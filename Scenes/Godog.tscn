@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0rlsqa57skme"]
+[gd_scene load_steps=7 format=3 uid="uid://c0rlsqa57skme"]
 
 [ext_resource type="Script" path="res://Scripts/DogController.gd" id="1_tajt8"]
 [ext_resource type="PackedScene" uid="uid://bmd5rtakf86jq" path="res://Art/day_19_-_sled/scene.gltf" id="2_7d0r4"]
@@ -9,10 +9,15 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_7yr51"]
 size = Vector3(1, 0.6, 2)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_311ru"]
+
 [node name="Godog" type="VehicleBody3D"]
-mass = 300.0
+mass = 60.0
+gravity_scale = 3.0
 script = ExtResource("1_tajt8")
-steeringAmount = 0.4
+steeringAmount = 0.3
+steeringBlendSpeed = 5.0
+enginePower = 200.0
 
 [node name="Visuals" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -30,52 +35,56 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0.390524)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18503, 0.114929)
 
 [node name="VehicleWheel3D_FR" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.150044, 0.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.355881, 0.7)
 use_as_steering = true
 wheel_roll_influence = 0.0
 wheel_radius = 0.3
 wheel_rest_length = 0.05
-wheel_friction_slip = 1.0
+wheel_friction_slip = 100.0
 suspension_travel = 0.5
-suspension_stiffness = 50.0
+suspension_stiffness = 100.0
 damping_compression = 1.9
 damping_relaxation = 2.0
 
 [node name="VehicleWheel3D_FL" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.150044, 0.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.355881, 0.7)
 use_as_steering = true
 wheel_roll_influence = 0.0
 wheel_radius = 0.3
 wheel_rest_length = 0.05
-wheel_friction_slip = 1.0
+wheel_friction_slip = 100.0
 suspension_travel = 0.5
-suspension_stiffness = 50.0
+suspension_stiffness = 100.0
 damping_compression = 1.9
 damping_relaxation = 2.0
 
 [node name="VehicleWheel3D_BR" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.150044, -0.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.355881, -0.7)
 use_as_traction = true
 wheel_roll_influence = 0.0
 wheel_radius = 0.3
 wheel_rest_length = 0.05
-wheel_friction_slip = 1.0
+wheel_friction_slip = 100.0
 suspension_travel = 0.5
-suspension_stiffness = 50.0
+suspension_stiffness = 100.0
 
 [node name="VehicleWheel3D_BL" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.150044, -0.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.355881, -0.7)
 use_as_traction = true
 wheel_roll_influence = 0.0
 wheel_radius = 0.3
 wheel_rest_length = 0.05
-wheel_friction_slip = 1.0
+wheel_friction_slip = 100.0
 suspension_travel = 0.5
-suspension_stiffness = 50.0
+suspension_stiffness = 100.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_7yr51")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.828257, -1.08219e-08)
+shape = SubResource("CylinderShape3D_311ru")
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
 update_rotation = false

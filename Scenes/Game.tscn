@@ -11,10 +11,10 @@
 
 [sub_resource type="Curve3D" id="Curve3D_rybcm"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.54341, 0.152101, 0.191099, 0.383167, 0, -1.93632, -0.383167, 0, 1.93632, 1.75, -0.130306, 3.66507, 0.447001, 0, -1.22759, -0.447001, 0, 1.22759, 0.301146, -0.0651813, 7.8938, -0.275408, -6.70552e-08, -2.29029, 0.275408, 6.70552e-08, 2.29029, 5, -0.130306, 12.1651, 0, 0, 0, 0, 0, 0, 3, -0.0651525, 17.1651),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.54341, 0.152101, 0.191099, 0.383167, 0, -1.93632, -0.383167, 0, 1.93632, 1.75, -0.130306, 3.66507, 0.447001, 0, -1.22759, -0.447001, 0, 1.22759, 0.301146, -0.0651813, 7.8938, -0.275408, -6.70552e-08, -2.29029, 0.275408, 6.70552e-08, 2.29029, 5, -0.130306, 12.1651, 0, 0, 0, 0, 0, 0, 3.40906, -0.817861, 16.1641, 0, 0, 0, 0, 0, 0, 1.37943, 0.172786, 18.1048),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
-point_count = 5
+point_count = 6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17xsp"]
 diffuse_mode = 3
@@ -48,7 +48,6 @@ fog_light_color = Color(0.74902, 0.643137, 1, 1)
 fog_light_energy = 1.09
 fog_density = 0.0
 fog_sky_affect = 0.15
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.108
 volumetric_fog_albedo = Color(0.666667, 0.470588, 0.952941, 1)
 volumetric_fog_emission = Color(0, 0.0392157, 0.290196, 1)
@@ -167,6 +166,7 @@ script = ExtResource("1_ni43j")
 introAnim = false
 
 [node name="Level" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.960566, -0.278052, 0, 0.278052, 0.960566, 0, 0, 0)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 74.6546)
@@ -178,7 +178,7 @@ transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 0.013328
 size = Vector3(80, 10, 200)
 
 [node name="CSGPolygon3D_1" type="CSGPolygon3D" parent="Level/CSGCombiner3D"]
-transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 4, 0, 0.260612, -79.3149)
+transform = Transform3D(6, 0, 0, 0, 3, 0, 0, 0, 6, 0, 0.260612, -79.3149)
 operation = 2
 polygon = PackedVector2Array(1.12219, 1.25867, 0.488683, 1.09876, -0.0450668, 1.23769, -0.449857, 1.1232, -0.943874, 0.982923, -1.80925, 0.446885, -1.27283, 0.232836, -0.791182, -0.0963352, -0.66, -0.3, -0.5, -0.5, -0.3, -0.66, 0, -0.7, 0.3, -0.66, 0.5, -0.5, 0.66, -0.3, 0.844883, 0.0298533, 1.18996, 0.251429, 1.60035, 0.404674)
 mode = 2
@@ -235,7 +235,7 @@ environment = SubResource("Environment_1x1rp")
 camera_attributes = SubResource("CameraAttributesPractical_1g3do")
 
 [node name="Godog" parent="." node_paths=PackedStringArray("cameraScene") instance=ExtResource("1_nr1js")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.45409, -1.30037, -0.061142)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.51555, -1.30037, -0.061142)
 cameraScene = NodePath("../CameraScene")
 
 [node name="VFX" type="Node3D" parent="Godog"]

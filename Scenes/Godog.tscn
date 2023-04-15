@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0rlsqa57skme"]
+[gd_scene load_steps=8 format=3 uid="uid://c0rlsqa57skme"]
 
 [ext_resource type="Script" path="res://Scripts/DogController.gd" id="1_tajt8"]
 [ext_resource type="PackedScene" uid="uid://bmd5rtakf86jq" path="res://Art/day_19_-_sled/scene.gltf" id="2_7d0r4"]
 [ext_resource type="PackedScene" uid="uid://dcdh03shynjia" path="res://Art/shiba/scene.gltf" id="2_xrbg0"]
+[ext_resource type="PackedScene" uid="uid://bgeni6tvej630" path="res://Scenes/GodogMesh.tscn" id="4_olpc2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xfawx"]
 
@@ -13,6 +14,8 @@ size = Vector3(1, 0.6, 2)
 
 [node name="Godog" type="VehicleBody3D"]
 mass = 80.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0.3, 0)
 gravity_scale = 3.0
 script = ExtResource("1_tajt8")
 steeringAmount = 0.3
@@ -30,9 +33,14 @@ skeleton = NodePath("../..")
 
 [node name="Sled" parent="Visuals" instance=ExtResource("2_7d0r4")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0.390524)
+visible = false
 
 [node name="Dog" parent="Visuals" instance=ExtResource("2_xrbg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18503, 0.114929)
+visible = false
+
+[node name="godog" parent="Visuals" instance=ExtResource("4_olpc2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.35552, 0)
 
 [node name="VehicleWheel3D_FR" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.355881, 0.7)

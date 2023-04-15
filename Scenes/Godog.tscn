@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbojl50wy2swq"]
+
+[ext_resource type="Script" path="res://Scripts/DogController.gd" id="1_tajt8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xfawx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7yr51"]
+size = Vector3(1, 0.6, 2)
+
+[node name="Godog" type="VehicleBody3D"]
+mass = 300.0
+script = ExtResource("1_tajt8")
+steeringAmount = 0.4
+
+[node name="Visuals" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("BoxMesh_xfawx")
+skeleton = NodePath("../..")
+
+[node name="VehicleWheel3D_FR" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.150044, 0.7)
+use_as_steering = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.3
+wheel_rest_length = 0.05
+wheel_friction_slip = 1.0
+suspension_travel = 0.5
+suspension_stiffness = 50.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="VehicleWheel3D_FL" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.150044, 0.7)
+use_as_steering = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.3
+wheel_rest_length = 0.05
+wheel_friction_slip = 1.0
+suspension_travel = 0.5
+suspension_stiffness = 50.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="VehicleWheel3D_BR" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.150044, -0.7)
+use_as_traction = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.3
+wheel_rest_length = 0.05
+wheel_friction_slip = 1.0
+suspension_travel = 0.5
+suspension_stiffness = 50.0
+
+[node name="VehicleWheel3D_BL" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.150044, -0.7)
+use_as_traction = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.3
+wheel_rest_length = 0.05
+wheel_friction_slip = 1.0
+suspension_travel = 0.5
+suspension_stiffness = 50.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_7yr51")

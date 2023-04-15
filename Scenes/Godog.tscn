@@ -12,7 +12,7 @@ size = Vector3(1, 0.6, 2)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_311ru"]
 
 [node name="Godog" type="VehicleBody3D"]
-mass = 60.0
+mass = 80.0
 gravity_scale = 3.0
 script = ExtResource("1_tajt8")
 steeringAmount = 0.3

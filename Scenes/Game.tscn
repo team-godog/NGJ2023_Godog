@@ -1,14 +1,14 @@
 [gd_scene load_steps=8 format=3 uid="uid://do15j11nb3xw7"]
 
-[ext_resource type="PackedScene" uid="uid://bc4re8qeuyh6l" path="res://Scenes/Godog.tscn" id="1_nr1js"]
+[ext_resource type="PackedScene" uid="uid://c0rlsqa57skme" path="res://Scenes/Godog.tscn" id="1_nr1js"]
 [ext_resource type="PackedScene" uid="uid://ccrdooi0w71um" path="res://Scenes/Camera.tscn" id="2_j0xlf"]
 
 [sub_resource type="Curve3D" id="Curve3D_rybcm"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.54341, 0.152101, 0.191099, 0.383167, 0, -1.93632, -0.383167, 0, 1.93632, 1.37805, 0, 3.75516, 0.447001, 0, -1.22759, -0.447001, 0, 1.22759, -2.22425, -0.00945291, 7.57749, 0, 0, 0, 0, 0, 0, 0.81809, 0, 11.2091),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.54341, 0.152101, 0.191099, 0.383167, 0, -1.93632, -0.383167, 0, 1.93632, 1.75, -0.130306, 3.66507, 0.447001, 0, -1.22759, -0.447001, 0, 1.22759, 0.301146, -0.0651813, 7.8938, -0.275408, -6.70552e-08, -2.29029, 0.275408, 6.70552e-08, 2.29029, 5, -0.130306, 12.1651, 0, 0, 0, 0, 0, 0, 3, -0.0651525, 17.1651),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
-point_count = 4
+point_count = 5
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d50ci"]
 
@@ -26,7 +26,7 @@ volumetric_fog_density = 0.0932
 [node name="Game" type="Node"]
 
 [node name="Level" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.980591, -0.196066, 0, 0.196066, 0.980591, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 74.6546)
@@ -37,9 +37,9 @@ transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 0.013328
 size = Vector3(80, 10, 200)
 
 [node name="CSGPolygon3D_1" type="CSGPolygon3D" parent="Level/CSGCombiner3D"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.260612, -79.3149)
+transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 4, 0, 0.260612, -79.3149)
 operation = 2
-polygon = PackedVector2Array(0.5, 0.5, 0.3, 0.66, 0, 0.7, -0.3, 0.66, -0.5, 0.5, -0.66, 0.3, -0.7, 0, -0.66, -0.3, -0.5, -0.5, -0.3, -0.66, 0, -0.7, 0.3, -0.66, 0.5, -0.5, 0.66, -0.3, 0.7, 0, 0.66, 0.3)
+polygon = PackedVector2Array(1.12219, 1.25867, 0.488683, 1.09876, -0.0450668, 1.23769, -0.449857, 1.1232, -0.943874, 0.982923, -1.80925, 0.446885, -1.27283, 0.232836, -0.791182, -0.0963352, -0.66, -0.3, -0.5, -0.5, -0.3, -0.66, 0, -0.7, 0.3, -0.66, 0.5, -0.5, 0.66, -0.3, 0.844883, 0.0298533, 1.18996, 0.251429, 1.60035, 0.404674)
 mode = 2
 path_node = NodePath("Path3D")
 path_interval_type = 0
@@ -58,6 +58,8 @@ curve = SubResource("Curve3D_rybcm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.925574, -0.353676, 0.135006, 0.325927, 0.925887, 0.191066, -0.192576, -0.132843, 0.972249, 0, 0, 0)
+shadow_enabled = true
+shadow_normal_bias = 3.772
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1x1rp")

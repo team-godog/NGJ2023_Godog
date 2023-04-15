@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbojl50wy2swq"]
+[gd_scene load_steps=4 format=3 uid="uid://bc4re8qeuyh6l"]
 
 [ext_resource type="Script" path="res://Scripts/DogController.gd" id="1_tajt8"]
 
@@ -67,3 +67,7 @@ suspension_stiffness = 50.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_7yr51")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
+update_rotation = false
+update_scale = false

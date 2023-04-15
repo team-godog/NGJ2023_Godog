@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://do15j11nb3xw7"]
+[gd_scene load_steps=8 format=3 uid="uid://do15j11nb3xw7"]
 
-[ext_resource type="PackedScene" uid="uid://bbojl50wy2swq" path="res://Scenes/Godog.tscn" id="1_nr1js"]
+[ext_resource type="PackedScene" uid="uid://bc4re8qeuyh6l" path="res://Scenes/Godog.tscn" id="1_nr1js"]
+[ext_resource type="PackedScene" uid="uid://ccrdooi0w71um" path="res://Scenes/Camera.tscn" id="2_j0xlf"]
 
 [sub_resource type="Curve3D" id="Curve3D_rybcm"]
 _data = {
@@ -55,9 +56,6 @@ smooth_faces = true
 transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 0, 1, 0, 0, 0)
 curve = SubResource("Curve3D_rybcm")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.99452, -0.0598982, 0.0856891, 0, 0.81961, 0.572922, -0.104549, 0.569782, -0.815118, 5.14035, 3.37512, -3.96275)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.925574, -0.353676, 0.135006, 0.325927, 0.925887, 0.191066, -0.192576, -0.132843, 0.972249, 0, 0, 0)
 
@@ -65,5 +63,9 @@ transform = Transform3D(0.925574, -0.353676, 0.135006, 0.325927, 0.925887, 0.191
 environment = SubResource("Environment_1x1rp")
 camera_attributes = SubResource("CameraAttributesPractical_1g3do")
 
-[node name="Godog" parent="." instance=ExtResource("1_nr1js")]
+[node name="Godog" parent="." node_paths=PackedStringArray("cameraScene") instance=ExtResource("1_nr1js")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.45409, -1.30037, -0.061142)
+cameraScene = NodePath("../CameraScene")
+
+[node name="CameraScene" parent="." instance=ExtResource("2_j0xlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)

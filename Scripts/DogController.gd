@@ -6,9 +6,13 @@ class_name DogController
 @export var enginePower : float = 150;
 @export var engineBlendSpeed : float = 10;
 
+@export var cameraScene : Node;
 
 var steeringInput : float;
 var engineInput : float;
+
+func _ready():
+	$RemoteTransform3D.remote_path = cameraScene.get_path()
 
 func _physics_process(delta):
 	ProcessInput();

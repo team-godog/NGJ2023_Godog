@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://do15j11nb3xw7"]
+[gd_scene load_steps=23 format=3 uid="uid://do15j11nb3xw7"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ni43j"]
 [ext_resource type="PackedScene" uid="uid://c0rlsqa57skme" path="res://Scenes/Godog.tscn" id="1_nr1js"]
@@ -30,11 +30,18 @@ sky_material = SubResource("ProceduralSkyMaterial_d50ci")
 background_mode = 2
 sky = SubResource("Sky_dlx6n")
 ambient_light_source = 3
-ambient_light_color = Color(0.737255, 0.423529, 0.360784, 1)
+ambient_light_color = Color(0.894118, 0.709804, 0.890196, 1)
 ambient_light_sky_contribution = 0.13
 ambient_light_energy = 0.49
 reflected_light_source = 2
 tonemap_mode = 1
+tonemap_white = 0.95
+glow_enabled = true
+glow_intensity = 4.68
+glow_strength = 1.29
+glow_blend_mode = 0
+glow_hdr_luminance_cap = 23.29
+glow_map_strength = 0.68
 fog_light_color = Color(0.74902, 0.643137, 1, 1)
 fog_light_energy = 1.09
 fog_density = 0.0
@@ -81,6 +88,11 @@ billboard_mode = 1
 billboard_keep_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_wwvmg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dx55"]
+metallic_specular = 0.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_ujuny"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ni43j")
@@ -194,3 +206,53 @@ scale_amount_curve = SubResource("Curve_smi6o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.823079, 0.908271, 6.22938)
 material_override = SubResource("StandardMaterial3D_7c7ee")
 mesh = SubResource("QuadMesh_wwvmg")
+
+[node name="Mountains" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(-19.3643, -0.986319, 24.9371, -7.51807e-08, 29.9766, 1.18564, -29.0278, 0.657967, -16.6354, -62.7379, 1.97444, 190.531)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(-23.907, -0.863644, 21.8355, 6.61117e-08, 29.9766, 1.18564, -25.4174, 0.812322, -20.5379, -45.7454, 1.97444, 195.771)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(-19.3643, -0.986319, 24.9371, -7.51807e-08, 29.9766, 1.18564, -29.0278, 0.657967, -16.6354, 42.8124, 1.97444, 190.531)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(-23.907, -0.863644, 21.8355, 6.61117e-08, 29.9766, 1.18564, -25.4174, 0.812322, -20.5379, 59.8049, 1.97444, 195.771)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(-23.1912, 0.885892, -22.398, -2.21275e-07, 29.9766, 1.18564, 26.0722, 0.787999, -19.923, 98.4654, 1.97444, 105.55)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(-18.5498, 1.00423, -25.3899, 1.13455e-07, 29.9766, 1.18564, 29.5549, 0.630294, -15.9357, 99.2404, 1.97444, 87.7852)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(30.9488, -0.547634, 13.8458, -2.21275e-07, 29.9766, 1.18564, -16.1171, -1.05159, 26.5874, -115.929, 1.97444, 88.504)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(27.85, -0.71433, 18.0604, 4.43518e-08, 29.9766, 1.18564, -21.0231, -0.946298, 23.9252, -122.973, 1.97444, 104.831)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")

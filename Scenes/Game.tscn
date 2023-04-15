@@ -30,15 +30,14 @@ sky_material = SubResource("ProceduralSkyMaterial_d50ci")
 background_mode = 2
 sky = SubResource("Sky_dlx6n")
 ambient_light_source = 3
-ambient_light_color = Color(0.894118, 0.709804, 0.890196, 1)
-ambient_light_sky_contribution = 0.13
+ambient_light_color = Color(0.388235, 0.913725, 1, 1)
+ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.49
 reflected_light_source = 2
 tonemap_mode = 1
 tonemap_white = 0.95
-glow_enabled = true
-glow_intensity = 4.68
-glow_strength = 1.29
+glow_intensity = 3.26
+glow_strength = 0.61
 glow_blend_mode = 0
 glow_hdr_luminance_cap = 23.29
 glow_map_strength = 0.68
@@ -46,10 +45,15 @@ fog_light_color = Color(0.74902, 0.643137, 1, 1)
 fog_light_energy = 1.09
 fog_density = 0.0
 fog_sky_affect = 0.15
-volumetric_fog_density = 0.0345
-volumetric_fog_albedo = Color(0, 0.764706, 0.807843, 1)
-volumetric_fog_anisotropy = 0.07
-volumetric_fog_length = 199.53
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0933
+volumetric_fog_albedo = Color(0.666667, 0.470588, 0.980392, 1)
+volumetric_fog_emission = Color(0, 0, 0.278431, 1)
+volumetric_fog_emission_energy = 3.95
+volumetric_fog_gi_inject = 0.82
+volumetric_fog_anisotropy = 0.15
+volumetric_fog_length = 319.53
+volumetric_fog_sky_affect = 0.0
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_1g3do"]
 
@@ -82,8 +86,9 @@ point_count = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7c7ee"]
 transparency = 1
-albedo_color = Color(1, 0.803922, 0.745098, 1)
+albedo_color = Color(1, 0.854902, 0.776471, 1)
 albedo_texture = ExtResource("6_fa1px")
+metallic_specular = 0.0
 billboard_mode = 1
 billboard_keep_scale = true
 
@@ -132,6 +137,7 @@ curve = SubResource("Curve3D_rybcm")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.925573, -0.353676, 0.135006, 0.325927, 0.925886, 0.191065, -0.192576, -0.132843, 0.972249, 0, 0, 0)
 light_color = Color(0.956863, 0.858824, 0.870588, 1)
+light_energy = 0.991
 shadow_enabled = true
 shadow_bias = 0.0
 shadow_normal_bias = 5.287
@@ -203,7 +209,7 @@ scale_amount_curve = SubResource("Curve_smi6o")
 [node name="Grass" type="Node3D" parent="."]
 
 [node name="Grass" type="MeshInstance3D" parent="Grass"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.823079, 0.908271, 6.22938)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239132, 0.937187, 6.22938)
 material_override = SubResource("StandardMaterial3D_7c7ee")
 mesh = SubResource("QuadMesh_wwvmg")
 

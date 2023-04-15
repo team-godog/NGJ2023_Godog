@@ -148,7 +148,7 @@ _data = {
 [node name="CameraScene" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 9.97858e-07, -2.31337e-06, -3.57615e-08, 0.912506, 0.409063, 2.51915e-06, 0.409063, -0.912506, 0, 1.94772, -2.76484)
+transform = Transform3D(-1, -4.33144e-08, 7.59382e-08, 0, 0.868631, 0.495459, -8.74228e-08, 0.495459, -0.868631, 1, 5.64397, -3.70206)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

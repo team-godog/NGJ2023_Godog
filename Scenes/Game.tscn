@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://do15j11nb3xw7"]
+[gd_scene load_steps=31 format=3 uid="uid://do15j11nb3xw7"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ni43j"]
 [ext_resource type="PackedScene" uid="uid://c0rlsqa57skme" path="res://Scenes/Godog.tscn" id="1_nr1js"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cu6hqi6hvo8gm" path="res://Art/VFX/Textures/snowflake1.png" id="4_ia6bg"]
 [ext_resource type="Texture2D" uid="uid://d02xqb42vhm23" path="res://Art/VFX/Textures/snowflake2.png" id="5_ixl24"]
 [ext_resource type="Texture2D" uid="uid://dmbg1wq6m361w" path="res://Art/VFX/Textures/grass1.png" id="6_fa1px"]
+[ext_resource type="Texture2D" uid="uid://bnxt320wnleyu" path="res://Art/VFX/PICKUP1.png" id="8_80y6y"]
 
 [sub_resource type="Curve3D" id="Curve3D_rybcm"]
 _data = {
@@ -23,8 +24,8 @@ rim = 0.27
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d50ci"]
 sky_top_color = Color(0.133333, 0.231373, 0.760784, 1)
 sky_horizon_color = Color(0.882353, 0.556863, 0.501961, 1)
-ground_bottom_color = Color(0.152941, 0.188235, 0.121569, 1)
-ground_horizon_color = Color(0.937255, 0.72549, 0.427451, 1)
+ground_bottom_color = Color(0, 0.682353, 0.796078, 1)
+ground_horizon_color = Color(0.976471, 0.588235, 0.505882, 1)
 
 [sub_resource type="Sky" id="Sky_dlx6n"]
 sky_material = SubResource("ProceduralSkyMaterial_d50ci")
@@ -54,8 +55,8 @@ volumetric_fog_emission = Color(0, 0.0392157, 0.290196, 1)
 volumetric_fog_emission_energy = 6.01
 volumetric_fog_gi_inject = 0.0
 volumetric_fog_anisotropy = 0.15
-volumetric_fog_length = 319.53
-volumetric_fog_ambient_inject = 1.08
+volumetric_fog_length = 1024.0
+volumetric_fog_ambient_inject = 1.49
 volumetric_fog_sky_affect = 0.0
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_1g3do"]
@@ -95,6 +96,66 @@ billboard_mode = 1
 billboard_keep_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_wwvmg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8681r"]
+transparency = 1
+albedo_color = Color(1, 1, 0.580392, 1)
+albedo_texture = ExtResource("8_80y6y")
+rim_enabled = true
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="Animation" id="Animation_w7k8f"]
+resource_name = "Float"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(7.24819, -0.503458, 11.4469), Vector3(7.248, 0.107, 11.447), Vector3(7.248, -0.503, 11.447)]
+}
+
+[sub_resource type="Animation" id="Animation_jscrd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(7.24819, -0.503458, 11.4469)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r5qii"]
+_data = {
+"Float": SubResource("Animation_w7k8f"),
+"RESET": SubResource("Animation_jscrd")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4rtp7"]
+transparency = 1
+albedo_color = Color(1, 1, 0.709804, 1)
+albedo_texture = ExtResource("5_ixl24")
+rim_enabled = true
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_aktdu"]
+
+[sub_resource type="Curve" id="Curve_ioa6r"]
+_data = [Vector2(0, 0.936364), 0.0, 0.0, 0, 0, Vector2(0.950549, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dx55"]
 metallic_specular = 0.0
@@ -174,7 +235,7 @@ environment = SubResource("Environment_1x1rp")
 camera_attributes = SubResource("CameraAttributesPractical_1g3do")
 
 [node name="Godog" parent="." node_paths=PackedStringArray("cameraScene") instance=ExtResource("1_nr1js")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.45409, -1.30037, -0.061142)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.45409, -1.30037, -0.061142)
 cameraScene = NodePath("../CameraScene")
 
 [node name="VFX" type="Node3D" parent="Godog"]
@@ -229,6 +290,7 @@ scale_amount_max = 0.33
 scale_amount_curve = SubResource("Curve_smi6o")
 
 [node name="CameraScene" parent="." instance=ExtResource("2_j0xlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029, 2.593, 0)
 
 [node name="Grass" type="Node3D" parent="."]
 
@@ -236,6 +298,34 @@ scale_amount_curve = SubResource("Curve_smi6o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239132, 1.36364, 6.22938)
 material_override = SubResource("StandardMaterial3D_7c7ee")
 mesh = SubResource("QuadMesh_wwvmg")
+
+[node name="PickUp" type="MeshInstance3D" parent="Grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.248, 0.107, 11.447)
+material_override = SubResource("StandardMaterial3D_8681r")
+mesh = SubResource("QuadMesh_wwvmg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Grass/PickUp"]
+autoplay = "Float"
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_r5qii")
+}
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Grass/PickUp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.689915)
+material_override = SubResource("StandardMaterial3D_4rtp7")
+amount = 10
+lifetime = 1.59
+speed_scale = 1.38
+mesh = SubResource("QuadMesh_aktdu")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, -20, 0)
+spread = 50.91
+gravity = Vector3(0, 2, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+scale_amount_curve = SubResource("Curve_ioa6r")
 
 [node name="Mountains" type="Node3D" parent="."]
 

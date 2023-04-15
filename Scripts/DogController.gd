@@ -13,6 +13,8 @@ var engineInput : float;
 
 func _ready():
 	$RemoteTransform3D.remote_path = cameraScene.get_path()
+	# Paused initially until intro ends.
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 func _physics_process(delta):
 	ProcessInput();

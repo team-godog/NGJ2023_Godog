@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://do15j11nb3xw7"]
+[gd_scene load_steps=9 format=3 uid="uid://do15j11nb3xw7"]
 
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ni43j"]
 [ext_resource type="PackedScene" uid="uid://c0rlsqa57skme" path="res://Scenes/Godog.tscn" id="1_nr1js"]
 [ext_resource type="PackedScene" uid="uid://ccrdooi0w71um" path="res://Scenes/Camera.tscn" id="2_j0xlf"]
 
@@ -24,9 +25,10 @@ volumetric_fog_density = 0.0932
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_1g3do"]
 
 [node name="Game" type="Node"]
+script = ExtResource("1_ni43j")
+introAnim = false
 
 [node name="Level" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 74.6546)
@@ -70,4 +72,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.45409, -1.30037, -0.061142)
 cameraScene = NodePath("../CameraScene")
 
 [node name="CameraScene" parent="." instance=ExtResource("2_j0xlf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)

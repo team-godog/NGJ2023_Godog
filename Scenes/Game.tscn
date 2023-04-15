@@ -1,13 +1,144 @@
-[gd_scene load_steps=2 format=3 uid="uid://do15j11nb3xw7"]
+[gd_scene load_steps=9 format=3 uid="uid://do15j11nb3xw7"]
 
-[sub_resource type="Curve3D" id="Curve3D_1urnn"]
+[sub_resource type="Curve3D" id="Curve3D_rybcm"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10),
-"tilts": PackedFloat32Array(0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.383167, 0, -1.93632, -0.383167, 0, 1.93632, 1.37805, 0, 3.75516, 0.447001, 0, -1.22759, -0.447001, 0, 1.22759, -2.18052, 0, 7.55746, 0, 0, 0, 0, 0, 0, 0.81809, 0, 11.2091),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
 }
-point_count = 2
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_arwmq"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.383167, 0, -1.93632, -0.383167, 0, 1.93632, -2.43869, 0, 2.98314, 1.73826, 0, -3.14855, -1.73826, 0, 3.14855, 1.43139, 8.61287e-06, 7.40719, 0, 0, 0, 0, 0, 0, 0.81809, 0, 11.2091),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_hls6i"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.383167, 0, -1.93632, -0.383167, 0, 1.93632, 5.76064, 8.61287e-06, 2.81556, 1.08231, 0, -2.98456, -1.08231, 0, 2.98456, 7.56449, 8.61287e-06, 7.93195, 0, 0, 0, 0, 0, 0, 9.98253, 8.61287e-06, 15.7868),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_wq0uv"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.383167, 0, -1.93632, -0.383167, 0, 1.93632, -2.42085, 0.0702993, 4.98378, 0.0983925, 0, -4.29645, -0.0983925, 0, 4.29645, -6.2939, 0.154811, 10.0655, 0, 0, 0, 0, 0, 0, -0.411824, 8.58307e-06, 15.9482),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d50ci"]
+
+[sub_resource type="Sky" id="Sky_dlx6n"]
+sky_material = SubResource("ProceduralSkyMaterial_d50ci")
+
+[sub_resource type="Environment" id="Environment_1x1rp"]
+background_mode = 2
+sky = SubResource("Sky_dlx6n")
+tonemap_mode = 1
+volumetric_fog_density = 0.0932
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_1g3do"]
 
 [node name="Game" type="Node"]
 
-[node name="Path3D" type="Path3D" parent="."]
-curve = SubResource("Curve3D_1urnn")
+[node name="Level" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.976383, -0.216048, 0, 0.216048, 0.976383, 0, 0, 0)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Level"]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, -0.0514259, -0.458379, 23.244)
+size = Vector3(30, 1, 50)
+
+[node name="CSGPolygon3D_1" type="CSGPolygon3D" parent="Level/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.260612, -2.56302)
+operation = 2
+polygon = PackedVector2Array(0.5, 0.5, 0.3, 0.66, 0, 0.7, -0.3, 0.66, -0.5, 0.5, -0.66, 0.3, -0.7, 0, -0.66, -0.3, -0.5, -0.5, -0.3, -0.66, 0, -0.7, 0.3, -0.66, 0.5, -0.5, 0.66, -0.3, 0.7, 0, 0.66, 0.3)
+mode = 2
+path_node = NodePath("Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = true
+path_continuous_u = false
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+
+[node name="Path3D" type="Path3D" parent="Level/CSGCombiner3D/CSGPolygon3D_1"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 0, 1, 0, 0, 0)
+curve = SubResource("Curve3D_rybcm")
+
+[node name="CSGPolygon3D_2" type="CSGPolygon3D" parent="Level/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54148, 0.260612, 6.32506)
+operation = 2
+polygon = PackedVector2Array(0.5, 0.5, 0.3, 0.66, 0, 0.7, -0.3, 0.66, -0.5, 0.5, -0.66, 0.3, -0.7, 0, -0.66, -0.3, -0.5, -0.5, -0.3, -0.66, 0, -0.7, 0.3, -0.66, 0.5, -0.5, 0.66, -0.3, 0.7, 0, 0.66, 0.3)
+mode = 2
+path_node = NodePath("Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = true
+path_continuous_u = false
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+
+[node name="Path3D" type="Path3D" parent="Level/CSGCombiner3D/CSGPolygon3D_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+curve = SubResource("Curve3D_arwmq")
+
+[node name="CSGPolygon3D_3" type="CSGPolygon3D" parent="Level/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.229581, 0.260612, 13.0813)
+operation = 2
+polygon = PackedVector2Array(0.5, 0.5, 0.3, 0.66, 0, 0.7, -0.3, 0.66, -0.5, 0.5, -0.66, 0.3, -0.7, 0, -0.66, -0.3, -0.5, -0.5, -0.3, -0.66, 0, -0.7, 0.3, -0.66, 0.5, -0.5, 0.66, -0.3, 0.7, 0, 0.66, 0.3)
+mode = 2
+path_node = NodePath("Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = true
+path_continuous_u = false
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+
+[node name="Path3D" type="Path3D" parent="Level/CSGCombiner3D/CSGPolygon3D_3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0983925, 0, 0)
+curve = SubResource("Curve3D_hls6i")
+
+[node name="CSGPolygon3D_4" type="CSGPolygon3D" parent="Level/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60771, 0.260612, 10.3263)
+operation = 2
+polygon = PackedVector2Array(0.5, 0.5, 0.3, 0.66, 0, 0.7, -0.3, 0.66, -0.5, 0.5, -0.66, 0.3, -0.7, 0, -0.66, -0.3, -0.5, -0.5, -0.3, -0.66, 0, -0.7, 0.3, -0.66, 0.5, -0.5, 0.66, -0.3, 0.7, 0, 0.66, 0.3)
+mode = 2
+path_node = NodePath("Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = true
+path_continuous_u = false
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+
+[node name="Path3D" type="Path3D" parent="Level/CSGCombiner3D/CSGPolygon3D_4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0983925, 0, 0)
+curve = SubResource("Curve3D_wq0uv")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.998848, 0.0179383, -0.044501, 0, 0.927482, 0.373867, 0.0479804, 0.373437, -0.926414, 0.556114, 0.475865, -2.19201)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.925574, -0.353676, 0.135006, 0.325927, 0.925887, 0.191066, -0.192576, -0.132843, 0.972249, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1x1rp")
+camera_attributes = SubResource("CameraAttributesPractical_1g3do")

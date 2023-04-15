@@ -2,13 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ni43j"]
 [ext_resource type="PackedScene" uid="uid://c0rlsqa57skme" path="res://Scenes/Godog.tscn" id="1_nr1js"]
+[ext_resource type="Material" uid="uid://cepxjvviodl5q" path="res://Materials/TrackMat.tres" id="2_7vl5a"]
 [ext_resource type="PackedScene" uid="uid://ccrdooi0w71um" path="res://Scenes/Camera.tscn" id="2_j0xlf"]
 [ext_resource type="Texture2D" uid="uid://cu6hqi6hvo8gm" path="res://Art/VFX/Textures/snowflake1.png" id="4_ia6bg"]
 [ext_resource type="Texture2D" uid="uid://d02xqb42vhm23" path="res://Art/VFX/Textures/snowflake2.png" id="5_ixl24"]
 [ext_resource type="Texture2D" uid="uid://dmbg1wq6m361w" path="res://Art/VFX/Textures/grass1.png" id="6_fa1px"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqnwb"]
-metallic_specular = 0.0
 
 [sub_resource type="Curve3D" id="Curve3D_rybcm"]
 _data = {
@@ -16,6 +14,11 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17xsp"]
+diffuse_mode = 3
+rim_enabled = true
+rim = 0.27
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d50ci"]
 sky_top_color = Color(0.133333, 0.231373, 0.760784, 1)
@@ -29,10 +32,9 @@ sky_material = SubResource("ProceduralSkyMaterial_d50ci")
 [sub_resource type="Environment" id="Environment_1x1rp"]
 background_mode = 2
 sky = SubResource("Sky_dlx6n")
-ambient_light_source = 3
-ambient_light_color = Color(0.388235, 0.913725, 1, 1)
+ambient_light_color = Color(1, 0.65098, 1, 1)
 ambient_light_sky_contribution = 0.0
-ambient_light_energy = 0.49
+ambient_light_energy = 0.17
 reflected_light_source = 2
 tonemap_mode = 1
 tonemap_white = 0.95
@@ -46,13 +48,14 @@ fog_light_energy = 1.09
 fog_density = 0.0
 fog_sky_affect = 0.15
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0933
-volumetric_fog_albedo = Color(0.666667, 0.470588, 0.980392, 1)
-volumetric_fog_emission = Color(0, 0, 0.278431, 1)
-volumetric_fog_emission_energy = 3.95
-volumetric_fog_gi_inject = 0.82
+volumetric_fog_density = 0.108
+volumetric_fog_albedo = Color(0.666667, 0.470588, 0.952941, 1)
+volumetric_fog_emission = Color(0, 0.0392157, 0.290196, 1)
+volumetric_fog_emission_energy = 6.01
+volumetric_fog_gi_inject = 0.0
 volumetric_fog_anisotropy = 0.15
 volumetric_fog_length = 319.53
+volumetric_fog_ambient_inject = 1.08
 volumetric_fog_sky_affect = 0.0
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_1g3do"]
@@ -60,6 +63,8 @@ volumetric_fog_sky_affect = 0.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4rng"]
 transparency = 1
 shading_mode = 0
+diffuse_mode = 3
+albedo_color = Color(1, 0.839216, 1, 1)
 albedo_texture = ExtResource("4_ia6bg")
 billboard_mode = 1
 billboard_keep_scale = true
@@ -69,14 +74,11 @@ billboard_keep_scale = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hty5i"]
 transparency = 1
 shading_mode = 0
-albedo_color = Color(0.960784, 0.941176, 0.929412, 1)
+albedo_color = Color(0.960784, 0.827451, 0.929412, 1)
 albedo_texture = ExtResource("5_ixl24")
 billboard_mode = 1
 billboard_keep_scale = true
 distance_fade_max_distance = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r62jo"]
-metallic_specular = 0.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_p3bmd"]
 
@@ -107,10 +109,10 @@ introAnim = false
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 74.6546)
-material_override = SubResource("StandardMaterial3D_uqnwb")
+material_override = ExtResource("2_7vl5a")
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Level/CSGCombiner3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 0.0133286, -4.47533, 23.2496)
 size = Vector3(80, 10, 200)
 
@@ -134,16 +136,38 @@ smooth_faces = true
 transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 0, 1, 0, 0, 0)
 curve = SubResource("Curve3D_rybcm")
 
+[node name="Snow" type="Node3D" parent="."]
+transform = Transform3D(6.3173, -2.593e-08, -4.33239, 0, 1.01069, -1.49983e-07, 3.01252, -5.86616e-09, 9.08508, -6.25604, 0.460912, 10.0559)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Snow"]
+transform = Transform3D(0.999999, 8.04912e-16, 0, -1.77636e-14, 0.475011, 1.56319e-13, -8.9407e-08, 2.77556e-16, 1, -0.0823221, 0.100023, 0.0272971)
+material_override = SubResource("StandardMaterial3D_17xsp")
+radius = 1.40711
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Snow"]
+transform = Transform3D(0.269771, 1.36352e-07, 0.862513, -9.32069e-08, 0.999996, -8.43263e-08, -0.628091, -8.98322e-08, 0.370458, 3.35852, -0.23319, -1.11365)
+material_override = SubResource("StandardMaterial3D_17xsp")
+radius = 1.40711
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.925573, -0.353676, 0.135006, 0.325927, 0.925886, 0.191065, -0.192576, -0.132843, 0.972249, 0, 0, 0)
-light_color = Color(0.956863, 0.858824, 0.870588, 1)
-light_energy = 0.991
+light_color = Color(0.952941, 0.87451, 0.788235, 1)
+light_energy = 0.982
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.555
 shadow_enabled = true
-shadow_bias = 0.0
-shadow_normal_bias = 5.287
-shadow_transmittance_bias = 1.666
-shadow_opacity = 0.59
-shadow_blur = 4.333
+shadow_bias = 0.417
+shadow_normal_bias = 0.0
+shadow_transmittance_bias = 16.0
+shadow_blur = 1.528
+directional_shadow_mode = 0
+directional_shadow_split_1 = 0.081
+directional_shadow_split_2 = 0.181
+directional_shadow_split_3 = 0.608
+directional_shadow_blend_splits = true
+directional_shadow_fade_start = 0.0
+directional_shadow_max_distance = 7.2
+directional_shadow_pancake_size = 8.4
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1x1rp")
@@ -182,7 +206,7 @@ scale_amount_max = 0.46
 
 [node name="SledParticle" type="CPUParticles3D" parent="Godog/VFX"]
 transform = Transform3D(0.885467, 0, -0.464703, 0, 1, 0, 0.464703, 0, 0.885467, -1.49216, -4.0671, -10.5362)
-material_override = SubResource("StandardMaterial3D_r62jo")
+material_override = ExtResource("2_7vl5a")
 lifetime = 0.46
 mesh = SubResource("SphereMesh_p3bmd")
 emission_shape = 3
@@ -194,7 +218,7 @@ scale_amount_curve = SubResource("Curve_smi6o")
 
 [node name="SledParticle2" type="CPUParticles3D" parent="Godog/VFX"]
 transform = Transform3D(0.885467, 0, -0.464703, 0, 1, 0, 0.464703, 0, 0.885467, -2.20729, -4.0671, -10.5362)
-material_override = SubResource("StandardMaterial3D_r62jo")
+material_override = ExtResource("2_7vl5a")
 lifetime = 0.46
 mesh = SubResource("SphereMesh_p3bmd")
 emission_shape = 3
@@ -209,7 +233,7 @@ scale_amount_curve = SubResource("Curve_smi6o")
 [node name="Grass" type="Node3D" parent="."]
 
 [node name="Grass" type="MeshInstance3D" parent="Grass"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239132, 0.937187, 6.22938)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239132, 1.36364, 6.22938)
 material_override = SubResource("StandardMaterial3D_7c7ee")
 mesh = SubResource("QuadMesh_wwvmg")
 

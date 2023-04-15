@@ -18,6 +18,10 @@ _data = {
 point_count = 5
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d50ci"]
+sky_top_color = Color(0.133333, 0.231373, 0.760784, 1)
+sky_horizon_color = Color(0.882353, 0.556863, 0.501961, 1)
+ground_bottom_color = Color(0.152941, 0.188235, 0.121569, 1)
+ground_horizon_color = Color(0.937255, 0.72549, 0.427451, 1)
 
 [sub_resource type="Sky" id="Sky_dlx6n"]
 sky_material = SubResource("ProceduralSkyMaterial_d50ci")
@@ -25,8 +29,20 @@ sky_material = SubResource("ProceduralSkyMaterial_d50ci")
 [sub_resource type="Environment" id="Environment_1x1rp"]
 background_mode = 2
 sky = SubResource("Sky_dlx6n")
+ambient_light_source = 3
+ambient_light_color = Color(0.737255, 0.423529, 0.360784, 1)
+ambient_light_sky_contribution = 0.13
+ambient_light_energy = 0.49
+reflected_light_source = 2
 tonemap_mode = 1
-volumetric_fog_density = 0.0932
+fog_light_color = Color(0.74902, 0.643137, 1, 1)
+fog_light_energy = 1.09
+fog_density = 0.0
+fog_sky_affect = 0.15
+volumetric_fog_density = 0.0345
+volumetric_fog_albedo = Color(0, 0.764706, 0.807843, 1)
+volumetric_fog_anisotropy = 0.07
+volumetric_fog_length = 199.53
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_1g3do"]
 
@@ -103,7 +119,7 @@ curve = SubResource("Curve3D_rybcm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.925573, -0.353676, 0.135006, 0.325927, 0.925886, 0.191065, -0.192576, -0.132843, 0.972249, 0, 0, 0)
-light_color = Color(0.952941, 0.866667, 0.839216, 1)
+light_color = Color(0.956863, 0.858824, 0.870588, 1)
 shadow_enabled = true
 shadow_bias = 0.0
 shadow_normal_bias = 5.287

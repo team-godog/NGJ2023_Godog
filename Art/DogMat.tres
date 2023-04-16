@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cif34thpno2ge"]
+
+[ext_resource type="Texture2D" uid="uid://bxao0ufuxusnn" path="res://Art/Dog_BaseColor.png" id="1_m2lix"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_m2lix")
+rim = 0.06
+rim_tint = 0.04
+clearcoat_enabled = true
+clearcoat = 0.02

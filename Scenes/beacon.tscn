@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://4nn2tgdx21m8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slpmo"]
+transparency = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 16.0
+distance_fade_mode = 1
+distance_fade_min_distance = 40.0
+distance_fade_max_distance = 100.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_2rh0w"]
+
+[node name="Beacon" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 500, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_slpmo")
+mesh = SubResource("BoxMesh_2rh0w")

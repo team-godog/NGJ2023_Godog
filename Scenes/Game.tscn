@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dfty372hd8kx1" path="res://Scenes/Level_New.tscn" id="2_punwc"]
 [ext_resource type="PackedScene" uid="uid://cfcq7cnyl2pt3" path="res://Art/Prefabs/tree.tscn" id="3_3h1b4"]
 [ext_resource type="Texture2D" uid="uid://dmbg1wq6m361w" path="res://Art/VFX/Textures/grass1.png" id="6_fa1px"]
-[ext_resource type="PackedScene" uid="uid://c48kfmcc8lma0" path="res://Scenes/Collectible.tscn" id="6_ttyx4"]
+[ext_resource type="PackedScene" uid="uid://btn5ikxl8o8ku" path="res://Scenes/collectables.tscn" id="7_xufm6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dx55"]
 metallic_specular = 0.0
@@ -181,19 +181,4 @@ cameraScene = NodePath("../CameraScene")
 [node name="CameraScene" parent="." instance=ExtResource("2_j0xlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029, 2.593, 0)
 
-[node name="Collectibles" type="Node3D" parent="."]
-
-[node name="Collectible1" parent="Collectibles" instance=ExtResource("6_ttyx4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3295, -4.59897, 11.4469)
-
-[node name="Collectible2" parent="Collectibles" instance=ExtResource("6_ttyx4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.24819, -11.5727, 28.2329)
-pickup_type = 1
-
-[node name="Collectible3" parent="Collectibles" instance=ExtResource("6_ttyx4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3912, -16.4117, 47.287)
-pickup_type = 2
-
-[node name="Collectible" parent="Collectibles" instance=ExtResource("6_ttyx4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51587, -17.449, 47.7826)
-pickup_type = 2
+[node name="Collectables" parent="." instance=ExtResource("7_xufm6")]

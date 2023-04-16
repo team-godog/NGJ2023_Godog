@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c48kfmcc8lma0"]
+[gd_scene load_steps=17 format=3 uid="uid://c48kfmcc8lma0"]
 
 [ext_resource type="Script" path="res://Scripts/Collectible.gd" id="1_ebnwg"]
 [ext_resource type="Texture2D" uid="uid://dkwopn6quh3dy" path="res://Art/VFX/Textures/pickup_rosemary.png" id="2_0vdbu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cdq65n8tax267" path="res://Art/VFX/Textures/pickup_flower.png" id="3_q3g4e"]
 [ext_resource type="Texture2D" uid="uid://d33ov17hbhqyf" path="res://Art/VFX/Textures/pickup_pastinak.png" id="4_0vg8n"]
 [ext_resource type="AudioStream" uid="uid://dmgphnv432sem" path="res://Sound/sfx_pickup.wav" id="6_la1fm"]
+[ext_resource type="PackedScene" uid="uid://4nn2tgdx21m8" path="res://Scenes/beacon.tscn" id="7_sw5c7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pqaga"]
 radius = 0.8
@@ -109,5 +110,7 @@ scale_amount_curve = SubResource("Curve_m71gb")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_la1fm")
 volume_db = 3.0
+
+[node name="Beacon" parent="." instance=ExtResource("7_sw5c7")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

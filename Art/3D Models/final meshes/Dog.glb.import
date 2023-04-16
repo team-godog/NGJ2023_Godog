@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://j81hogtwfn3r"
-path="res://.godot/imported/townhouse_blockoutglb.glb-a777e9543b0a9adc4deb80d3ff3dbe0c.scn"
+uid="uid://cxvdj3x7mxhnu"
+path="res://.godot/imported/Dog.glb-3b02f4bef1785e5d294c9da7f541919b.scn"
 
 [deps]
 
-source_file="res://Meshes/townhouse_blockoutglb.glb"
-dest_files=["res://.godot/imported/townhouse_blockoutglb.glb-a777e9543b0a9adc4deb80d3ff3dbe0c.scn"]
+source_file="res://Art/3D Models/final meshes/Dog.glb"
+dest_files=["res://.godot/imported/Dog.glb-3b02f4bef1785e5d294c9da7f541919b.scn"]
 
 [params]
 

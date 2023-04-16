@@ -27,11 +27,12 @@ func _on_body_entered(body):
 
 	if body is DogController:
 		picked = true
+		GameState.bark()
 		print("You picked me up!")
 		GameState.pickups_collected.append(pickup_type)
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "scale", Vector3(0.01, 0.01, 0.01), 0.1)
 		tween.tween_property(self, "scale", Vector3(0.5, 0.5, 0.5), 0.05)
 		tween.tween_property(self, "scale", Vector3(0.01, 0.01, 0.01), 0.05)
-		tween.tween_callback(self.queue_free)
+		hide()
 

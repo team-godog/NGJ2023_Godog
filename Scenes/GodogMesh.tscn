@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgeni6tvej630"]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource type="PackedScene" uid="uid://cfioetmwa2y10" path="res://Meshes/godog.glb" id="1_0fhn0"]
+[ext_resource type="PackedScene" uid="uid://cfioetmwa2y10" path="res://Art/3D Models/BlockOut Meshes/godog.glb" id="1_0fhn0"]
+[ext_resource type="Material" path="res://Art/DogMat.tres" id="2_daayj"]
 
 [sub_resource type="Animation" id="Animation_p1hp0"]
 length = 0.001
@@ -162,14 +163,21 @@ _data = {
 
 [node name="godog" instance=ExtResource("1_0fhn0")]
 
+[node name="Dog_Body" parent="." index="0"]
+material_override = ExtResource("2_daayj")
+surface_material_override/0 = ExtResource("2_daayj")
+
 [node name="DogTail" parent="." index="1"]
 transform = Transform3D(0.628302, 0, 0, 0, 0.628302, 0, 0, 0, 0.628302, 0, 0.37259, -0.300898)
+surface_material_override/0 = ExtResource("2_daayj")
 
 [node name="Ear_Left" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0445001, 0.632108, 0.149381)
+surface_material_override/0 = ExtResource("2_daayj")
 
 [node name="Ear_Right" parent="." index="3"]
 transform = Transform3D(-1, 0, 0, 0, 1, 2.53518e-06, 0, -2.53518e-06, 1, -0.0449586, 0.632108, 0.149381)
+material_override = ExtResource("2_daayj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 autoplay = "wiggle"

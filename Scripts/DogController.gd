@@ -19,11 +19,18 @@ func _ready():
 func _physics_process(delta):
 	ProcessInput();
 	ProcessDriving(delta);
-	
+
 func ProcessInput():
 	steeringInput = Input.get_axis("move_right", "move_left");
 	engineInput = Input.get_axis("decelerate", "accelerate");
-	
+
+	if Input.is_action_just_pressed("woof"):
+		GameState.bark()
+
+	if Input.is_action_just_pressed("reset"):
+		position.y += 0.5
+		rotation = Vector3()
+
 func ProcessDriving(delta : float):
 	steering = lerp(steering, steeringInput * steeringAmount, delta * steeringBlendSpeed);
 	engine_force = lerp(engine_force, engineInput * enginePower, delta * engineBlendSpeed);

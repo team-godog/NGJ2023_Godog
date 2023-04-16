@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://fi70jfcyqpkb"
-path="res://.godot/imported/bush_blockout.glb-16b464eb9552e5878a41889319d397de.scn"
+uid="uid://j81hogtwfn3r"
+path="res://.godot/imported/townhouse_blockoutglb.glb-36caa8fda9afda89338687354876a8a9.scn"
 
 [deps]
 
-source_file="res://Meshes/bush_blockout.glb"
-dest_files=["res://.godot/imported/bush_blockout.glb-16b464eb9552e5878a41889319d397de.scn"]
+source_file="res://Art/3D Models/BlockOut Meshes/townhouse_blockoutglb.glb"
+dest_files=["res://.godot/imported/townhouse_blockoutglb.glb-36caa8fda9afda89338687354876a8a9.scn"]
 
 [params]
 

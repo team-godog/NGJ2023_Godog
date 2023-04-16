@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dmbg1wq6m361w" path="res://Art/VFX/Textures/grass1.png" id="4_ilf8i"]
 [ext_resource type="PackedScene" uid="uid://rqotgtay708o" path="res://Art/Prefabs/bush.tscn" id="5_2ba45"]
 [ext_resource type="PackedScene" uid="uid://bulsc4m3y6r0d" path="res://Art/Prefabs/totem.tscn" id="7_xpbgq"]
-[ext_resource type="PackedScene" uid="uid://bt2g02g7054sf" path="res://Art/Prefabs/Rock2.tscn" id="8_ojktq"]
+[ext_resource type="PackedScene" uid="uid://bqsiey5tqn04g" path="res://Art/Prefabs/Rock2.tscn" id="8_ojktq"]
 [ext_resource type="PackedScene" uid="uid://bo4s18pk8d3bj" path="res://Art/Prefabs/rock_2.tscn" id="9_7ptau"]
-[ext_resource type="PackedScene" path="res://Art/Prefabs/rock_3.tscn" id="10_yxsqo"]
-[ext_resource type="PackedScene" path="res://Art/Prefabs/house.tscn" id="11_3lf7n"]
+[ext_resource type="PackedScene" uid="uid://vhnkjm27tp67" path="res://Art/Prefabs/rock_3.tscn" id="10_yxsqo"]
+[ext_resource type="PackedScene" uid="uid://cfrcjgup5yflm" path="res://Art/Prefabs/house.tscn" id="11_3lf7n"]
 
 [sub_resource type="Curve3D" id="Curve3D_rybcm"]
 _data = {

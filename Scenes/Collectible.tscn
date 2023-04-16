@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://c48kfmcc8lma0"]
+[gd_scene load_steps=16 format=3 uid="uid://c48kfmcc8lma0"]
 
 [ext_resource type="Script" path="res://Scripts/Collectible.gd" id="1_ebnwg"]
 [ext_resource type="Texture2D" uid="uid://dkwopn6quh3dy" path="res://Art/VFX/Textures/pickup_rosemary.png" id="2_0vdbu"]
 [ext_resource type="Texture2D" uid="uid://d02xqb42vhm23" path="res://Art/VFX/Textures/snowflake2.png" id="2_nkin8"]
 [ext_resource type="Texture2D" uid="uid://cdq65n8tax267" path="res://Art/VFX/Textures/pickup_flower.png" id="3_q3g4e"]
 [ext_resource type="Texture2D" uid="uid://d33ov17hbhqyf" path="res://Art/VFX/Textures/pickup_pastinak.png" id="4_0vg8n"]
+[ext_resource type="AudioStream" uid="uid://dmgphnv432sem" path="res://Sound/sfx_pickup.wav" id="6_528hq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pqaga"]
 radius = 0.8
@@ -104,5 +105,8 @@ gravity = Vector3(0, 2, 0)
 initial_velocity_min = 1.0
 initial_velocity_max = 1.0
 scale_amount_curve = SubResource("Curve_m71gb")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_528hq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

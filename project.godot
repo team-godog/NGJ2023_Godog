@@ -10,15 +10,20 @@ config_version=5
 
 [application]
 
-config/name="NGJ2023 Rosemary"
+config/name="Godog - NGJ2023 Rosemary"
 run/main_scene="res://Scenes/Menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 boot_splash/image="res://Art/godog_splash.png"
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 
 GameState="*res://Scenes/GameState.tscn"
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [dotnet]
 

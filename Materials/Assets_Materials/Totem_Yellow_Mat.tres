@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bbldfri2584uv"]
+
+[ext_resource type="Texture2D" uid="uid://c48xlbsd4vrxe" path="res://Art/textures/Totem_Basecolor_Yellow.png" id="1_wl48a"]
+
+[resource]
+albedo_texture = ExtResource("1_wl48a")

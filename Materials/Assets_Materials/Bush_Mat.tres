@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://blrhl3ihqlako"]
+
+[ext_resource type="Texture2D" uid="uid://burudh4x8lrr0" path="res://Art/textures/Bush_Basecolor.png" id="1_mv5u8"]
+
+[resource]
+albedo_texture = ExtResource("1_mv5u8")

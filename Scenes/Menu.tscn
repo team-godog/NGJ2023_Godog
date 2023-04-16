@@ -45,19 +45,11 @@ grow_vertical = 2
 script = ExtResource("1_krjn6")
 
 [node name="GodogSplash" type="Sprite2D" parent="."]
-position = Vector2(577, 359)
-scale = Vector2(1.16887, 1.16887)
+position = Vector2(576, 324)
+scale = Vector2(1.17192, 1.07285)
 texture = ExtResource("2_jmvkn")
 
 [node name="StartScreen" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="StartScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,14 +83,14 @@ frame_progress = 0.431865
 
 [node name="Label" type="Label" parent="StartScreen/PlayButton"]
 layout_mode = 0
-offset_left = 171.326
-offset_top = 214.937
-offset_right = 696.326
-offset_bottom = 376.937
+offset_left = 243.0
+offset_top = 215.0
+offset_right = 663.0
+offset_bottom = 377.0
 scale = Vector2(0.683287, 0.683287)
 theme_override_fonts/font = ExtResource("6_8esx7")
 theme_override_font_sizes/font_size = 132
-text = "Resume"
+text = "Play"
 
 [node name="Selector" type="Sprite2D" parent="StartScreen/PlayButton"]
 visible = false

@@ -3,44 +3,38 @@ extends Control
 
 enum State {
 	START_SCREEN,
-	PAUSE_SCREEN,
+	INTRO_CUTSCENE,
 	IN_GAME,
 }
 var state : State = State.START_SCREEN
 
 
 func _input(event: InputEvent):
-	if state == State.START_SCREEN:
-		return
-	
-	if event.is_action_pressed("pause"):
-		if state == State.IN_GAME:
-			state = State.PAUSE_SCREEN
-			$/root/Game.process_mode = Node.PROCESS_MODE_DISABLED
-			$ResumeScreen.show()
-		else:
-			state = State.IN_GAME
-			$/root/Game.process_mode = Node.PROCESS_MODE_ALWAYS
-			$ResumeScreen.hide()
+	if state == State.INTRO_CUTSCENE and event.is_action_pressed("pause"):
+		start_game()
 
 
 func _on_play_button_pressed(restart := false):
-	$StartScreen.hide()
-	$ResumeScreen.hide()
-	state = State.IN_GAME
+	self.hide()
+	state = State.INTRO_CUTSCENE
 
+	var cutscene = preload("res://Scenes/IntroCutscene.tscn").instantiate()
+	get_tree().get_root().add_child(cutscene)
+
+
+func start_game():
 	var game = preload("res://Scenes/Game.tscn").instantiate()
-	if restart:
-		$/root/Game.free()
-	get_tree().get_root().add_child(game)
+	
+	var cutscene = get_tree().get_root().get_node_or_null("IntroCutscene")
+	if cutscene:
+		cutscene.hide()
 
+	var prev_game = get_tree().get_root().get_node_or_null("Game")
+	if prev_game:
+		prev_game.free()
 
-func _on_resume_button_pressed():
-	$StartScreen.hide()
-	$ResumeScreen.hide()
 	state = State.IN_GAME
-
-	$/root/Game.process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().get_root().add_child(game)
 
 
 func _on_quit_button_pressed():

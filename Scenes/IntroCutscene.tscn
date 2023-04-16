@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ckkbhjil2qffy"]
+[gd_scene load_steps=22 format=3 uid="uid://ckkbhjil2qffy"]
 
 [ext_resource type="Script" path="res://Scenes/IntroCutscene.gd" id="1_vf384"]
 [ext_resource type="Texture2D" uid="uid://dg04efy2pc5mj" path="res://Art/IntroSlides/10.png" id="2_gekjl"]
@@ -13,8 +13,6 @@
 [ext_resource type="Script" path="res://Scenes/Slide3.gd" id="10_ar7ji"]
 [ext_resource type="Texture2D" uid="uid://d1jtduxnaovld" path="res://Art/IntroSlides/intro1.2.png" id="11_ym48p"]
 [ext_resource type="Texture2D" uid="uid://ls6dj4biodii" path="res://Art/IntroSlides/intro1.png" id="12_i05qr"]
-[ext_resource type="AudioStream" uid="uid://bt0bsrc78r4di" path="res://Sound/ForebodingWahs/Bah2.wav" id="12_q6kxl"]
-[ext_resource type="AudioStream" uid="uid://bfpsvhaw05dh5" path="res://Sound/ForebodingWahs/Bah3.wav" id="13_6e0xa"]
 [ext_resource type="AudioStream" uid="uid://cfha2aklgcvds" path="res://Sound/music_cinematic.wav" id="14_dnddn"]
 
 [sub_resource type="Animation" id="Animation_2scyq"]
@@ -23,7 +21,7 @@ length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/StreamPlayer1:playing")
+tracks/0/path = NodePath("StreamPlayer1:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -34,36 +32,36 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("AnimationPlayer/StreamPlayer2:playing")
+tracks/1/enabled = true
+tracks/1/path = NodePath("Page1:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(-0.1, 6.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 2, 5.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("AnimationPlayer/StreamPlayer3:playing")
+tracks/2/enabled = true
+tracks/2/path = NodePath("page12:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(-0.1, 10.9),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 6.4, 9.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, true, false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/Page1:visible")
+tracks/3/path = NodePath("Page13:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2, 5.4),
+"times": PackedFloat32Array(0, 11.1, 14.9),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -71,34 +69,10 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPlayer/page12:visible")
+tracks/4/path = NodePath("page4:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 6.4, 9.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AnimationPlayer/Page13:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 11.1, 14.9),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("AnimationPlayer/page4:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
 "times": PackedFloat32Array(0, 16.1, 19.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
@@ -110,7 +84,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/StreamPlayer1:playing")
+tracks/0/path = NodePath("StreamPlayer1:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -122,31 +96,31 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/StreamPlayer2:playing")
+tracks/1/path = NodePath("Page1:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/StreamPlayer3:playing")
+tracks/2/path = NodePath("page12:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/Page1:visible")
+tracks/3/path = NodePath("Page13:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -158,34 +132,10 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPlayer/page12:visible")
+tracks/4/path = NodePath("page4:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AnimationPlayer/Page13:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("AnimationPlayer/page4:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -263,50 +213,46 @@ libraries = {
 "": SubResource("AnimationLibrary_myqwm")
 }
 
-[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+[node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1148.0
 offset_bottom = 646.0
 color = Color(0.2, 0.133333, 0.219608, 1)
 
-[node name="Page1" type="AnimatedSprite2D" parent="AnimationPlayer"]
+[node name="Page1" type="AnimatedSprite2D" parent="."]
 position = Vector2(591, 319)
 scale = Vector2(0.322, 0.322)
 sprite_frames = SubResource("SpriteFrames_im2fu")
 frame_progress = 0.983199
 script = ExtResource("4_uioeg")
 
-[node name="page12" type="AnimatedSprite2D" parent="AnimationPlayer"]
+[node name="page12" type="AnimatedSprite2D" parent="."]
 position = Vector2(570, 325)
 scale = Vector2(0.328391, 0.328391)
 sprite_frames = SubResource("SpriteFrames_i7j5k")
 frame_progress = 0.47357
 script = ExtResource("7_eff82")
 
-[node name="Page13" type="AnimatedSprite2D" parent="AnimationPlayer"]
+[node name="Page13" type="AnimatedSprite2D" parent="."]
 position = Vector2(592, 294)
 scale = Vector2(0.321906, 0.321906)
 sprite_frames = SubResource("SpriteFrames_6j2bw")
 frame_progress = 0.0435128
 script = ExtResource("10_ar7ji")
 
-[node name="page4" type="AnimatedSprite2D" parent="AnimationPlayer"]
+[node name="page4" type="AnimatedSprite2D" parent="."]
 position = Vector2(597, 310)
 scale = Vector2(0.328391, 0.328391)
 sprite_frames = SubResource("SpriteFrames_jd7u0")
 frame_progress = 0.921844
 script = ExtResource("4_odyy7")
 
-[node name="ColorRect2" type="ColorRect" parent="AnimationPlayer"]
+[node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
 offset_right = 1148.0
 offset_bottom = 646.0
 color = Color(0.2, 0.133333, 0.219608, 0)
 
-[node name="StreamPlayer1" type="AudioStreamPlayer" parent="AnimationPlayer"]
+[node name="StreamPlayer1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_dnddn")
 
-[node name="StreamPlayer2" type="AudioStreamPlayer" parent="AnimationPlayer"]
-stream = ExtResource("12_q6kxl")
-
-[node name="StreamPlayer3" type="AudioStreamPlayer" parent="AnimationPlayer"]
-stream = ExtResource("13_6e0xa")
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

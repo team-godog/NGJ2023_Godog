@@ -239,7 +239,7 @@ script = ExtResource("4_odyy7")
 position = Vector2(597, 288)
 scale = Vector2(0.328391, 0.328391)
 sprite_frames = SubResource("SpriteFrames_iev07")
-frame_progress = 0.362842
+frame_progress = 0.0242318
 script = ExtResource("7_eff82")
 
 [node name="Slide3" type="AnimatedSprite2D" parent="AnimationPlayer"]

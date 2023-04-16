@@ -28,6 +28,7 @@ func start_game():
 	var cutscene = get_tree().get_root().get_node_or_null("IntroCutscene")
 	if cutscene:
 		cutscene.hide()
+		cutscene.process_mode = Node.PROCESS_MODE_DISABLED
 
 	var prev_game = get_tree().get_root().get_node_or_null("Game")
 	if prev_game:

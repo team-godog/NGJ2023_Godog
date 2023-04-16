@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/DogController.gd" id="1_tajt8"]
 [ext_resource type="PackedScene" uid="uid://bmd5rtakf86jq" path="res://Art/day_19_-_sled/scene.gltf" id="2_7d0r4"]
-[ext_resource type="PackedScene" uid="uid://dcdh03shynjia" path="res://Art/shiba/scene.gltf" id="2_xrbg0"]
+[ext_resource type="PackedScene" uid="uid://dcdh03shynjia" path="res://Art/Prefabs/shiba/scene.gltf" id="2_xrbg0"]
 [ext_resource type="PackedScene" path="res://Scenes/GodogMesh.tscn" id="4_olpc2"]
 [ext_resource type="Texture2D" uid="uid://cu6hqi6hvo8gm" path="res://Art/VFX/Textures/snowflake1.png" id="5_t6si1"]
 [ext_resource type="Texture2D" uid="uid://d02xqb42vhm23" path="res://Art/VFX/Textures/snowflake2.png" id="6_xv22a"]

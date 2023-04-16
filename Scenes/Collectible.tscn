@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://c48kfmcc8lma0"]
+[gd_scene load_steps=18 format=3 uid="uid://c48kfmcc8lma0"]
 
 [ext_resource type="Script" path="res://Scripts/Collectible.gd" id="1_ebnwg"]
 [ext_resource type="Texture2D" uid="uid://dkwopn6quh3dy" path="res://Art/VFX/Textures/pickup_rosemary.png" id="2_0vdbu"]
 [ext_resource type="Texture2D" uid="uid://d02xqb42vhm23" path="res://Art/VFX/Textures/snowflake2.png" id="2_nkin8"]
 [ext_resource type="Texture2D" uid="uid://cdq65n8tax267" path="res://Art/VFX/Textures/pickup_flower.png" id="3_q3g4e"]
 [ext_resource type="Texture2D" uid="uid://d33ov17hbhqyf" path="res://Art/VFX/Textures/pickup_pastinak.png" id="4_0vg8n"]
+[ext_resource type="AudioStream" uid="uid://dyxjdk1fmenc8" path="res://Sound/Woofs/Woof1.wav" id="6_euamf"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pqaga"]
 radius = 0.8
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kgk3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcvy4"]
 transparency = 1
 albedo_color = Color(1, 1, 0.580392, 1)
 albedo_texture = ExtResource("2_0vdbu")
@@ -71,6 +72,17 @@ billboard_keep_scale = true
 _data = [Vector2(0, 0.936364), 0.0, 0.0, 0, 0, Vector2(0.950549, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgl6s"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 9.82
+proximity_fade_distance = 727.33
+distance_fade_mode = 1
+distance_fade_min_distance = 20.0
+distance_fade_max_distance = 300.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_4n0dx"]
+
 [node name="Collectible" type="Area3D"]
 script = ExtResource("1_ebnwg")
 textures = Array[Texture2D]([ExtResource("2_0vdbu"), ExtResource("3_q3g4e"), ExtResource("4_0vg8n")])
@@ -80,7 +92,7 @@ shape = SubResource("SphereShape3D_pqaga")
 
 [node name="PickUp" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.503, 0)
-material_override = SubResource("StandardMaterial3D_3kgk3")
+material_override = SubResource("StandardMaterial3D_mcvy4")
 mesh = SubResource("QuadMesh_t1ddy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PickUp"]
@@ -104,5 +116,14 @@ gravity = Vector3(0, 2, 0)
 initial_velocity_min = 1.0
 initial_velocity_max = 1.0
 scale_amount_curve = SubResource("Curve_m71gb")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_euamf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 600, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_sgl6s")
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_4n0dx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,95 +1,108 @@
-[gd_scene load_steps=23 format=3 uid="uid://ckkbhjil2qffy"]
+[gd_scene load_steps=24 format=3 uid="uid://ckkbhjil2qffy"]
 
 [ext_resource type="Script" path="res://Scenes/IntroCutscene.gd" id="1_vf384"]
 [ext_resource type="Texture2D" uid="uid://dg04efy2pc5mj" path="res://Art/IntroSlides/10.png" id="2_gekjl"]
 [ext_resource type="Texture2D" uid="uid://crmvb1scqq3h2" path="res://Art/IntroSlides/11.png" id="3_1tcg2"]
 [ext_resource type="Script" path="res://Scenes/Slide1.gd" id="4_odyy7"]
+[ext_resource type="Script" path="res://Scenes/Page1.gd" id="4_uioeg"]
 [ext_resource type="Texture2D" uid="uid://by6y8h31h8yqo" path="res://Art/IntroSlides/20.png" id="4_xae0x"]
-[ext_resource type="Texture2D" uid="uid://cdku7ixg6814n" path="res://Art/IntroSlides/21.png" id="5_qjlx0"]
+[ext_resource type="Texture2D" uid="uid://gmp51oaurwuq" path="res://Art/IntroSlides/31.png" id="5_3saoa"]
 [ext_resource type="Texture2D" uid="uid://ct2i1evatdksq" path="res://Art/IntroSlides/30.png" id="6_36nyn"]
-[ext_resource type="Texture2D" uid="uid://gmp51oaurwuq" path="res://Art/IntroSlides/31.png" id="7_7rdn6"]
 [ext_resource type="Script" path="res://Scenes/Slide2.gd" id="7_eff82"]
+[ext_resource type="Texture2D" uid="uid://cy66q0rflnoek" path="res://Art/IntroSlides/FIXED.png" id="9_qn4lk"]
 [ext_resource type="Script" path="res://Scenes/Slide3.gd" id="10_ar7ji"]
-[ext_resource type="AudioStream" uid="uid://buw5037ud2p60" path="res://Sound/ForebodingWahs/Bah1.wav" id="11_ctiwb"]
 [ext_resource type="Texture2D" uid="uid://d1jtduxnaovld" path="res://Art/IntroSlides/intro1.2.png" id="11_ym48p"]
 [ext_resource type="Texture2D" uid="uid://ls6dj4biodii" path="res://Art/IntroSlides/intro1.png" id="12_i05qr"]
 [ext_resource type="AudioStream" uid="uid://bt0bsrc78r4di" path="res://Sound/ForebodingWahs/Bah2.wav" id="12_q6kxl"]
 [ext_resource type="AudioStream" uid="uid://bfpsvhaw05dh5" path="res://Sound/ForebodingWahs/Bah3.wav" id="13_6e0xa"]
+[ext_resource type="AudioStream" uid="uid://cfha2aklgcvds" path="res://Sound/music_cinematic.wav" id="14_dnddn"]
 
 [sub_resource type="Animation" id="Animation_2scyq"]
 resource_name = "Cutscene"
-length = 15.0
+length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Slide1:visible")
+tracks/0/path = NodePath("AnimationPlayer/StreamPlayer1:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 6.4, 9.7),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Slide2:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 5.1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/Slide3:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 10.9, 14.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [false, true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/StreamPlayer1:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(-0.1, 1.9),
+"times": PackedFloat32Array(-0.1, 0),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPlayer/StreamPlayer2:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("AnimationPlayer/StreamPlayer2:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(-0.1, 6.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AnimationPlayer/StreamPlayer3:playing")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("AnimationPlayer/StreamPlayer3:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(-0.1, 10.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Page1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 5.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/page12:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 6.4, 9.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Page13:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 11.1, 14.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/page4:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 16.1, 19.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_s7ij8"]
@@ -97,7 +110,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Slide1:visible")
+tracks/0/path = NodePath("AnimationPlayer/StreamPlayer1:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -109,62 +122,74 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Slide2:visible")
+tracks/1/path = NodePath("AnimationPlayer/StreamPlayer2:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/Slide3:visible")
+tracks/2/path = NodePath("AnimationPlayer/StreamPlayer3:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/StreamPlayer1:playing")
+tracks/3/path = NodePath("AnimationPlayer/Page1:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPlayer/StreamPlayer2:playing")
+tracks/4/path = NodePath("AnimationPlayer/page12:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("AnimationPlayer/StreamPlayer3:playing")
+tracks/5/path = NodePath("AnimationPlayer/Page13:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/page4:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_myqwm"]
@@ -172,48 +197,6 @@ _data = {
 "Cutscene": SubResource("Animation_2scyq"),
 "RESET": SubResource("Animation_s7ij8")
 }
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jd7u0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_gekjl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_1tcg2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_iev07"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_xae0x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_qjlx0")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_c7t2v"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_36nyn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_7rdn6")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_im2fu"]
 animations = [{
@@ -223,6 +206,48 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("12_i05qr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i7j5k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_36nyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3saoa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6j2bw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xae0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qn4lk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jd7u0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gekjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1tcg2")
 }],
 "loop": true,
 "name": &"default",
@@ -243,35 +268,33 @@ offset_right = 1148.0
 offset_bottom = 646.0
 color = Color(0.2, 0.133333, 0.219608, 1)
 
-[node name="Slide1" type="AnimatedSprite2D" parent="AnimationPlayer"]
-visible = false
-position = Vector2(597, 310)
-scale = Vector2(0.328391, 0.328391)
-sprite_frames = SubResource("SpriteFrames_jd7u0")
-frame_progress = 0.00522259
-script = ExtResource("4_odyy7")
-
-[node name="Slide2" type="AnimatedSprite2D" parent="AnimationPlayer"]
-position = Vector2(597, 288)
-scale = Vector2(0.328391, 0.328391)
-sprite_frames = SubResource("SpriteFrames_iev07")
-frame_progress = 0.0242318
-script = ExtResource("7_eff82")
-
-[node name="Slide3" type="AnimatedSprite2D" parent="AnimationPlayer"]
-visible = false
-position = Vector2(571, 329)
-scale = Vector2(0.321906, 0.321906)
-sprite_frames = SubResource("SpriteFrames_c7t2v")
-frame_progress = 0.119841
-script = ExtResource("10_ar7ji")
-
 [node name="Page1" type="AnimatedSprite2D" parent="AnimationPlayer"]
-visible = false
 position = Vector2(591, 319)
 scale = Vector2(0.322, 0.322)
 sprite_frames = SubResource("SpriteFrames_im2fu")
-frame_progress = 0.332906
+frame_progress = 0.983199
+script = ExtResource("4_uioeg")
+
+[node name="page12" type="AnimatedSprite2D" parent="AnimationPlayer"]
+position = Vector2(570, 325)
+scale = Vector2(0.328391, 0.328391)
+sprite_frames = SubResource("SpriteFrames_i7j5k")
+frame_progress = 0.47357
+script = ExtResource("7_eff82")
+
+[node name="Page13" type="AnimatedSprite2D" parent="AnimationPlayer"]
+position = Vector2(592, 294)
+scale = Vector2(0.321906, 0.321906)
+sprite_frames = SubResource("SpriteFrames_6j2bw")
+frame_progress = 0.0435128
+script = ExtResource("10_ar7ji")
+
+[node name="page4" type="AnimatedSprite2D" parent="AnimationPlayer"]
+position = Vector2(597, 310)
+scale = Vector2(0.328391, 0.328391)
+sprite_frames = SubResource("SpriteFrames_jd7u0")
+frame_progress = 0.921844
+script = ExtResource("4_odyy7")
 
 [node name="ColorRect2" type="ColorRect" parent="AnimationPlayer"]
 visible = false
@@ -280,7 +303,7 @@ offset_bottom = 646.0
 color = Color(0.2, 0.133333, 0.219608, 0)
 
 [node name="StreamPlayer1" type="AudioStreamPlayer" parent="AnimationPlayer"]
-stream = ExtResource("11_ctiwb")
+stream = ExtResource("14_dnddn")
 
 [node name="StreamPlayer2" type="AudioStreamPlayer" parent="AnimationPlayer"]
 stream = ExtResource("12_q6kxl")

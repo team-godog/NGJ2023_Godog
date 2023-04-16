@@ -28,7 +28,8 @@ func ProcessInput():
 		GameState.bark()
 
 	if Input.is_action_just_pressed("reset"):
-		position.y += 0.5
+		position.y += 1.0
+		position.z -= 1.2
 		rotation = Vector3()
 
 func ProcessDriving(delta : float):

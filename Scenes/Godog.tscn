@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/DogController.gd" id="1_tajt8"]
 [ext_resource type="PackedScene" uid="uid://bmd5rtakf86jq" path="res://Art/day_19_-_sled/scene.gltf" id="2_7d0r4"]
 [ext_resource type="PackedScene" uid="uid://dcdh03shynjia" path="res://Art/shiba/scene.gltf" id="2_xrbg0"]
-[ext_resource type="PackedScene" uid="uid://bgeni6tvej630" path="res://Scenes/GodogMesh.tscn" id="4_olpc2"]
+[ext_resource type="PackedScene" path="res://Scenes/GodogMesh.tscn" id="4_olpc2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xfawx"]
 

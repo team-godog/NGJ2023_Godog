@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckkbhjil2qffy"]
+
+[ext_resource type="Script" path="res://Scenes/IntroCutscene.gd" id="1_vf384"]
+[ext_resource type="Texture2D" uid="uid://b5n7d3lv175hh" path="res://Art/IntroSlides/Intro1F.png" id="2_n6ps1"]
+[ext_resource type="Texture2D" uid="uid://dwcrco5ruly7s" path="res://Art/IntroSlides/Intro2F.png" id="3_8pksc"]
+[ext_resource type="Texture2D" uid="uid://be7svda6udqly" path="res://Art/IntroSlides/Intro3F.png" id="4_sngsg"]
+
+[sub_resource type="Animation" id="Animation_2scyq"]
+resource_name = "Cutscene"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Intro1f:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Intro2f:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.7, 5.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Intro3f:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6.4, 9.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_s7ij8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Intro1f:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Intro2f:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Intro3f:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_myqwm"]
+_data = {
+"Cutscene": SubResource("Animation_2scyq"),
+"RESET": SubResource("Animation_s7ij8")
+}
+
+[node name="IntroCutscene" type="Node2D"]
+script = ExtResource("1_vf384")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_myqwm")
+}
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+offset_right = 1148.0
+offset_bottom = 646.0
+color = Color(0.2, 0.133333, 0.219608, 1)
+
+[node name="Intro1f" type="Sprite2D" parent="AnimationPlayer"]
+visible = false
+position = Vector2(575, 325)
+scale = Vector2(0.540921, 0.540921)
+texture = ExtResource("2_n6ps1")
+
+[node name="Intro2f" type="Sprite2D" parent="AnimationPlayer"]
+visible = false
+position = Vector2(633, 326)
+scale = Vector2(0.590985, 0.590985)
+texture = ExtResource("3_8pksc")
+
+[node name="Intro3f" type="Sprite2D" parent="AnimationPlayer"]
+visible = false
+position = Vector2(581, 317)
+scale = Vector2(0.529736, 0.529736)
+texture = ExtResource("4_sngsg")

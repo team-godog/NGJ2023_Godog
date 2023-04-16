@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://daqyb4pvugb77"]
+
+[ext_resource type="PackedScene" uid="uid://brvc05bjcohxv" path="res://Art/3D Models/final meshes/House.glb" id="1_7a5l7"]
+[ext_resource type="PhysicsMaterial" uid="uid://dxf3l8xflygws" path="res://Materials/ObjectPhysicsMat.tres" id="1_tnosn"]
+[ext_resource type="Material" uid="uid://ce7juq8kmpqvs" path="res://Materials/Assets_Materials/House_Mat.tres" id="2_w5twf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b4nr0"]
+radius = 0.724637
+height = 5.73248
+
+[node name="Node3D" type="Node3D"]
+
+[node name="House" parent="." instance=ExtResource("1_7a5l7")]
+
+[node name="Townhouse" parent="House" index="0"]
+material_override = ExtResource("2_w5twf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = ExtResource("1_tnosn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00936234, 2.45778, 0)
+shape = SubResource("CapsuleShape3D_b4nr0")
+
+[editable path="House"]

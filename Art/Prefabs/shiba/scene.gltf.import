@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dcdh03shynjia"
-path="res://.godot/imported/scene.gltf-07f57754419e4f27be0055a49876e733.scn"
+path="res://.godot/imported/scene.gltf-f85a74f58621aa9c4438e64c74a8ccd6.scn"
 
 [deps]
 
-source_file="res://Art/shiba/scene.gltf"
-dest_files=["res://.godot/imported/scene.gltf-07f57754419e4f27be0055a49876e733.scn"]
+source_file="res://Art/Prefabs/shiba/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-f85a74f58621aa9c4438e64c74a8ccd6.scn"]
 
 [params]
 

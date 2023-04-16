@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1swkgns5eekw"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://dxf3l8xflygws" path="res://Materials/ObjectPhysicsMat.tres" id="1_447sk"]
+[ext_resource type="PackedScene" uid="uid://drag27x6guavt" path="res://Art/3D Models/final meshes/Bush_2.glb" id="2_4dyyk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_68pry"]
+radius = 0.78857
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+visible = false
+physics_material_override = ExtResource("1_447sk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -0.0413526, 0.999145, 0, -0.999145, -0.0413526, -0.0366213, 0.56081, -0.0518281)
+visible = false
+shape = SubResource("SphereShape3D_68pry")
+
+[node name="Bush_2" parent="." instance=ExtResource("2_4dyyk")]

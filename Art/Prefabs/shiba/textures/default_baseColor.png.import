@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5ec35j2ddp10"
-path.s3tc="res://.godot/imported/default_baseColor.png-084e29a76099c9df8e448c5300518192.s3tc.ctex"
+path.s3tc="res://.godot/imported/default_baseColor.png-05382ed07c084dd9cefaf932e00bb7c7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art/shiba/textures/default_baseColor.png"
-dest_files=["res://.godot/imported/default_baseColor.png-084e29a76099c9df8e448c5300518192.s3tc.ctex"]
+source_file="res://Art/Prefabs/shiba/textures/default_baseColor.png"
+dest_files=["res://.godot/imported/default_baseColor.png-05382ed07c084dd9cefaf932e00bb7c7.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfrcjgup5yflm"]
+
+[ext_resource type="PackedScene" uid="uid://dplsew1h4rexd" path="res://Art/3D Models/final meshes/Rock_1.glb" id="1_0ctxe"]
+[ext_resource type="PhysicsMaterial" uid="uid://dxf3l8xflygws" path="res://Materials/ObjectPhysicsMat.tres" id="2_y2n6v"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_obfff"]
+margin = 0.037
+radius = 0.87
+
+[node name="Rock" type="Node3D"]
+
+[node name="Rock_1" parent="." instance=ExtResource("1_0ctxe")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = ExtResource("2_y2n6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_obfff")

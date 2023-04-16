@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfcq7cnyl2pt3"]
+[gd_scene load_steps=5 format=3 uid="uid://dbfjdn4oobk43"]
 
-[ext_resource type="PackedScene" uid="uid://d2hepojc44uuh" path="res://Art/3D Models/final meshes/Tree_1.glb" id="1_g56mb"]
-[ext_resource type="Material" uid="uid://brt6oja2b3sfx" path="res://Materials/Assets_Materials/Trees_Mat.tres" id="2_l87p4"]
+[ext_resource type="PackedScene" uid="uid://d3oimc5yic76r" path="res://Art/3D Models/final meshes/Tree_2.glb" id="1_cbpdk"]
+[ext_resource type="Material" uid="uid://brt6oja2b3sfx" path="res://Materials/Assets_Materials/Trees_Mat.tres" id="2_2vnao"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8kh7x"]
 friction = 0.0
@@ -13,6 +13,11 @@ height = 3.897
 
 [node name="tree" type="Node3D"]
 
+[node name="Tree_2" parent="." instance=ExtResource("1_cbpdk")]
+
+[node name="Tree_22" parent="Tree_2" index="0"]
+material_override = ExtResource("2_2vnao")
+
 [node name="StaticBody" type="StaticBody3D" parent="."]
 input_ray_pickable = false
 physics_material_override = SubResource("PhysicsMaterial_8kh7x")
@@ -21,9 +26,4 @@ physics_material_override = SubResource("PhysicsMaterial_8kh7x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0329025, 1.25176, 0.0401561)
 shape = SubResource("CapsuleShape3D_drra5")
 
-[node name="Tree_1" parent="." instance=ExtResource("1_g56mb")]
-
-[node name="Tree_12" parent="Tree_1" index="0"]
-material_override = ExtResource("2_l87p4")
-
-[editable path="Tree_1"]
+[editable path="Tree_2"]

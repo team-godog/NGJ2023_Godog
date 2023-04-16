@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cq1xwmv77ivhn"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_krjn6"]
-[ext_resource type="Texture2D" path="res://Textures/lovely_concept.jpg" id="1_tgaj1"]
+[ext_resource type="Texture2D" uid="uid://cky3gwpjoqg08" path="res://Art/godog_splash.png" id="2_jmvkn"]
 [ext_resource type="Script" path="res://Scenes/PlayButton.gd" id="3_bq7tk"]
 [ext_resource type="Texture2D" uid="uid://djcvskttpep3n" path="res://Art/UI/Banner1.png" id="4_pwe7e"]
 [ext_resource type="Texture2D" uid="uid://csw7aatjdfutr" path="res://Art/UI/Banner2.png" id="5_p2wek"]
@@ -44,6 +44,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_krjn6")
 
+[node name="GodogSplash" type="Sprite2D" parent="."]
+position = Vector2(577, 359)
+scale = Vector2(1.16887, 1.16887)
+texture = ExtResource("2_jmvkn")
+
 [node name="StartScreen" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -59,7 +64,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_tgaj1")
 
 [node name="PlayButton" type="Button" parent="StartScreen"]
 layout_mode = 0
@@ -122,6 +126,7 @@ frame = 1
 frame_progress = 0.431865
 
 [node name="Label" type="Label" parent="StartScreen/QuitButton"]
+layout_mode = 0
 offset_left = 222.341
 offset_top = 142.051
 offset_right = 638.341

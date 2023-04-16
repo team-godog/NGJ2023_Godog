@@ -1,7 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq1xwmv77ivhn"]
+[gd_scene load_steps=16 format=3 uid="uid://cq1xwmv77ivhn"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_krjn6"]
 [ext_resource type="Texture2D" uid="uid://bwbou8m18xoq1" path="res://Textures/lovely_concept.jpg" id="1_tgaj1"]
+[ext_resource type="Script" path="res://Scenes/PlayButton.gd" id="3_bq7tk"]
+[ext_resource type="Texture2D" uid="uid://djcvskttpep3n" path="res://Art/UI/Banner1.png" id="4_pwe7e"]
+[ext_resource type="Texture2D" uid="uid://csw7aatjdfutr" path="res://Art/UI/Banner2.png" id="5_p2wek"]
+[ext_resource type="FontFile" uid="uid://caa812febmt4f" path="res://Art/UI/EthnicABC-Regular.otf" id="6_8esx7"]
+[ext_resource type="Texture2D" uid="uid://b2lx80tbbwcfn" path="res://Art/UI/selector.png" id="7_1je7d"]
+[ext_resource type="Script" path="res://Scenes/QuitButton.gd" id="8_l17vm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w33sl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0305f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yibc7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_06rr0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pwe7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p2wek")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m5ynd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cxmgu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe5wb"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -31,60 +63,83 @@ texture = ExtResource("1_tgaj1")
 
 [node name="PlayButton" type="Button" parent="StartScreen"]
 layout_mode = 0
-offset_left = 102.0
-offset_top = 379.0
-offset_right = 282.0
-offset_bottom = 459.0
-theme_override_font_sizes/font_size = 32
-text = "Play!"
+offset_left = 230.0
+offset_top = 371.0
+offset_right = 930.0
+offset_bottom = 884.0
+scale = Vector2(0.321024, 0.321024)
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w33sl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0305f")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yibc7")
+script = ExtResource("3_bq7tk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StartScreen/PlayButton"]
+position = Vector2(358.228, 252.317)
+scale = Vector2(1.92536, 1.92536)
+sprite_frames = SubResource("SpriteFrames_06rr0")
+frame = 1
+frame_progress = 0.431865
+
+[node name="Label" type="Label" parent="StartScreen/PlayButton"]
+layout_mode = 0
+offset_left = 171.326
+offset_top = 214.937
+offset_right = 696.326
+offset_bottom = 376.937
+scale = Vector2(0.683287, 0.683287)
+theme_override_fonts/font = ExtResource("6_8esx7")
+theme_override_font_sizes/font_size = 132
+text = "Resume"
+
+[node name="Selector" type="Sprite2D" parent="StartScreen/PlayButton"]
+visible = false
+position = Vector2(348.883, 517.095)
+scale = Vector2(1.27025, 1.27025)
+texture = ExtResource("7_1je7d")
 
 [node name="QuitButton" type="Button" parent="StartScreen"]
 layout_mode = 0
-offset_left = 102.0
-offset_top = 499.0
-offset_right = 282.0
-offset_bottom = 579.0
-theme_override_font_sizes/font_size = 32
+offset_left = 662.0
+offset_top = 397.0
+offset_right = 1365.0
+offset_bottom = 902.0
+scale = Vector2(0.323827, 0.323827)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m5ynd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cxmgu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qe5wb")
+script = ExtResource("8_l17vm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StartScreen/QuitButton"]
+position = Vector2(363.169, 178.772)
+scale = Vector2(1.92536, 1.92536)
+sprite_frames = SubResource("SpriteFrames_06rr0")
+frame = 1
+frame_progress = 0.431865
+
+[node name="Label" type="Label" parent="StartScreen/QuitButton"]
+offset_left = 222.341
+offset_top = 142.051
+offset_right = 638.341
+offset_bottom = 304.051
+scale = Vector2(0.689606, 0.689606)
+theme_override_fonts/font = ExtResource("6_8esx7")
+theme_override_font_sizes/font_size = 132
 text = "Quit"
 
-[node name="ResumeScreen" type="Control" parent="."]
+[node name="Selector" type="Sprite2D" parent="StartScreen/QuitButton"]
 visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+position = Vector2(361.304, 438.506)
+scale = Vector2(1.27025, 1.27025)
+texture = ExtResource("7_1je7d")
 
-[node name="RestartButton" type="Button" parent="ResumeScreen"]
-layout_mode = 0
-offset_left = 102.0
-offset_top = 259.0
-offset_right = 282.0
-offset_bottom = 339.0
-theme_override_font_sizes/font_size = 32
-text = "Restart"
-
-[node name="ResumeButton" type="Button" parent="ResumeScreen"]
-layout_mode = 0
-offset_left = 102.0
-offset_top = 379.0
-offset_right = 282.0
-offset_bottom = 459.0
-theme_override_font_sizes/font_size = 32
-text = "Resume"
-
-[node name="QuitButton" type="Button" parent="ResumeScreen"]
-layout_mode = 0
-offset_left = 102.0
-offset_top = 499.0
-offset_right = 282.0
-offset_bottom = 579.0
-theme_override_font_sizes/font_size = 32
-text = "Quit"
-
+[connection signal="mouse_entered" from="StartScreen/PlayButton" to="StartScreen/PlayButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StartScreen/PlayButton" to="StartScreen/PlayButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="StartScreen/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="StartScreen/QuitButton" to="StartScreen/QuitButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StartScreen/QuitButton" to="StartScreen/QuitButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="StartScreen/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="ResumeScreen/RestartButton" to="." method="_on_play_button_pressed" binds= [true]]
-[connection signal="pressed" from="ResumeScreen/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="ResumeScreen/QuitButton" to="." method="_on_quit_button_pressed"]

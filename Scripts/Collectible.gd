@@ -26,8 +26,7 @@ func _on_body_entered(body):
 
 	if body is DogController:
 		picked = true
-		GameState.bark()
-		print("You picked me up!")
+		$AudioStreamPlayer3D.play()
 		GameState.pickups_collected.append(pickup_type)
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "scale", Vector3(0.01, 0.01, 0.01), 0.1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ckkbhjil2qffy"]
+[gd_scene load_steps=20 format=3 uid="uid://ckkbhjil2qffy"]
 
 [ext_resource type="Script" path="res://Scenes/IntroCutscene.gd" id="1_vf384"]
 [ext_resource type="Texture2D" uid="uid://dg04efy2pc5mj" path="res://Art/IntroSlides/10.png" id="2_gekjl"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://Scenes/Slide2.gd" id="7_eff82"]
 [ext_resource type="Script" path="res://Scenes/Slide3.gd" id="10_ar7ji"]
 [ext_resource type="AudioStream" uid="uid://buw5037ud2p60" path="res://Sound/ForebodingWahs/Bah1.wav" id="11_ctiwb"]
+[ext_resource type="AudioStream" uid="uid://bt0bsrc78r4di" path="res://Sound/ForebodingWahs/Bah2.wav" id="12_q6kxl"]
+[ext_resource type="AudioStream" uid="uid://bfpsvhaw05dh5" path="res://Sound/ForebodingWahs/Bah3.wav" id="13_6e0xa"]
 
 [sub_resource type="Animation" id="Animation_2scyq"]
 resource_name = "Cutscene"
@@ -54,11 +56,35 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/AudioStreamPlayer:playing")
+tracks/3/path = NodePath("AnimationPlayer/StreamPlayer1:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(-0.1, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/StreamPlayer2:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(-0.1, 6.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/StreamPlayer3:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(-0.1, 10.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -105,10 +131,34 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/AudioStreamPlayer:playing")
+tracks/3/path = NodePath("AnimationPlayer/StreamPlayer1:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/StreamPlayer2:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/StreamPlayer3:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -189,7 +239,7 @@ script = ExtResource("4_odyy7")
 position = Vector2(597, 288)
 scale = Vector2(0.328391, 0.328391)
 sprite_frames = SubResource("SpriteFrames_iev07")
-frame_progress = 0.759965
+frame_progress = 0.362842
 script = ExtResource("7_eff82")
 
 [node name="Slide3" type="AnimatedSprite2D" parent="AnimationPlayer"]
@@ -207,5 +257,11 @@ offset_right = 1148.0
 offset_bottom = 646.0
 color = Color(0.2, 0.133333, 0.219608, 0)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer"]
+[node name="StreamPlayer1" type="AudioStreamPlayer" parent="AnimationPlayer"]
 stream = ExtResource("11_ctiwb")
+
+[node name="StreamPlayer2" type="AudioStreamPlayer" parent="AnimationPlayer"]
+stream = ExtResource("12_q6kxl")
+
+[node name="StreamPlayer3" type="AudioStreamPlayer" parent="AnimationPlayer"]
+stream = ExtResource("13_6e0xa")

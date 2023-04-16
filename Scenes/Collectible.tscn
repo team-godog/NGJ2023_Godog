@@ -1,16 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://c48kfmcc8lma0"]
+[gd_scene load_steps=17 format=3 uid="uid://c48kfmcc8lma0"]
 
 [ext_resource type="Script" path="res://Scripts/Collectible.gd" id="1_ebnwg"]
 [ext_resource type="Texture2D" uid="uid://dkwopn6quh3dy" path="res://Art/VFX/Textures/pickup_rosemary.png" id="2_0vdbu"]
 [ext_resource type="Texture2D" uid="uid://d02xqb42vhm23" path="res://Art/VFX/Textures/snowflake2.png" id="2_nkin8"]
 [ext_resource type="Texture2D" uid="uid://cdq65n8tax267" path="res://Art/VFX/Textures/pickup_flower.png" id="3_q3g4e"]
 [ext_resource type="Texture2D" uid="uid://d33ov17hbhqyf" path="res://Art/VFX/Textures/pickup_pastinak.png" id="4_0vg8n"]
-[ext_resource type="AudioStream" uid="uid://dmgphnv432sem" path="res://Sound/sfx_pickup.wav" id="6_528hq"]
+[ext_resource type="AudioStream" uid="uid://dmgphnv432sem" path="res://Sound/sfx_pickup.wav" id="6_la1fm"]
+[ext_resource type="PackedScene" uid="uid://4nn2tgdx21m8" path="res://Scenes/beacon.tscn" id="7_sw5c7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pqaga"]
-radius = 0.8
+radius = 1.3
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucs0x"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nu7be"]
 transparency = 1
 albedo_color = Color(1, 1, 0.580392, 1)
 albedo_texture = ExtResource("2_0vdbu")
@@ -19,6 +20,7 @@ billboard_mode = 1
 billboard_keep_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_t1ddy"]
+size = Vector2(1.4, 1.5)
 
 [sub_resource type="Animation" id="Animation_w7k8f"]
 resource_name = "Float"
@@ -81,7 +83,7 @@ shape = SubResource("SphereShape3D_pqaga")
 
 [node name="PickUp" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.503, 0)
-material_override = SubResource("StandardMaterial3D_ucs0x")
+material_override = SubResource("StandardMaterial3D_nu7be")
 mesh = SubResource("QuadMesh_t1ddy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PickUp"]
@@ -107,6 +109,9 @@ initial_velocity_max = 1.0
 scale_amount_curve = SubResource("Curve_m71gb")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("6_528hq")
+stream = ExtResource("6_la1fm")
+volume_db = 3.0
+
+[node name="Beacon" parent="." instance=ExtResource("7_sw5c7")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

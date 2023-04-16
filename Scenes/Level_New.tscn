@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://dfty372hd8kx1"]
+[gd_scene load_steps=25 format=3 uid="uid://dfty372hd8kx1"]
 
+[ext_resource type="Material" uid="uid://ba4fi6qgnghgs" path="res://Materials/icefrost.tres" id="1_ap2wq"]
 [ext_resource type="Material" uid="uid://cepxjvviodl5q" path="res://Materials/TrackMat.tres" id="1_n7b8k"]
 [ext_resource type="PackedScene" uid="uid://j81hogtwfn3r" path="res://Art/3D Models/BlockOut Meshes/townhouse_blockoutglb.glb" id="2_m88s6"]
 [ext_resource type="PackedScene" uid="uid://cfcq7cnyl2pt3" path="res://Art/Prefabs/tree.tscn" id="3_xasa7"]
@@ -47,9 +48,9 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="Curve3D" id="Curve3D_enaek"]
+[sub_resource type="Curve3D" id="Curve3D_m3yo7"]
 _data = {
-"points": PackedVector3Array(-0.384706, -2.08616e-07, -1.45138, 0.384706, 2.08616e-07, 1.45138, 1.91517, 0.152102, 0.355864, -0.671999, -7.45058e-08, -2.53292, 0.671999, 7.45058e-08, 2.53292, -6.17815, -0.0651826, 6.6102, 3.56004, -1.19209e-07, -2.86782, -3.56004, 1.19209e-07, 2.86782, -8.05706, -0.817869, 14.027),
+"points": PackedVector3Array(-0.384706, -2.08616e-07, -1.45138, 0.384706, 2.08616e-07, 1.45138, 1.91517, 0.152102, 0.355864, -0.671999, -7.45058e-08, -2.53292, 0.671999, 7.45058e-08, 2.53292, -6.17815, -0.0651826, 6.6102, 3.56004, -1.19209e-07, -2.86782, -3.56004, 1.19209e-07, 2.86782, -8.07215, -0.1422, 14.133),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -213,7 +214,7 @@ smooth_faces = true
 
 [node name="Path3D" type="Path3D" parent="CSGCombiner3D/CSGPolygon3D_8"]
 transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 0, 1, 0, 0, 0)
-curve = SubResource("Curve3D_enaek")
+curve = SubResource("Curve3D_m3yo7")
 
 [node name="CSGPolygon3D_6" type="CSGPolygon3D" parent="CSGCombiner3D"]
 transform = Transform3D(6, 0, 0, 0, 3, 0, 0, 0, 5.99999, -28.1384, 0.260612, 398.695)
@@ -254,6 +255,11 @@ smooth_faces = true
 [node name="Path3D" type="Path3D" parent="CSGCombiner3D/CSGPolygon3D_7"]
 transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 0, 1, 0, 0, 0)
 curve = SubResource("Curve3D_uwk37")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.727432, 0.0340374, -0.685335, 0.0382148, 0.99521, 0.0899895, 0.685114, -0.0916513, 0.722647, 78.7316, -2.38439, 450.621)
+material_override = ExtResource("1_ap2wq")
+size = Vector3(22.8525, 1, 45.3708)
 
 [node name="Village" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4168, 0, 726.931)
@@ -787,7 +793,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.0153, 0.524689, 119.881)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.054, 0.524685, 132.437)
 
 [node name="Tree146" parent="." instance=ExtResource("3_xasa7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.4009, 0.524689, 147.114)
+transform = Transform3D(1, 0, 0, 0, 0.999703, -0.0243798, 0, 0.0243798, 0.999703, 69.4009, 0.524693, 147.114)
 
 [node name="Tree147" parent="." instance=ExtResource("3_xasa7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2387, 0.524685, 130.013)
@@ -967,7 +973,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5161, 0.524666, 276.507)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.585, 0.524673, 273.467)
 
 [node name="Tree206" parent="." instance=ExtResource("3_xasa7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3833, 0.524673, 274.455)
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 12.3833, 0.524689, 274.455)
 
 [node name="Tree207" parent="." instance=ExtResource("3_xasa7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7563, 0.524681, 272.552)

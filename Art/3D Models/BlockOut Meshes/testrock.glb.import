@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://66e0k41l2nvi"
-path="res://.godot/imported/tree_blockout.glb-f6ff8d46f3ef15e9a34494d5a30543a7.scn"
+uid="uid://dmbajym3gpu0g"
+path="res://.godot/imported/testrock.glb-6e7577a2ff6a8a348f8eccbf6628150a.scn"
 
 [deps]
 
-source_file="res://Meshes/tree_blockout.glb"
-dest_files=["res://.godot/imported/tree_blockout.glb-f6ff8d46f3ef15e9a34494d5a30543a7.scn"]
+source_file="res://Art/3D Models/BlockOut Meshes/testrock.glb"
+dest_files=["res://.godot/imported/testrock.glb-6e7577a2ff6a8a348f8eccbf6628150a.scn"]
 
 [params]
 

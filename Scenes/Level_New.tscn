@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dntdg6tly67b4"]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="Material" uid="uid://cepxjvviodl5q" path="res://Materials/TrackMat.tres" id="1_n7b8k"]
-[ext_resource type="PackedScene" uid="uid://j81hogtwfn3r" path="res://Meshes/townhouse_blockoutglb.glb" id="2_m88s6"]
+[ext_resource type="PackedScene" uid="uid://j81hogtwfn3r" path="res://Art/3D Models/BlockOut Meshes/townhouse_blockoutglb.glb" id="2_m88s6"]
 
 [sub_resource type="Curve3D" id="Curve3D_rybcm"]
 _data = {

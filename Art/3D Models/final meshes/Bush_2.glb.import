@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d07ockq7kdevn"
-path="res://.godot/imported/totem_blockoutglb.glb-6f59caf9533e549eb7785810d6d0c8ba.scn"
+uid="uid://drag27x6guavt"
+path="res://.godot/imported/Bush_2.glb-432c6fa6a3b4e2066081f838720e452e.scn"
 
 [deps]
 
-source_file="res://Meshes/totem_blockoutglb.glb"
-dest_files=["res://.godot/imported/totem_blockoutglb.glb-6f59caf9533e549eb7785810d6d0c8ba.scn"]
+source_file="res://Art/3D Models/final meshes/Bush_2.glb"
+dest_files=["res://.godot/imported/Bush_2.glb-432c6fa6a3b4e2066081f838720e452e.scn"]
 
 [params]
 

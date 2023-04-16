@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgeni6tvej630"]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource type="PackedScene" uid="uid://cfioetmwa2y10" path="res://Meshes/godog.glb" id="1_0fhn0"]
-[ext_resource type="Material" uid="uid://cif34thpno2ge" path="res://Art/DogMat.tres" id="2_daayj"]
+[ext_resource type="PackedScene" uid="uid://cfioetmwa2y10" path="res://Art/3D Models/BlockOut Meshes/godog.glb" id="1_0fhn0"]
+[ext_resource type="Material" path="res://Art/DogMat.tres" id="2_daayj"]
 
 [sub_resource type="Animation" id="Animation_p1hp0"]
 length = 0.001

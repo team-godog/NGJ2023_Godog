@@ -162,8 +162,20 @@ mesh = SubResource("QuadMesh_wwvmg")
 
 [node name="Collectibles" type="Node3D" parent="."]
 
-[node name="Collectible" parent="Collectibles" instance=ExtResource("6_ttyx4")]
+[node name="Collectible1" parent="Collectibles" instance=ExtResource("6_ttyx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.24819, -3.3534, 11.4469)
+
+[node name="Collectible2" parent="Collectibles" instance=ExtResource("6_ttyx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.24819, -7.6771, 22.4469)
+pickup_type = 1
+
+[node name="Collectible3" parent="Collectibles" instance=ExtResource("6_ttyx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.24819, -10.3318, 31.9754)
+pickup_type = 2
+
+[node name="Collectible" parent="Collectibles" instance=ExtResource("6_ttyx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51587, -8.97749, 26.4125)
+pickup_type = 2
 
 [node name="Mountains" type="Node3D" parent="."]
 

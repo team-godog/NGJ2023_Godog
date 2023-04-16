@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://c48kfmcc8lma0"]
+[gd_scene load_steps=15 format=3 uid="uid://c48kfmcc8lma0"]
 
 [ext_resource type="Script" path="res://Scripts/Collectible.gd" id="1_ebnwg"]
-[ext_resource type="Texture2D" uid="uid://bnxt320wnleyu" path="res://Art/VFX/PICKUP1.png" id="2_dunui"]
+[ext_resource type="Texture2D" uid="uid://dkwopn6quh3dy" path="res://Art/VFX/Textures/pickup_rosemary.png" id="2_0vdbu"]
 [ext_resource type="Texture2D" uid="uid://d02xqb42vhm23" path="res://Art/VFX/Textures/snowflake2.png" id="2_nkin8"]
+[ext_resource type="Texture2D" uid="uid://cdq65n8tax267" path="res://Art/VFX/Textures/pickup_flower.png" id="3_q3g4e"]
+[ext_resource type="Texture2D" uid="uid://d33ov17hbhqyf" path="res://Art/VFX/Textures/pickup_pastinak.png" id="4_0vg8n"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pqaga"]
 radius = 0.8
@@ -10,7 +12,7 @@ radius = 0.8
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1vfr3"]
 transparency = 1
 albedo_color = Color(1, 1, 0.580392, 1)
-albedo_texture = ExtResource("2_dunui")
+albedo_texture = ExtResource("2_0vdbu")
 rim_enabled = true
 billboard_mode = 1
 billboard_keep_scale = true
@@ -71,6 +73,7 @@ point_count = 2
 
 [node name="Collectible" type="Area3D"]
 script = ExtResource("1_ebnwg")
+textures = Array[Texture2D]([ExtResource("2_0vdbu"), ExtResource("3_q3g4e"), ExtResource("4_0vg8n")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_pqaga")

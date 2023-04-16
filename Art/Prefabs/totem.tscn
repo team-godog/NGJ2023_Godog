@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbcvxq7y5hide"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://dxf3l8xflygws" path="res://Materials/ObjectPhysicsMat.tres" id="1_xopwr"]
+[ext_resource type="PackedScene" uid="uid://db41mut7tsbri" path="res://Art/3D Models/final meshes/Totem.glb" id="2_hkp61"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b4nr0"]
+radius = 0.724637
+height = 5.73248
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = ExtResource("1_xopwr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00936234, 2.45778, 0)
+shape = SubResource("CapsuleShape3D_b4nr0")
+
+[node name="Totem" parent="." instance=ExtResource("2_hkp61")]

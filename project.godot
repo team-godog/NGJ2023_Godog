@@ -20,6 +20,11 @@ config/icon="res://icon.png"
 
 GameState="*res://Scenes/GameState.tscn"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="NGJ2023 Rosemary"

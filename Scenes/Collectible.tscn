@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d02xqb42vhm23" path="res://Art/VFX/Textures/snowflake2.png" id="2_nkin8"]
 [ext_resource type="Texture2D" uid="uid://cdq65n8tax267" path="res://Art/VFX/Textures/pickup_flower.png" id="3_q3g4e"]
 [ext_resource type="Texture2D" uid="uid://d33ov17hbhqyf" path="res://Art/VFX/Textures/pickup_pastinak.png" id="4_0vg8n"]
-[ext_resource type="AudioStream" uid="uid://dyxjdk1fmenc8" path="res://Sound/Woofs/Woof1.wav" id="6_euamf"]
+[ext_resource type="AudioStream" uid="uid://dmgphnv432sem" path="res://Sound/sfx_pickup.wav" id="6_la1fm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pqaga"]
 radius = 0.8
@@ -107,6 +107,7 @@ initial_velocity_max = 1.0
 scale_amount_curve = SubResource("Curve_m71gb")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("6_euamf")
+stream = ExtResource("6_la1fm")
+volume_db = 3.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

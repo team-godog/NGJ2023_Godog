@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=11 format=3 uid="uid://dfty372hd8kx1"]
 
 [ext_resource type="Material" uid="uid://cepxjvviodl5q" path="res://Materials/TrackMat.tres" id="1_n7b8k"]
 [ext_resource type="PackedScene" uid="uid://j81hogtwfn3r" path="res://Art/3D Models/BlockOut Meshes/townhouse_blockoutglb.glb" id="2_m88s6"]

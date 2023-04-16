@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cq1xwmv77ivhn"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_krjn6"]
-[ext_resource type="Texture2D" uid="uid://bwbou8m18xoq1" path="res://Textures/lovely_concept.jpg" id="1_tgaj1"]
+[ext_resource type="Texture2D" uid="uid://cky3gwpjoqg08" path="res://Art/godog_splash.png" id="2_4la20"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -27,7 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_tgaj1")
+texture = ExtResource("2_4la20")
 
 [node name="PlayButton" type="Button" parent="StartScreen"]
 layout_mode = 0

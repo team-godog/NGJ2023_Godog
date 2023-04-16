@@ -5,6 +5,7 @@ enum State {
 	START_SCREEN,
 	INTRO_CUTSCENE,
 	IN_GAME,
+	END_SCREEN
 }
 var state : State = State.START_SCREEN
 
@@ -42,3 +43,24 @@ func _on_quit_button_pressed():
 	get_tree().quit()
 
 
+func _on_resume_button_pressed():
+	$StartScreen.hide()
+	$ResumeScreen.hide()
+	state = State.IN_GAME
+
+	$/root/Game.process_mode = Node.PROCESS_MODE_ALWAYS
+
+func show_end():
+	state = State.END_SCREEN
+	$/root/Game.process_mode = Node.PROCESS_MODE_DISABLED
+	self.show()
+	$EndScreen.show()
+	AudioServer.set_bus_volume_db(0, -100);
+
+func _on_end_quit_button_pressed():
+	get_tree().quit()
+
+func _on_end_re_play_button_pressed():
+	$EndScreen.hide()
+	$StartScreen.show()
+	state = State.START_SCREEN

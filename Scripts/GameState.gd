@@ -14,3 +14,5 @@ func bark():
 
 func play_music():
 	music.play()
+
+

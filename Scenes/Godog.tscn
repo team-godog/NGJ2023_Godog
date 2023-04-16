@@ -47,6 +47,7 @@ mass = 80.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.3, 0)
 gravity_scale = 3.0
+continuous_cd = true
 script = ExtResource("1_tajt8")
 steeringAmount = 0.3
 steeringBlendSpeed = 5.0

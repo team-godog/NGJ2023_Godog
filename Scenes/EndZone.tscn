@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://do2lsasxkw2ya"]
+
+[ext_resource type="Script" path="res://Scripts/EndZone.gd" id="1_ixm8e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3npe2"]
+size = Vector3(20, 20, 20)
+
+[node name="EndZone" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 1.98952e-13, 0, -1.98952e-13, 0.999999, 7.34013, -7.52667, 15.9001)
+script = ExtResource("1_ixm8e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 3.69482e-13, 0, -3.69482e-13, 0.999999, 0, 0, 0)
+shape = SubResource("BoxShape3D_3npe2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

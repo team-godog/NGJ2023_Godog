@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://do15j11nb3xw7"]
+[gd_scene load_steps=11 format=3 uid="uid://do15j11nb3xw7"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ni43j"]
 [ext_resource type="PackedScene" uid="uid://c0rlsqa57skme" path="res://Scenes/Godog.tscn" id="1_nr1js"]
 [ext_resource type="PackedScene" uid="uid://ccrdooi0w71um" path="res://Scenes/Camera.tscn" id="2_j0xlf"]
 [ext_resource type="PackedScene" uid="uid://dfty372hd8kx1" path="res://Scenes/Level_New.tscn" id="2_punwc"]
-[ext_resource type="PackedScene" uid="uid://btn5ikxl8o8ku" path="res://Scenes/Collectables.tscn" id="7_xufm6"]
+[ext_resource type="PackedScene" uid="uid://do2lsasxkw2ya" path="res://Scenes/EndZone.tscn" id="6_41rlm"]
+[ext_resource type="PackedScene" uid="uid://btn5ikxl8o8ku" path="res://Scenes/collectables.tscn" id="7_xufm6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d50ci"]
 sky_top_color = Color(0.133333, 0.231373, 0.760784, 1)
@@ -90,3 +91,6 @@ cameraScene = NodePath("../CameraScene")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029, 2.593, 0)
 
 [node name="Collectables" parent="." instance=ExtResource("7_xufm6")]
+
+[node name="EndZone" parent="." instance=ExtResource("6_41rlm")]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 1.98952e-13, 0, -1.98952e-13, 0.999999, 29.8117, -248.852, 679.574)

@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0rlsqa57skme"]
+[gd_scene load_steps=16 format=3 uid="uid://c0rlsqa57skme"]
 
 [ext_resource type="Script" path="res://Scripts/DogController.gd" id="1_tajt8"]
 [ext_resource type="PackedScene" uid="uid://bmd5rtakf86jq" path="res://Art/day_19_-_sled/scene.gltf" id="2_7d0r4"]
 [ext_resource type="PackedScene" uid="uid://dcdh03shynjia" path="res://Art/shiba/scene.gltf" id="2_xrbg0"]
-[ext_resource type="PackedScene" path="res://Scenes/GodogMesh.tscn" id="4_olpc2"]
+[ext_resource type="PackedScene" uid="uid://bgeni6tvej630" path="res://Scenes/GodogMesh.tscn" id="4_olpc2"]
+[ext_resource type="Texture2D" uid="uid://cu6hqi6hvo8gm" path="res://Art/VFX/Textures/snowflake1.png" id="5_t6si1"]
+[ext_resource type="Texture2D" uid="uid://d02xqb42vhm23" path="res://Art/VFX/Textures/snowflake2.png" id="6_xv22a"]
+[ext_resource type="Material" uid="uid://cepxjvviodl5q" path="res://Materials/TrackMat.tres" id="7_24e0l"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xfawx"]
 
@@ -11,6 +14,32 @@
 size = Vector3(1, 0.6, 2)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_311ru"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3s7c"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+albedo_color = Color(1, 0.839216, 1, 1)
+albedo_texture = ExtResource("5_t6si1")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_4o5gd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbkrq"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.960784, 0.827451, 0.929412, 1)
+albedo_texture = ExtResource("6_xv22a")
+billboard_mode = 1
+billboard_keep_scale = true
+distance_fade_max_distance = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_ulf50"]
+
+[sub_resource type="Curve" id="Curve_drspi"]
+_data = [Vector2(0, 0.663636), 0.0, 0.0, 0, 0, Vector2(0.653846, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Godog" type="VehicleBody3D"]
 mass = 80.0
@@ -97,3 +126,54 @@ shape = SubResource("CylinderShape3D_311ru")
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
 update_rotation = false
 update_scale = false
+
+[node name="VFX" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83854, 4.27623, 9.3262)
+
+[node name="Snowfall1" type="CPUParticles3D" parent="VFX"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52337, 1.94133, -1.40007)
+material_override = SubResource("StandardMaterial3D_j3s7c")
+amount = 20
+lifetime = 4.0
+mesh = SubResource("QuadMesh_4o5gd")
+emission_shape = 3
+emission_box_extents = Vector3(10, 0, 10)
+gravity = Vector3(0, -1.236, 0)
+scale_amount_min = 0.28
+scale_amount_max = 0.46
+
+[node name="Snowfall2" type="CPUParticles3D" parent="VFX"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52337, 1.94133, 6.13405)
+material_override = SubResource("StandardMaterial3D_cbkrq")
+amount = 100
+lifetime = 4.0
+mesh = SubResource("QuadMesh_4o5gd")
+emission_shape = 3
+emission_box_extents = Vector3(20, 0, 20)
+gravity = Vector3(0, -1.236, 0)
+scale_amount_min = 0.28
+scale_amount_max = 0.46
+
+[node name="SledParticle" type="CPUParticles3D" parent="VFX"]
+transform = Transform3D(0.885467, 0, -0.464703, 0, 1, 0, 0.464703, 0, 0.885467, -1.49216, -4.0671, -10.5362)
+material_override = ExtResource("7_24e0l")
+lifetime = 0.46
+mesh = SubResource("SphereMesh_ulf50")
+emission_shape = 3
+emission_box_extents = Vector3(0.04, 0.113, 0)
+gravity = Vector3(1, 1.658, -3.8)
+scale_amount_min = 0.06
+scale_amount_max = 0.33
+scale_amount_curve = SubResource("Curve_drspi")
+
+[node name="SledParticle2" type="CPUParticles3D" parent="VFX"]
+transform = Transform3D(0.885467, 0, -0.464703, 0, 1, 0, 0.464703, 0, 0.885467, -2.20729, -4.0671, -10.5362)
+material_override = ExtResource("7_24e0l")
+lifetime = 0.46
+mesh = SubResource("SphereMesh_ulf50")
+emission_shape = 3
+emission_box_extents = Vector3(0.04, 0.113, 0)
+gravity = Vector3(1, 1.658, -3.8)
+scale_amount_min = 0.06
+scale_amount_max = 0.33
+scale_amount_curve = SubResource("Curve_drspi")

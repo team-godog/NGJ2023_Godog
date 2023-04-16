@@ -1,18 +1,108 @@
-[gd_scene load_steps=4 format=3 uid="uid://c48kfmcc8lma0"]
+[gd_scene load_steps=15 format=3 uid="uid://c48kfmcc8lma0"]
 
-[ext_resource type="Texture2D" uid="uid://cbmt6c32je1sw" path="res://icon.svg" id="1_6o45v"]
 [ext_resource type="Script" path="res://Scripts/Collectible.gd" id="1_ebnwg"]
+[ext_resource type="Texture2D" uid="uid://dkwopn6quh3dy" path="res://Art/VFX/Textures/pickup_rosemary.png" id="2_0vdbu"]
+[ext_resource type="Texture2D" uid="uid://d02xqb42vhm23" path="res://Art/VFX/Textures/snowflake2.png" id="2_nkin8"]
+[ext_resource type="Texture2D" uid="uid://cdq65n8tax267" path="res://Art/VFX/Textures/pickup_flower.png" id="3_q3g4e"]
+[ext_resource type="Texture2D" uid="uid://d33ov17hbhqyf" path="res://Art/VFX/Textures/pickup_pastinak.png" id="4_0vg8n"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pqaga"]
 radius = 0.8
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3sqq"]
+transparency = 1
+albedo_color = Color(1, 1, 0.580392, 1)
+albedo_texture = ExtResource("2_0vdbu")
+rim_enabled = true
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_t1ddy"]
+
+[sub_resource type="Animation" id="Animation_w7k8f"]
+resource_name = "Float"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.503, 0), Vector3(0, 0.107, 0), Vector3(0, -0.503, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jscrd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(7.24819, -0.503458, 11.4469)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r5qii"]
+_data = {
+"Float": SubResource("Animation_w7k8f"),
+"RESET": SubResource("Animation_jscrd")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txdks"]
+transparency = 1
+albedo_color = Color(1, 1, 0.709804, 1)
+albedo_texture = ExtResource("2_nkin8")
+rim_enabled = true
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_1wdlw"]
+
+[sub_resource type="Curve" id="Curve_m71gb"]
+_data = [Vector2(0, 0.936364), 0.0, 0.0, 0, 0, Vector2(0.950549, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Collectible" type="Area3D"]
 script = ExtResource("1_ebnwg")
+textures = Array[Texture2D]([ExtResource("2_0vdbu"), ExtResource("3_q3g4e"), ExtResource("4_0vg8n")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_pqaga")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-texture = ExtResource("1_6o45v")
+[node name="PickUp" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.503, 0)
+material_override = SubResource("StandardMaterial3D_v3sqq")
+mesh = SubResource("QuadMesh_t1ddy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PickUp"]
+autoplay = "Float"
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_r5qii")
+}
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="PickUp"]
+material_override = SubResource("StandardMaterial3D_txdks")
+amount = 10
+lifetime = 1.59
+speed_scale = 1.38
+mesh = SubResource("QuadMesh_1wdlw")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, -20, 0)
+spread = 50.91
+gravity = Vector3(0, 2, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+scale_amount_curve = SubResource("Curve_m71gb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -3,11 +3,15 @@
 [resource]
 diffuse_mode = 3
 albedo_color = Color(0.478431, 1, 0.862745, 1)
-metallic_specular = 0.0
+metallic = 0.57
+metallic_specular = 0.58
+roughness = 0.78
 rim_enabled = true
-rim = 0.23
-rim_tint = 0.26
-clearcoat = 0.18
-clearcoat_roughness = 0.09
+rim = 0.28
+rim_tint = 0.0
+clearcoat_enabled = true
+clearcoat = 0.06
+clearcoat_roughness = 0.39
+ao_light_affect = 0.06
 backlight_enabled = true
 backlight = Color(0.25098, 0, 0.964706, 1)

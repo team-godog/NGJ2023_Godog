@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfiaybtbljgvv"]
+
+[ext_resource type="Script" path="res://Scripts/DogBall.gd" id="1_ju5t4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_e2mrt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0nn20"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pj2h5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_y2jr0"]
+
+[node name="GodogBall" type="Node3D"]
+script = ExtResource("1_ju5t4")
+
+[node name="Ball_Visual" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball_Visual"]
+mesh = SubResource("SphereMesh_e2mrt")
+
+[node name="RayCast3D" type="RayCast3D" parent="Ball_Visual"]
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Ball_Visual"]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Ball_Visual"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.450953, 0.4459)
+mesh = SubResource("BoxMesh_0nn20")
+
+[node name="Ball" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
+shape = SubResource("SphereShape3D_pj2h5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
+mesh = SubResource("BoxMesh_y2jr0")

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxwwbiascl7ea"]
+
+[ext_resource type="Script" path="res://Scripts/GodogSled.gd" id="1_bfdgk"]
+[ext_resource type="PackedScene" uid="uid://dcdh03shynjia" path="res://Art/shiba/scene.gltf" id="1_g20hm"]
+[ext_resource type="PackedScene" uid="uid://bmd5rtakf86jq" path="res://Art/day_19_-_sled/scene.gltf" id="2_5ob51"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wd2fq"]
+
+[node name="GodogSled" type="PathFollow3D" node_paths=PackedStringArray("remoteTransform")]
+loop = false
+script = ExtResource("1_bfdgk")
+posTime = 0.1
+rotTime = 0.2
+remoteTransform = NodePath("RemoteTransform3D")
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="Dog" parent="Visuals" instance=ExtResource("1_g20hm")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.36244, -0.0917921)
+
+[node name="Sled" parent="Visuals" instance=ExtResource("2_5ob51")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
+
+[node name="Positions" type="Node3D" parent="."]
+
+[node name="Positions_Left" type="Node3D" parent="Positions"]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 0.4, 0, 0)
+
+[node name="Positions_Middle" type="Node3D" parent="Positions"]
+
+[node name="Positions_Right" type="Node3D" parent="Positions"]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -0.4, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.176403, -0.200494)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_wd2fq")

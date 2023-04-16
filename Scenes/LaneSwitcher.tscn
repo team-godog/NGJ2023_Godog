@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cirteo43h1plq"]
+
+[ext_resource type="Script" path="res://Scripts/LaneSwitcher.gd" id="1_46qx7"]
+[ext_resource type="Texture2D" uid="uid://cbmt6c32je1sw" path="res://icon.svg" id="2_uoyp1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8gpub"]
+size = Vector3(3, 3, 3)
+
+[node name="LaneSwitcher" type="Area3D"]
+script = ExtResource("1_46qx7")
+targetSteering = -1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_8gpub")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75937, 0)
+texture = ExtResource("2_uoyp1")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

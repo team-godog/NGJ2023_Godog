@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgw6smae6v5e4"]
+
+[ext_resource type="Texture2D" uid="uid://cu6hqi6hvo8gm" path="res://Art/VFX/Textures/snowflake1.png" id="1_q65bx"]
+[ext_resource type="Texture2D" uid="uid://d02xqb42vhm23" path="res://Art/VFX/Textures/snowflake2.png" id="2_0ua6i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4rng"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_q65bx")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_mcfjj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hty5i"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.960784, 0.941176, 0.929412, 1)
+albedo_texture = ExtResource("2_0ua6i")
+billboard_mode = 1
+billboard_keep_scale = true
+distance_fade_max_distance = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r62jo"]
+metallic_specular = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_p3bmd"]
+
+[sub_resource type="Curve" id="Curve_smi6o"]
+_data = [Vector2(0, 0.663636), 0.0, 0.0, 0, 0, Vector2(0.653846, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="VFX" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83854, 4.27623, 9.3262)
+
+[node name="Snowfall1" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52337, 1.94133, -1.40007)
+material_override = SubResource("StandardMaterial3D_q4rng")
+amount = 20
+lifetime = 4.0
+mesh = SubResource("QuadMesh_mcfjj")
+emission_shape = 3
+emission_box_extents = Vector3(10, 0, 10)
+gravity = Vector3(0, -1.236, 0)
+scale_amount_min = 0.28
+scale_amount_max = 0.46
+
+[node name="Snowfall2" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52337, 1.94133, 6.13405)
+material_override = SubResource("StandardMaterial3D_hty5i")
+amount = 100
+lifetime = 4.0
+mesh = SubResource("QuadMesh_mcfjj")
+emission_shape = 3
+emission_box_extents = Vector3(20, 0, 20)
+gravity = Vector3(0, -1.236, 0)
+scale_amount_min = 0.28
+scale_amount_max = 0.46
+
+[node name="SledParticle" type="CPUParticles3D" parent="."]
+transform = Transform3D(0.885467, 0, -0.464703, 0, 1, 0, 0.464703, 0, 0.885467, -1.49216, -4.0671, -10.5362)
+material_override = SubResource("StandardMaterial3D_r62jo")
+lifetime = 0.46
+mesh = SubResource("SphereMesh_p3bmd")
+emission_shape = 3
+emission_box_extents = Vector3(0.04, 0.113, 0)
+gravity = Vector3(1, 1.658, -3.8)
+scale_amount_min = 0.06
+scale_amount_max = 0.33
+scale_amount_curve = SubResource("Curve_smi6o")
+
+[node name="SledParticle2" type="CPUParticles3D" parent="."]
+transform = Transform3D(0.885467, 0, -0.464703, 0, 1, 0, 0.464703, 0, 0.885467, -2.20729, -4.0671, -10.5362)
+material_override = SubResource("StandardMaterial3D_r62jo")
+lifetime = 0.46
+mesh = SubResource("SphereMesh_p3bmd")
+emission_shape = 3
+emission_box_extents = Vector3(0.04, 0.113, 0)
+gravity = Vector3(1, 1.658, -3.8)
+scale_amount_min = 0.06
+scale_amount_max = 0.33
+scale_amount_curve = SubResource("Curve_smi6o")

@@ -1,13 +1,378 @@
-[gd_scene load_steps=2 format=3 uid="uid://do15j11nb3xw7"]
+[gd_scene load_steps=31 format=3 uid="uid://do15j11nb3xw7"]
 
-[sub_resource type="Curve3D" id="Curve3D_1urnn"]
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ni43j"]
+[ext_resource type="PackedScene" uid="uid://c0rlsqa57skme" path="res://Scenes/Godog.tscn" id="1_nr1js"]
+[ext_resource type="Material" uid="uid://cepxjvviodl5q" path="res://Materials/TrackMat.tres" id="2_7vl5a"]
+[ext_resource type="PackedScene" uid="uid://ccrdooi0w71um" path="res://Scenes/Camera.tscn" id="2_j0xlf"]
+[ext_resource type="Texture2D" uid="uid://cu6hqi6hvo8gm" path="res://Art/VFX/Textures/snowflake1.png" id="4_ia6bg"]
+[ext_resource type="Texture2D" uid="uid://d02xqb42vhm23" path="res://Art/VFX/Textures/snowflake2.png" id="5_ixl24"]
+[ext_resource type="Texture2D" uid="uid://dmbg1wq6m361w" path="res://Art/VFX/Textures/grass1.png" id="6_fa1px"]
+[ext_resource type="Texture2D" uid="uid://bnxt320wnleyu" path="res://Art/VFX/PICKUP1.png" id="8_80y6y"]
+
+[sub_resource type="Curve3D" id="Curve3D_rybcm"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10),
-"tilts": PackedFloat32Array(0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.54341, 0.152101, 0.191099, 0.383167, 0, -1.93632, -0.383167, 0, 1.93632, 1.75, -0.130306, 3.66507, 0.447001, 0, -1.22759, -0.447001, 0, 1.22759, 0.301146, -0.0651813, 7.8938, -0.275408, -6.70552e-08, -2.29029, 0.275408, 6.70552e-08, 2.29029, 5, -0.130306, 12.1651, 0, 0, 0, 0, 0, 0, 3.40906, -0.817861, 16.1641, 0, 0, 0, 0, 0, 0, 1.37943, 0.172786, 18.1048),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
+point_count = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17xsp"]
+diffuse_mode = 3
+rim_enabled = true
+rim = 0.27
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d50ci"]
+sky_top_color = Color(0.133333, 0.231373, 0.760784, 1)
+sky_horizon_color = Color(0.882353, 0.556863, 0.501961, 1)
+ground_bottom_color = Color(0, 0.682353, 0.796078, 1)
+ground_horizon_color = Color(0.976471, 0.588235, 0.505882, 1)
+
+[sub_resource type="Sky" id="Sky_dlx6n"]
+sky_material = SubResource("ProceduralSkyMaterial_d50ci")
+
+[sub_resource type="Environment" id="Environment_1x1rp"]
+background_mode = 2
+sky = SubResource("Sky_dlx6n")
+ambient_light_color = Color(1, 0.65098, 1, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.17
+reflected_light_source = 2
+tonemap_mode = 1
+tonemap_white = 0.95
+glow_intensity = 3.26
+glow_strength = 0.61
+glow_blend_mode = 0
+glow_hdr_luminance_cap = 23.29
+glow_map_strength = 0.68
+fog_light_color = Color(0.74902, 0.643137, 1, 1)
+fog_light_energy = 1.09
+fog_density = 0.0
+fog_sky_affect = 0.15
+volumetric_fog_density = 0.108
+volumetric_fog_albedo = Color(0.666667, 0.470588, 0.952941, 1)
+volumetric_fog_emission = Color(0, 0.0392157, 0.290196, 1)
+volumetric_fog_emission_energy = 6.01
+volumetric_fog_gi_inject = 0.0
+volumetric_fog_anisotropy = 0.15
+volumetric_fog_length = 1024.0
+volumetric_fog_ambient_inject = 1.49
+volumetric_fog_sky_affect = 0.0
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_1g3do"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4rng"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+albedo_color = Color(1, 0.839216, 1, 1)
+albedo_texture = ExtResource("4_ia6bg")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_mcfjj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hty5i"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.960784, 0.827451, 0.929412, 1)
+albedo_texture = ExtResource("5_ixl24")
+billboard_mode = 1
+billboard_keep_scale = true
+distance_fade_max_distance = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_p3bmd"]
+
+[sub_resource type="Curve" id="Curve_smi6o"]
+_data = [Vector2(0, 0.663636), 0.0, 0.0, 0, 0, Vector2(0.653846, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="Game" type="Node"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7c7ee"]
+transparency = 1
+albedo_color = Color(1, 0.854902, 0.776471, 1)
+albedo_texture = ExtResource("6_fa1px")
+metallic_specular = 0.0
+billboard_mode = 1
+billboard_keep_scale = true
 
-[node name="Path3D" type="Path3D" parent="."]
-curve = SubResource("Curve3D_1urnn")
+[sub_resource type="QuadMesh" id="QuadMesh_wwvmg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8681r"]
+transparency = 1
+albedo_color = Color(1, 1, 0.580392, 1)
+albedo_texture = ExtResource("8_80y6y")
+rim_enabled = true
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="Animation" id="Animation_w7k8f"]
+resource_name = "Float"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(7.24819, -0.503458, 11.4469), Vector3(7.248, 0.107, 11.447), Vector3(7.248, -0.503, 11.447)]
+}
+
+[sub_resource type="Animation" id="Animation_jscrd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(7.24819, -0.503458, 11.4469)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r5qii"]
+_data = {
+"Float": SubResource("Animation_w7k8f"),
+"RESET": SubResource("Animation_jscrd")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4rtp7"]
+transparency = 1
+albedo_color = Color(1, 1, 0.709804, 1)
+albedo_texture = ExtResource("5_ixl24")
+rim_enabled = true
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_aktdu"]
+
+[sub_resource type="Curve" id="Curve_ioa6r"]
+_data = [Vector2(0, 0.936364), 0.0, 0.0, 0, 0, Vector2(0.950549, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dx55"]
+metallic_specular = 0.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_ujuny"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_ni43j")
+introAnim = false
+
+[node name="Level" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.960566, -0.278052, 0, 0.278052, 0.960566, 0, 0, 0)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 74.6546)
+material_override = ExtResource("2_7vl5a")
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 0.0133286, -4.47533, 23.2496)
+size = Vector3(80, 10, 200)
+
+[node name="CSGPolygon3D_1" type="CSGPolygon3D" parent="Level/CSGCombiner3D"]
+transform = Transform3D(6, 0, 0, 0, 3, 0, 0, 0, 6, 0, 0.260612, -79.3149)
+operation = 2
+polygon = PackedVector2Array(1.12219, 1.25867, 0.488683, 1.09876, -0.0450668, 1.23769, -0.449857, 1.1232, -0.943874, 0.982923, -1.80925, 0.446885, -1.27283, 0.232836, -0.791182, -0.0963352, -0.66, -0.3, -0.5, -0.5, -0.3, -0.66, 0, -0.7, 0.3, -0.66, 0.5, -0.5, 0.66, -0.3, 0.844883, 0.0298533, 1.18996, 0.251429, 1.60035, 0.404674)
+mode = 2
+path_node = NodePath("Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = true
+path_continuous_u = false
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+
+[node name="Path3D" type="Path3D" parent="Level/CSGCombiner3D/CSGPolygon3D_1"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 0, 1, 0, 0, 0)
+curve = SubResource("Curve3D_rybcm")
+
+[node name="Snow" type="Node3D" parent="."]
+transform = Transform3D(6.3173, -2.593e-08, -4.33239, 0, 1.01069, -1.49983e-07, 3.01252, -5.86616e-09, 9.08508, -6.25604, 0.460912, 10.0559)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Snow"]
+transform = Transform3D(0.999999, 8.04912e-16, 0, -1.77636e-14, 0.475011, 1.56319e-13, -8.9407e-08, 2.77556e-16, 1, -0.0823221, 0.100023, 0.0272971)
+material_override = SubResource("StandardMaterial3D_17xsp")
+radius = 1.40711
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Snow"]
+transform = Transform3D(0.269771, 1.36352e-07, 0.862513, -9.32069e-08, 0.999996, -8.43263e-08, -0.628091, -8.98322e-08, 0.370458, 3.35852, -0.23319, -1.11365)
+material_override = SubResource("StandardMaterial3D_17xsp")
+radius = 1.40711
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.925573, -0.353676, 0.135006, 0.325927, 0.925886, 0.191065, -0.192576, -0.132843, 0.972249, 0, 0, 0)
+light_color = Color(0.952941, 0.87451, 0.788235, 1)
+light_energy = 0.982
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.555
+shadow_enabled = true
+shadow_bias = 0.417
+shadow_normal_bias = 0.0
+shadow_transmittance_bias = 16.0
+shadow_blur = 1.528
+directional_shadow_mode = 0
+directional_shadow_split_1 = 0.081
+directional_shadow_split_2 = 0.181
+directional_shadow_split_3 = 0.608
+directional_shadow_blend_splits = true
+directional_shadow_fade_start = 0.0
+directional_shadow_max_distance = 7.2
+directional_shadow_pancake_size = 8.4
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1x1rp")
+camera_attributes = SubResource("CameraAttributesPractical_1g3do")
+
+[node name="Godog" parent="." node_paths=PackedStringArray("cameraScene") instance=ExtResource("1_nr1js")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.51555, -1.30037, -0.061142)
+cameraScene = NodePath("../CameraScene")
+
+[node name="VFX" type="Node3D" parent="Godog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83854, 4.27623, 9.3262)
+
+[node name="Snowfall1" type="CPUParticles3D" parent="Godog/VFX"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52337, 1.94133, -1.40007)
+material_override = SubResource("StandardMaterial3D_q4rng")
+amount = 20
+lifetime = 4.0
+mesh = SubResource("QuadMesh_mcfjj")
+emission_shape = 3
+emission_box_extents = Vector3(10, 0, 10)
+gravity = Vector3(0, -1.236, 0)
+scale_amount_min = 0.28
+scale_amount_max = 0.46
+
+[node name="Snowfall2" type="CPUParticles3D" parent="Godog/VFX"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52337, 1.94133, 6.13405)
+material_override = SubResource("StandardMaterial3D_hty5i")
+amount = 100
+lifetime = 4.0
+mesh = SubResource("QuadMesh_mcfjj")
+emission_shape = 3
+emission_box_extents = Vector3(20, 0, 20)
+gravity = Vector3(0, -1.236, 0)
+scale_amount_min = 0.28
+scale_amount_max = 0.46
+
+[node name="SledParticle" type="CPUParticles3D" parent="Godog/VFX"]
+transform = Transform3D(0.885467, 0, -0.464703, 0, 1, 0, 0.464703, 0, 0.885467, -1.49216, -4.0671, -10.5362)
+material_override = ExtResource("2_7vl5a")
+lifetime = 0.46
+mesh = SubResource("SphereMesh_p3bmd")
+emission_shape = 3
+emission_box_extents = Vector3(0.04, 0.113, 0)
+gravity = Vector3(1, 1.658, -3.8)
+scale_amount_min = 0.06
+scale_amount_max = 0.33
+scale_amount_curve = SubResource("Curve_smi6o")
+
+[node name="SledParticle2" type="CPUParticles3D" parent="Godog/VFX"]
+transform = Transform3D(0.885467, 0, -0.464703, 0, 1, 0, 0.464703, 0, 0.885467, -2.20729, -4.0671, -10.5362)
+material_override = ExtResource("2_7vl5a")
+lifetime = 0.46
+mesh = SubResource("SphereMesh_p3bmd")
+emission_shape = 3
+emission_box_extents = Vector3(0.04, 0.113, 0)
+gravity = Vector3(1, 1.658, -3.8)
+scale_amount_min = 0.06
+scale_amount_max = 0.33
+scale_amount_curve = SubResource("Curve_smi6o")
+
+[node name="CameraScene" parent="." instance=ExtResource("2_j0xlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029, 2.593, 0)
+
+[node name="Grass" type="Node3D" parent="."]
+
+[node name="Grass" type="MeshInstance3D" parent="Grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239132, 1.36364, 6.22938)
+material_override = SubResource("StandardMaterial3D_7c7ee")
+mesh = SubResource("QuadMesh_wwvmg")
+
+[node name="PickUp" type="MeshInstance3D" parent="Grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.248, 0.107, 11.447)
+material_override = SubResource("StandardMaterial3D_8681r")
+mesh = SubResource("QuadMesh_wwvmg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Grass/PickUp"]
+autoplay = "Float"
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_r5qii")
+}
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Grass/PickUp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.689915)
+material_override = SubResource("StandardMaterial3D_4rtp7")
+amount = 10
+lifetime = 1.59
+speed_scale = 1.38
+mesh = SubResource("QuadMesh_aktdu")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, -20, 0)
+spread = 50.91
+gravity = Vector3(0, 2, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+scale_amount_curve = SubResource("Curve_ioa6r")
+
+[node name="Mountains" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(-19.3643, -0.986319, 24.9371, -7.51807e-08, 29.9766, 1.18564, -29.0278, 0.657967, -16.6354, -62.7379, 1.97444, 190.531)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(-23.907, -0.863644, 21.8355, 6.61117e-08, 29.9766, 1.18564, -25.4174, 0.812322, -20.5379, -45.7454, 1.97444, 195.771)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(-19.3643, -0.986319, 24.9371, -7.51807e-08, 29.9766, 1.18564, -29.0278, 0.657967, -16.6354, 42.8124, 1.97444, 190.531)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(-23.907, -0.863644, 21.8355, 6.61117e-08, 29.9766, 1.18564, -25.4174, 0.812322, -20.5379, 59.8049, 1.97444, 195.771)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(-23.1912, 0.885892, -22.398, -2.21275e-07, 29.9766, 1.18564, 26.0722, 0.787999, -19.923, 98.4654, 1.97444, 105.55)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(-18.5498, 1.00423, -25.3899, 1.13455e-07, 29.9766, 1.18564, 29.5549, 0.630294, -15.9357, 99.2404, 1.97444, 87.7852)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(30.9488, -0.547634, 13.8458, -2.21275e-07, 29.9766, 1.18564, -16.1171, -1.05159, 26.5874, -115.929, 1.97444, 88.504)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Mountains"]
+transform = Transform3D(27.85, -0.71433, 18.0604, 4.43518e-08, 29.9766, 1.18564, -21.0231, -0.946298, 23.9252, -122.973, 1.97444, 104.831)
+material_override = SubResource("StandardMaterial3D_8dx55")
+mesh = SubResource("PrismMesh_ujuny")
+skeleton = NodePath("../..")

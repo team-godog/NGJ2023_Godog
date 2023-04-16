@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq1xwmv77ivhn"]
+
+[ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_krjn6"]
+[ext_resource type="Texture2D" uid="uid://bwbou8m18xoq1" path="res://Textures/lovely_concept.jpg" id="1_tgaj1"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_krjn6")
+
+[node name="StartScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="StartScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tgaj1")
+
+[node name="PlayButton" type="Button" parent="StartScreen"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 379.0
+offset_right = 282.0
+offset_bottom = 459.0
+theme_override_font_sizes/font_size = 32
+text = "Play!"
+
+[node name="QuitButton" type="Button" parent="StartScreen"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 499.0
+offset_right = 282.0
+offset_bottom = 579.0
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[node name="ResumeScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RestartButton" type="Button" parent="ResumeScreen"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 259.0
+offset_right = 282.0
+offset_bottom = 339.0
+theme_override_font_sizes/font_size = 32
+text = "Restart"
+
+[node name="ResumeButton" type="Button" parent="ResumeScreen"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 379.0
+offset_right = 282.0
+offset_bottom = 459.0
+theme_override_font_sizes/font_size = 32
+text = "Resume"
+
+[node name="QuitButton" type="Button" parent="ResumeScreen"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 499.0
+offset_right = 282.0
+offset_bottom = 579.0
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[connection signal="pressed" from="StartScreen/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="StartScreen/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ResumeScreen/RestartButton" to="." method="_on_play_button_pressed" binds= [true]]
+[connection signal="pressed" from="ResumeScreen/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="ResumeScreen/QuitButton" to="." method="_on_quit_button_pressed"]

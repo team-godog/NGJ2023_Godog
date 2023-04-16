@@ -6,8 +6,6 @@ class_name Collectible
 @export var textures : Array[Texture2D]
 @export_enum("rosemary", "flower", "pastinak") var pickup_type : int = 0
 
-@export var woofs : Array[AudioStreamWAV]
-
 enum PickupType {
 	ROSEMARY,
 	FLOWER,
@@ -29,8 +27,7 @@ func _on_body_entered(body):
 
 	if body is DogController:
 		picked = true
-		$AudioStreamPlayer3D.stream = woofs[randi() % 4]
-		$AudioStreamPlayer3D.play()
+		GameState.bark()
 		print("You picked me up!")
 		GameState.pickups_collected.append(pickup_type)
 		var tween = get_tree().create_tween()

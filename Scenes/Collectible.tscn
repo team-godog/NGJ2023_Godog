@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c48kfmcc8lma0"]
+[gd_scene load_steps=16 format=3 uid="uid://c48kfmcc8lma0"]
 
 [ext_resource type="Script" path="res://Scripts/Collectible.gd" id="1_ebnwg"]
 [ext_resource type="Texture2D" uid="uid://dkwopn6quh3dy" path="res://Art/VFX/Textures/pickup_rosemary.png" id="2_0vdbu"]
@@ -6,14 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cdq65n8tax267" path="res://Art/VFX/Textures/pickup_flower.png" id="3_q3g4e"]
 [ext_resource type="Texture2D" uid="uid://d33ov17hbhqyf" path="res://Art/VFX/Textures/pickup_pastinak.png" id="4_0vg8n"]
 [ext_resource type="AudioStream" uid="uid://dyxjdk1fmenc8" path="res://Sound/Woofs/Woof1.wav" id="6_euamf"]
-[ext_resource type="AudioStream" uid="uid://dixlpfljog00u" path="res://Sound/Woofs/Woof2.wav" id="6_lyn2r"]
-[ext_resource type="AudioStream" uid="uid://cwf8yaipowghu" path="res://Sound/Woofs/Woof3.wav" id="7_0cywr"]
-[ext_resource type="AudioStream" uid="uid://bld5ypdhsm76m" path="res://Sound/Woofs/Woof4.wav" id="8_wrtyn"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pqaga"]
 radius = 0.8
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gs576"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ia1rd"]
 transparency = 1
 albedo_color = Color(1, 1, 0.580392, 1)
 albedo_texture = ExtResource("2_0vdbu")
@@ -78,14 +75,13 @@ point_count = 2
 [node name="Collectible" type="Area3D"]
 script = ExtResource("1_ebnwg")
 textures = Array[Texture2D]([ExtResource("2_0vdbu"), ExtResource("3_q3g4e"), ExtResource("4_0vg8n")])
-woofs = Array[AudioStreamWAV]([ExtResource("6_euamf"), ExtResource("6_lyn2r"), ExtResource("7_0cywr"), ExtResource("8_wrtyn")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_pqaga")
 
 [node name="PickUp" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.503, 0)
-material_override = SubResource("StandardMaterial3D_gs576")
+material_override = SubResource("StandardMaterial3D_ia1rd")
 mesh = SubResource("QuadMesh_t1ddy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PickUp"]

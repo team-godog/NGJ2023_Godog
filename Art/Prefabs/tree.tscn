@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfcq7cnyl2pt3"]
+[gd_scene load_steps=8 format=3 uid="uid://cfcq7cnyl2pt3"]
 
 [ext_resource type="PackedScene" uid="uid://d2hepojc44uuh" path="res://Art/3D Models/final meshes/Tree_1.glb" id="1_g56mb"]
-[ext_resource type="Material" uid="uid://brt6oja2b3sfx" path="res://Materials/Assets_Materials/Trees_Mat.tres" id="2_l87p4"]
+[ext_resource type="PackedScene" uid="uid://dwqwu5st821b" path="res://Art/3D Models/final meshes/Tree_3.glb" id="2_k4mr7"]
+[ext_resource type="Material" uid="uid://brt6oja2b3sfx" path="res://Materials/Assets_Materials/Trees_Mat.tres" id="3_rid6s"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8kh7x"]
 friction = 0.0
@@ -11,19 +12,40 @@ bounce = 0.82
 radius = 0.432
 height = 3.897
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aksot"]
+friction = 0.0
+bounce = 0.82
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6q2bb"]
+radius = 0.432
+height = 3.897
+
 [node name="Tree" type="Node3D"]
 
 [node name="StaticBody" type="StaticBody3D" parent="."]
+visible = false
 input_ray_pickable = false
 physics_material_override = SubResource("PhysicsMaterial_8kh7x")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0329025, 1.25176, 0.0401561)
+visible = false
 shape = SubResource("CapsuleShape3D_drra5")
 
 [node name="Tree_1" parent="." instance=ExtResource("1_g56mb")]
+visible = false
 
-[node name="Tree_12" parent="Tree_1" index="0"]
-material_override = ExtResource("2_l87p4")
+[node name="StaticBody2" type="StaticBody3D" parent="."]
+input_ray_pickable = false
+physics_material_override = SubResource("PhysicsMaterial_aksot")
 
-[editable path="Tree_1"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0329025, 1.25176, 0.0401561)
+shape = SubResource("CapsuleShape3D_6q2bb")
+
+[node name="Tree_3" parent="." instance=ExtResource("2_k4mr7")]
+
+[node name="Tree_32" parent="Tree_3" index="0"]
+material_override = ExtResource("3_rid6s")
+
+[editable path="Tree_3"]

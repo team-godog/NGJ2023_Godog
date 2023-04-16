@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://3t7jucxrvvn6"]
+[gd_scene load_steps=2 format=3 uid="uid://btn5ikxl8o8ku"]
+
+[ext_resource type="PackedScene" uid="uid://c48kfmcc8lma0" path="res://Scenes/Collectible.tscn" id="1_kvk4s"]
 
 [node name="Collectables" type="Node3D"]
+
+[node name="Collectible" parent="." instance=ExtResource("1_kvk4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.6214, -59.2426, 159.708)
+
+[node name="Collectible2" parent="." instance=ExtResource("1_kvk4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.9105, -170.096, 463.552)
+pickup_type = 1
+
+[node name="Collectible3" parent="." instance=ExtResource("1_kvk4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.5154, -222.164, 603.631)
+pickup_type = 2

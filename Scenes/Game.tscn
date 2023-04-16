@@ -32,6 +32,7 @@ tonemap_mode = 1
 tonemap_white = 0.95
 ssao_enabled = true
 ssao_intensity = 4.78
+sdfgi_enabled = true
 sdfgi_use_occlusion = true
 glow_intensity = 3.26
 glow_strength = 0.61
@@ -39,7 +40,7 @@ glow_blend_mode = 0
 glow_hdr_luminance_cap = 23.29
 glow_map_strength = 0.68
 fog_light_color = Color(0.74902, 0.643137, 1, 1)
-fog_light_energy = 1.09
+fog_light_energy = 2.93
 fog_density = 0.0
 fog_sky_affect = 0.15
 volumetric_fog_density = 0.108
@@ -88,7 +89,7 @@ material_override = SubResource("StandardMaterial3D_17xsp")
 radius = 1.40711
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.925573, -0.302949, 0.227015, 0.325927, 0.942742, -0.0707715, -0.192576, 0.139494, 0.971317, 0, 0, 0)
+transform = Transform3D(0.258244, -0.346645, 0.901747, 0.228495, 0.928841, 0.291624, -0.938669, 0.130735, 0.319075, 8.76039, -2.73476, 1.74443)
 light_color = Color(0.952941, 0.87451, 0.788235, 1)
 light_energy = 0.982
 light_indirect_energy = 0.0
@@ -144,51 +145,52 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51587, -8.97749, 26.4125)
 pickup_type = 2
 
 [node name="Mountains" type="Node3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -164.459, -377.923, -415.557)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Mountains"]
-transform = Transform3D(-19.3643, -0.986319, 24.9371, -7.51807e-08, 29.9766, 1.18564, -29.0278, 0.657967, -16.6354, -62.7379, 1.97444, 190.531)
+transform = Transform3D(-41.3303, -2.13484, 24.9371, -1.60462e-07, 64.8829, 1.18564, -61.9556, 1.42414, -16.6354, -62.7379, 1.97444, 190.531)
 material_override = SubResource("StandardMaterial3D_8dx55")
 mesh = SubResource("PrismMesh_ujuny")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Mountains"]
-transform = Transform3D(-23.907, -0.863644, 21.8355, 6.61117e-08, 29.9766, 1.18564, -25.4174, 0.812322, -20.5379, -45.7454, 1.97444, 195.771)
+transform = Transform3D(-51.026, -1.86932, 21.8355, 1.41106e-07, 64.8829, 1.18564, -54.2498, 1.75823, -20.5379, -45.7454, 1.97444, 195.771)
 material_override = SubResource("StandardMaterial3D_8dx55")
 mesh = SubResource("PrismMesh_ujuny")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Mountains"]
-transform = Transform3D(-19.3643, -0.986319, 24.9371, -7.51807e-08, 29.9766, 1.18564, -29.0278, 0.657967, -16.6354, 42.8124, 1.97444, 190.531)
+transform = Transform3D(-41.3303, -2.13484, 24.9371, -1.60462e-07, 64.8829, 1.18564, -61.9556, 1.42414, -16.6354, 42.8124, 1.97444, 190.531)
 material_override = SubResource("StandardMaterial3D_8dx55")
 mesh = SubResource("PrismMesh_ujuny")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Mountains"]
-transform = Transform3D(-23.907, -0.863644, 21.8355, 6.61117e-08, 29.9766, 1.18564, -25.4174, 0.812322, -20.5379, 59.8049, 1.97444, 195.771)
+transform = Transform3D(-51.026, -1.86932, 21.8355, 1.41106e-07, 64.8829, 1.18564, -54.2498, 1.75823, -20.5379, 59.8049, 1.97444, 195.771)
 material_override = SubResource("StandardMaterial3D_8dx55")
 mesh = SubResource("PrismMesh_ujuny")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Mountains"]
-transform = Transform3D(-23.1912, 0.885892, -22.398, -2.21275e-07, 29.9766, 1.18564, 26.0722, 0.787999, -19.923, 98.4654, 1.97444, 105.55)
+transform = Transform3D(-49.4983, 1.91747, -22.398, -4.7228e-07, 64.8829, 1.18564, 55.6474, 1.70559, -19.923, 98.4654, 1.97444, 105.55)
 material_override = SubResource("StandardMaterial3D_8dx55")
 mesh = SubResource("PrismMesh_ujuny")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Mountains"]
-transform = Transform3D(-18.5498, 1.00423, -25.3899, 1.13455e-07, 29.9766, 1.18564, 29.5549, 0.630294, -15.9357, 99.2404, 1.97444, 87.7852)
+transform = Transform3D(-39.5919, 2.17361, -25.3899, 2.42153e-07, 64.8829, 1.18564, 63.0807, 1.36424, -15.9357, 99.2404, 1.97444, 87.7852)
 material_override = SubResource("StandardMaterial3D_8dx55")
 mesh = SubResource("PrismMesh_ujuny")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Mountains"]
-transform = Transform3D(30.9488, -0.547634, 13.8458, -2.21275e-07, 29.9766, 1.18564, -16.1171, -1.05159, 26.5874, -115.929, 1.97444, 88.504)
+transform = Transform3D(66.0557, -1.18533, 13.8458, -4.7228e-07, 64.8829, 1.18564, -34.3996, -2.27612, 26.5874, -115.929, 1.97444, 88.504)
 material_override = SubResource("StandardMaterial3D_8dx55")
 mesh = SubResource("PrismMesh_ujuny")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="Mountains"]
-transform = Transform3D(27.85, -0.71433, 18.0604, 4.43518e-08, 29.9766, 1.18564, -21.0231, -0.946298, 23.9252, -122.973, 1.97444, 104.831)
+transform = Transform3D(59.4418, -1.54613, 18.0604, 9.46625e-08, 64.8829, 1.18564, -44.8708, -2.04822, 23.9252, -122.973, 1.97444, 104.831)
 material_override = SubResource("StandardMaterial3D_8dx55")
 mesh = SubResource("PrismMesh_ujuny")
 skeleton = NodePath("../..")

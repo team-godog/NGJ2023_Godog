@@ -7,7 +7,7 @@
 margin = 0.037
 radius = 0.87
 
-[node name="Node3D" type="Node3D"]
+[node name="RockB" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 physics_material_override = ExtResource("1_y5kxo")

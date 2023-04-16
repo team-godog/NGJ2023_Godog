@@ -11,7 +11,7 @@ bounce = 0.82
 radius = 0.432
 height = 3.897
 
-[node name="tree" type="Node3D"]
+[node name="Tree" type="Node3D"]
 
 [node name="StaticBody" type="StaticBody3D" parent="."]
 input_ray_pickable = false

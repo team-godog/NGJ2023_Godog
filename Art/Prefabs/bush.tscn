@@ -6,7 +6,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_68pry"]
 radius = 0.78857
 
-[node name="Node3D" type="Node3D"]
+[node name="Bush" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 visible = false

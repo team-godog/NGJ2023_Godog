@@ -7,7 +7,7 @@
 margin = 0.037
 radius = 0.87
 
-[node name="Rock" type="Node3D"]
+[node name="RockA" type="Node3D"]
 
 [node name="Rock_1" parent="." instance=ExtResource("1_al1ns")]
 

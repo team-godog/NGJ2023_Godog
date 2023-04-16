@@ -7,7 +7,7 @@
 radius = 0.724637
 height = 5.73248
 
-[node name="Node3D" type="Node3D"]
+[node name="Totem" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 physics_material_override = ExtResource("1_xopwr")

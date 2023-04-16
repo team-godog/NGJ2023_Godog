@@ -8,7 +8,11 @@ func _ready():
 		$CameraScene/AnimationPlayer.play("level_overview")
 	else:
 		# Start right away.
-		$Godog.process_mode = Node.PROCESS_MODE_ALWAYS
+		start()
 
 func _on_intro_animation_finished(anim_name: StringName):
+	start()
+
+func start():
 	$Godog.process_mode = Node.PROCESS_MODE_ALWAYS
+	GameState.play_music()

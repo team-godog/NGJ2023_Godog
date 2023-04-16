@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cq1xwmv77ivhn"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_krjn6"]
-[ext_resource type="Texture2D" uid="uid://bwbou8m18xoq1" path="res://Textures/lovely_concept.jpg" id="1_tgaj1"]
+[ext_resource type="Texture2D" path="res://Textures/lovely_concept.jpg" id="1_tgaj1"]
 [ext_resource type="Script" path="res://Scenes/PlayButton.gd" id="3_bq7tk"]
 [ext_resource type="Texture2D" uid="uid://djcvskttpep3n" path="res://Art/UI/Banner1.png" id="4_pwe7e"]
 [ext_resource type="Texture2D" uid="uid://csw7aatjdfutr" path="res://Art/UI/Banner2.png" id="5_p2wek"]

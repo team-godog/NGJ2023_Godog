@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfcq7cnyl2pt3"]
+
+[ext_resource type="PackedScene" uid="uid://d2hepojc44uuh" path="res://Art/3D Models/final meshes/Tree_1.glb" id="1_g56mb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8kh7x"]
+friction = 0.0
+bounce = 0.82
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_drra5"]
+radius = 0.432
+height = 3.897
+
+[node name="tree" type="Node3D"]
+
+[node name="StaticBody" type="StaticBody3D" parent="."]
+input_ray_pickable = false
+physics_material_override = SubResource("PhysicsMaterial_8kh7x")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0329025, 1.25176, 0.0401561)
+shape = SubResource("CapsuleShape3D_drra5")
+
+[node name="Tree_1" parent="." instance=ExtResource("1_g56mb")]

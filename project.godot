@@ -13,6 +13,7 @@ config_version=5
 config/name="NGJ2023 Rosemary"
 run/main_scene="res://Scenes/IntroCutscene.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
+boot_splash/image="res://Art/godog_splash.png"
 config/icon="res://icon.svg"
 
 [autoload]

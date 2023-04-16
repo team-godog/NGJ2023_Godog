@@ -181,5 +181,4 @@ scale_amount_curve = SubResource("Curve_drspi")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_tvcyk")
-volume_db = -15.0
 autoplay = true

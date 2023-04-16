@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bj2snv0pcfs7a"]
+[gd_scene load_steps=7 format=3 uid="uid://bj2snv0pcfs7a"]
 
 [ext_resource type="Script" path="res://Scripts/GameState.gd" id="1_smvvp"]
 [ext_resource type="AudioStream" uid="uid://dyxjdk1fmenc8" path="res://Sound/Woofs/Woof1.wav" id="2_05yk8"]
 [ext_resource type="AudioStream" uid="uid://dixlpfljog00u" path="res://Sound/Woofs/Woof2.wav" id="3_lj2rt"]
 [ext_resource type="AudioStream" uid="uid://cwf8yaipowghu" path="res://Sound/Woofs/Woof3.wav" id="4_7of7i"]
 [ext_resource type="AudioStream" uid="uid://bld5ypdhsm76m" path="res://Sound/Woofs/Woof4.wav" id="5_8rxcp"]
+[ext_resource type="AudioStream" uid="uid://dwq5xrnv6d5df" path="res://Sound/music_gameplay.ogg" id="6_g2vwv"]
 
 [node name="GameState" type="Node"]
 script = ExtResource("1_smvvp")
@@ -12,3 +13,7 @@ woofs = Array[AudioStreamWAV]([ExtResource("2_05yk8"), ExtResource("3_lj2rt"), E
 
 [node name="BarkSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_05yk8")
+volume_db = 6.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_g2vwv")

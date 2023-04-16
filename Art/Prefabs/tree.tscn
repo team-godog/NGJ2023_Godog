@@ -21,4 +21,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0329025, 1.25176, 0.040156
 shape = SubResource("CapsuleShape3D_drra5")
 
 [node name="Tree_1" parent="." instance=ExtResource("1_g56mb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ni43j"]
 [ext_resource type="PackedScene" uid="uid://c0rlsqa57skme" path="res://Scenes/Godog.tscn" id="1_nr1js"]
 [ext_resource type="PackedScene" uid="uid://ccrdooi0w71um" path="res://Scenes/Camera.tscn" id="2_j0xlf"]
-[ext_resource type="PackedScene" uid="uid://dfty372hd8kx1" path="res://Scenes/Level_New.tscn" id="2_punwc"]
-[ext_resource type="Environment" uid="uid://bl21doeipiee6" path="res://Materials/GameEnvironment.tres" id="3_bi3k3"]
+[ext_resource type="PackedScene" path="res://Scenes/Level_New.tscn" id="2_punwc"]
+[ext_resource type="Environment" uid="uid://d0c2jwqlkic8t" path="res://Materials/GameEnvironment.tres" id="3_bi3k3"]
 [ext_resource type="PackedScene" uid="uid://btn5ikxl8o8ku" path="res://Scenes/Collectables.tscn" id="7_xufm6"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_1g3do"]

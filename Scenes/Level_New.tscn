@@ -264,49 +264,37 @@ transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 2.
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -167.144, -377.517, -418.206)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
-transform = Transform3D(-41.3303, -2.13484, 24.9371, -1.60462e-07, 64.8829, 1.18564, -61.9556, 1.42414, -16.6354, -62.7379, 1.97444, 190.531)
+transform = Transform3D(-67.3501, -0.5636, 10.4193, -0.116398, 37.8974, 0.986501, -27.334, 1.22732, -25.6769, -1.2332, -1.61138, 104.256)
 material_override = SubResource("StandardMaterial3D_s5806")
 mesh = SubResource("PrismMesh_4dgyq")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
-transform = Transform3D(-51.026, -1.86932, 21.8355, 1.41106e-07, 64.8829, 1.18564, -54.2498, 1.75823, -20.5379, -45.7454, 1.97444, 195.771)
+transform = Transform3D(-69.0898, 0.36142, -8.60915, -0.116381, 37.8974, 0.986501, 22.5783, 1.30128, -26.339, 30.291, -12.2191, 137.264)
 material_override = SubResource("StandardMaterial3D_s5806")
 mesh = SubResource("PrismMesh_4dgyq")
 skeleton = NodePath("../../../..")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
-transform = Transform3D(-41.3303, -2.13484, 24.9371, -1.60462e-07, 64.8829, 1.18564, -61.9556, 1.42414, -16.6354, 42.8124, 1.97444, 190.531)
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
+transform = Transform3D(-20.9149, 33.0986, -16.1511, 22.6979, 49.7435, 10.3356, 110.577, -3.95037, -5.17647, 40.2903, -5.64873, 66.229)
 material_override = SubResource("StandardMaterial3D_s5806")
 mesh = SubResource("PrismMesh_4dgyq")
 skeleton = NodePath("../../../..")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
-transform = Transform3D(-51.026, -1.86932, 21.8355, 1.41106e-07, 64.8829, 1.18564, -54.2498, 1.75823, -20.5379, 59.8049, 1.97444, 195.771)
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
+transform = Transform3D(48.7762, 1.64541, -17.9715, 21.9442, 58.3392, 2.37025, 101.583, -13.3926, 8.11714, 59.8003, -5.64873, 26.7558)
 material_override = SubResource("StandardMaterial3D_s5806")
 mesh = SubResource("PrismMesh_4dgyq")
 skeleton = NodePath("../../../..")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
-transform = Transform3D(-49.4983, 1.91747, -22.398, -4.7228e-07, 64.8829, 1.18564, 55.6474, 1.70559, -19.923, 98.4654, 1.97444, 105.55)
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
+transform = Transform3D(-27.3358, -27.6732, -16.9665, -4.88888, 52.9128, -9.25936, 111.394, -4.46867, -4.56991, -27.4784, -5.64874, 17.0737)
 material_override = SubResource("StandardMaterial3D_s5806")
 mesh = SubResource("PrismMesh_4dgyq")
 skeleton = NodePath("../../../..")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
-transform = Transform3D(-39.5919, 2.17361, -25.3899, 2.42153e-07, 64.8829, 1.18564, 63.0807, 1.36424, -15.9357, 99.2404, 1.97444, 87.7852)
-material_override = SubResource("StandardMaterial3D_s5806")
-mesh = SubResource("PrismMesh_4dgyq")
-skeleton = NodePath("../../../..")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
-transform = Transform3D(66.0557, -1.18533, 13.8458, -4.7228e-07, 64.8829, 1.18564, -34.3996, -2.27612, 26.5874, -115.929, 1.97444, 88.504)
-material_override = SubResource("StandardMaterial3D_s5806")
-mesh = SubResource("PrismMesh_4dgyq")
-skeleton = NodePath("../../../..")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
-transform = Transform3D(59.4418, -1.54613, 18.0604, 9.46625e-08, 64.8829, 1.18564, -44.8708, -2.04822, 23.9252, -122.973, 1.97444, 104.831)
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
+transform = Transform3D(42.606, -21.5648, -16.9995, -21.079, 52.3986, -8.89432, 104.5, 19.3617, 5.13681, -20.8952, -0.752745, 66.229)
 material_override = SubResource("StandardMaterial3D_s5806")
 mesh = SubResource("PrismMesh_4dgyq")
 skeleton = NodePath("../../../..")

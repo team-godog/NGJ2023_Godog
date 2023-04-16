@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://do15j11nb3xw7"]
+[gd_scene load_steps=17 format=3 uid="uid://do15j11nb3xw7"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ni43j"]
 [ext_resource type="PackedScene" uid="uid://c0rlsqa57skme" path="res://Scenes/Godog.tscn" id="1_nr1js"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/Level_New.tscn" id="2_punwc"]
 [ext_resource type="Texture2D" uid="uid://dmbg1wq6m361w" path="res://Art/VFX/Textures/grass1.png" id="6_fa1px"]
 [ext_resource type="PackedScene" uid="uid://c48kfmcc8lma0" path="res://Scenes/Collectible.tscn" id="6_ttyx4"]
+[ext_resource type="PackedScene" uid="uid://3t7jucxrvvn6" path="res://Scenes/Collectables.tscn" id="7_t1ao3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17xsp"]
 diffuse_mode = 3
@@ -128,6 +129,7 @@ material_override = SubResource("StandardMaterial3D_7c7ee")
 mesh = SubResource("QuadMesh_wwvmg")
 
 [node name="Collectibles" type="Node3D" parent="."]
+visible = false
 
 [node name="Collectible1" parent="Collectibles" instance=ExtResource("6_ttyx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.24819, -3.3534, 11.4469)
@@ -194,3 +196,5 @@ transform = Transform3D(59.4418, -1.54613, 18.0604, 9.46625e-08, 64.8829, 1.1856
 material_override = SubResource("StandardMaterial3D_8dx55")
 mesh = SubResource("PrismMesh_ujuny")
 skeleton = NodePath("../..")
+
+[node name="Collectables" parent="." instance=ExtResource("7_t1ao3")]

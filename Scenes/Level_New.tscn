@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfty372hd8kx1"]
+[gd_scene load_steps=17 format=3 uid="uid://dfty372hd8kx1"]
 
 [ext_resource type="Material" uid="uid://cepxjvviodl5q" path="res://Materials/TrackMat.tres" id="1_n7b8k"]
 [ext_resource type="PackedScene" uid="uid://j81hogtwfn3r" path="res://Art/3D Models/BlockOut Meshes/townhouse_blockoutglb.glb" id="2_m88s6"]
+[ext_resource type="PackedScene" uid="uid://cfcq7cnyl2pt3" path="res://Art/Prefabs/tree.tscn" id="3_xasa7"]
+[ext_resource type="Texture2D" uid="uid://dmbg1wq6m361w" path="res://Art/VFX/Textures/grass1.png" id="4_ilf8i"]
 
 [sub_resource type="Curve3D" id="Curve3D_rybcm"]
 _data = {
@@ -58,6 +60,21 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5806"]
+metallic_specular = 0.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_4dgyq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rvub"]
+transparency = 1
+albedo_color = Color(1, 0.854902, 0.776471, 1)
+albedo_texture = ExtResource("4_ilf8i")
+metallic_specular = 0.0
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_y0l34"]
 
 [node name="Level" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.939692, -0.34202, 0, 0.34202, 0.939692, 0, 0, 0)
@@ -236,3 +253,81 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4168, 0, 726.931)
 
 [node name="townhouse_blockoutglb" parent="Village" instance=ExtResource("2_m88s6")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.747803, 0, 32.1558)
+
+[node name="BackgroundModels" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 2.68496, 0.524696, 2.62777)
+
+[node name="Mountains" type="Node3D" parent="BackgroundModels"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -167.144, -377.517, -418.206)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
+transform = Transform3D(-41.3303, -2.13484, 24.9371, -1.60462e-07, 64.8829, 1.18564, -61.9556, 1.42414, -16.6354, -62.7379, 1.97444, 190.531)
+material_override = SubResource("StandardMaterial3D_s5806")
+mesh = SubResource("PrismMesh_4dgyq")
+skeleton = NodePath("../../../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
+transform = Transform3D(-51.026, -1.86932, 21.8355, 1.41106e-07, 64.8829, 1.18564, -54.2498, 1.75823, -20.5379, -45.7454, 1.97444, 195.771)
+material_override = SubResource("StandardMaterial3D_s5806")
+mesh = SubResource("PrismMesh_4dgyq")
+skeleton = NodePath("../../../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
+transform = Transform3D(-41.3303, -2.13484, 24.9371, -1.60462e-07, 64.8829, 1.18564, -61.9556, 1.42414, -16.6354, 42.8124, 1.97444, 190.531)
+material_override = SubResource("StandardMaterial3D_s5806")
+mesh = SubResource("PrismMesh_4dgyq")
+skeleton = NodePath("../../../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
+transform = Transform3D(-51.026, -1.86932, 21.8355, 1.41106e-07, 64.8829, 1.18564, -54.2498, 1.75823, -20.5379, 59.8049, 1.97444, 195.771)
+material_override = SubResource("StandardMaterial3D_s5806")
+mesh = SubResource("PrismMesh_4dgyq")
+skeleton = NodePath("../../../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
+transform = Transform3D(-49.4983, 1.91747, -22.398, -4.7228e-07, 64.8829, 1.18564, 55.6474, 1.70559, -19.923, 98.4654, 1.97444, 105.55)
+material_override = SubResource("StandardMaterial3D_s5806")
+mesh = SubResource("PrismMesh_4dgyq")
+skeleton = NodePath("../../../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
+transform = Transform3D(-39.5919, 2.17361, -25.3899, 2.42153e-07, 64.8829, 1.18564, 63.0807, 1.36424, -15.9357, 99.2404, 1.97444, 87.7852)
+material_override = SubResource("StandardMaterial3D_s5806")
+mesh = SubResource("PrismMesh_4dgyq")
+skeleton = NodePath("../../../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
+transform = Transform3D(66.0557, -1.18533, 13.8458, -4.7228e-07, 64.8829, 1.18564, -34.3996, -2.27612, 26.5874, -115.929, 1.97444, 88.504)
+material_override = SubResource("StandardMaterial3D_s5806")
+mesh = SubResource("PrismMesh_4dgyq")
+skeleton = NodePath("../../../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="BackgroundModels/Mountains"]
+transform = Transform3D(59.4418, -1.54613, 18.0604, 9.46625e-08, 64.8829, 1.18564, -44.8708, -2.04822, 23.9252, -122.973, 1.97444, 104.831)
+material_override = SubResource("StandardMaterial3D_s5806")
+mesh = SubResource("PrismMesh_4dgyq")
+skeleton = NodePath("../../../..")
+
+[node name="Trees" type="Node3D" parent="BackgroundModels"]
+transform = Transform3D(1, 0, 0, 0, 0.98781, -0.155659, 0, 0.155659, 0.98781, -4.76121, -4.81049, 14.0176)
+
+[node name="tree" parent="BackgroundModels/Trees" instance=ExtResource("3_xasa7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4773, -3.99437, 8.72816)
+
+[node name="Snow" type="Node3D" parent="BackgroundModels"]
+transform = Transform3D(6.3173, -2.593e-08, -4.33239, 0, 1.01069, -1.49983e-07, 3.01252, -5.86616e-09, 9.08508, -8.941, 0.866609, 7.40715)
+
+[node name="Snow1" type="Node3D" parent="BackgroundModels/Snow"]
+
+[node name="Grass" type="Node3D" parent="BackgroundModels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68496, 0.405697, -2.64875)
+
+[node name="Grass" type="MeshInstance3D" parent="BackgroundModels/Grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5339, -1.33502, 6.22938)
+material_override = SubResource("StandardMaterial3D_2rvub")
+mesh = SubResource("QuadMesh_y0l34")
+
+[node name="Grass2" type="MeshInstance3D" parent="BackgroundModels/Grass"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 19.3987, -5.85594, 18.7468)
+material_override = SubResource("StandardMaterial3D_2rvub")
+mesh = SubResource("QuadMesh_y0l34")

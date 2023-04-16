@@ -1,67 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://do15j11nb3xw7"]
+[gd_scene load_steps=8 format=3 uid="uid://do15j11nb3xw7"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ni43j"]
 [ext_resource type="PackedScene" uid="uid://c0rlsqa57skme" path="res://Scenes/Godog.tscn" id="1_nr1js"]
 [ext_resource type="PackedScene" uid="uid://ccrdooi0w71um" path="res://Scenes/Camera.tscn" id="2_j0xlf"]
 [ext_resource type="PackedScene" uid="uid://dfty372hd8kx1" path="res://Scenes/Level_New.tscn" id="2_punwc"]
-[ext_resource type="PackedScene" uid="uid://cfcq7cnyl2pt3" path="res://Art/Prefabs/tree.tscn" id="3_3h1b4"]
-[ext_resource type="Texture2D" uid="uid://dmbg1wq6m361w" path="res://Art/VFX/Textures/grass1.png" id="6_fa1px"]
-[ext_resource type="PackedScene" uid="uid://btn5ikxl8o8ku" path="res://Scenes/collectables.tscn" id="7_xufm6"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dx55"]
-metallic_specular = 0.0
-
-[sub_resource type="PrismMesh" id="PrismMesh_ujuny"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7c7ee"]
-transparency = 1
-albedo_color = Color(1, 0.854902, 0.776471, 1)
-albedo_texture = ExtResource("6_fa1px")
-metallic_specular = 0.0
-billboard_mode = 1
-billboard_keep_scale = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_wwvmg"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d50ci"]
-sky_top_color = Color(0.133333, 0.231373, 0.760784, 1)
-sky_horizon_color = Color(0.882353, 0.556863, 0.501961, 1)
-ground_bottom_color = Color(0, 0.682353, 0.796078, 1)
-ground_horizon_color = Color(0.976471, 0.588235, 0.505882, 1)
-
-[sub_resource type="Sky" id="Sky_dlx6n"]
-sky_material = SubResource("ProceduralSkyMaterial_d50ci")
-
-[sub_resource type="Environment" id="Environment_1x1rp"]
-background_mode = 2
-sky = SubResource("Sky_dlx6n")
-ambient_light_color = Color(1, 0.65098, 1, 1)
-ambient_light_sky_contribution = 0.0
-ambient_light_energy = 0.17
-reflected_light_source = 2
-tonemap_mode = 1
-tonemap_white = 0.95
-ssao_enabled = true
-ssao_intensity = 4.78
-sdfgi_enabled = true
-sdfgi_use_occlusion = true
-glow_intensity = 3.26
-glow_strength = 0.61
-glow_blend_mode = 0
-glow_hdr_luminance_cap = 23.29
-glow_map_strength = 0.68
-fog_light_color = Color(0.74902, 0.643137, 1, 1)
-fog_light_energy = 2.93
-fog_density = 0.0
-fog_sky_affect = 0.15
-volumetric_fog_density = 0.108
-volumetric_fog_emission = Color(0.000449649, 0.044797, 0.296374, 1)
-volumetric_fog_emission_energy = 6.01
-volumetric_fog_gi_inject = 0.0
-volumetric_fog_anisotropy = 0.15
-volumetric_fog_length = 1024.0
-volumetric_fog_ambient_inject = 1.49
-volumetric_fog_sky_affect = 0.0
+[ext_resource type="Environment" uid="uid://bl21doeipiee6" path="res://Materials/GameEnvironment.tres" id="3_bi3k3"]
+[ext_resource type="PackedScene" uid="uid://btn5ikxl8o8ku" path="res://Scenes/Collectables.tscn" id="7_xufm6"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_1g3do"]
 
@@ -69,85 +13,7 @@ volumetric_fog_sky_affect = 0.0
 script = ExtResource("1_ni43j")
 introAnim = false
 
-[node name="Level2" parent="." instance=ExtResource("2_punwc")]
-
-[node name="BackgroundModels" type="Node3D" parent="Level2"]
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 2.68496, 0.524696, 2.62777)
-
-[node name="Mountains" type="Node3D" parent="Level2/BackgroundModels"]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -167.144, -377.517, -418.206)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level2/BackgroundModels/Mountains"]
-transform = Transform3D(-41.3303, -2.13484, 24.9371, -1.60462e-07, 64.8829, 1.18564, -61.9556, 1.42414, -16.6354, -62.7379, 1.97444, 190.531)
-material_override = SubResource("StandardMaterial3D_8dx55")
-mesh = SubResource("PrismMesh_ujuny")
-skeleton = NodePath("../../../..")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Level2/BackgroundModels/Mountains"]
-transform = Transform3D(-51.026, -1.86932, 21.8355, 1.41106e-07, 64.8829, 1.18564, -54.2498, 1.75823, -20.5379, -45.7454, 1.97444, 195.771)
-material_override = SubResource("StandardMaterial3D_8dx55")
-mesh = SubResource("PrismMesh_ujuny")
-skeleton = NodePath("../../../..")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Level2/BackgroundModels/Mountains"]
-transform = Transform3D(-41.3303, -2.13484, 24.9371, -1.60462e-07, 64.8829, 1.18564, -61.9556, 1.42414, -16.6354, 42.8124, 1.97444, 190.531)
-material_override = SubResource("StandardMaterial3D_8dx55")
-mesh = SubResource("PrismMesh_ujuny")
-skeleton = NodePath("../../../..")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Level2/BackgroundModels/Mountains"]
-transform = Transform3D(-51.026, -1.86932, 21.8355, 1.41106e-07, 64.8829, 1.18564, -54.2498, 1.75823, -20.5379, 59.8049, 1.97444, 195.771)
-material_override = SubResource("StandardMaterial3D_8dx55")
-mesh = SubResource("PrismMesh_ujuny")
-skeleton = NodePath("../../../..")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Level2/BackgroundModels/Mountains"]
-transform = Transform3D(-49.4983, 1.91747, -22.398, -4.7228e-07, 64.8829, 1.18564, 55.6474, 1.70559, -19.923, 98.4654, 1.97444, 105.55)
-material_override = SubResource("StandardMaterial3D_8dx55")
-mesh = SubResource("PrismMesh_ujuny")
-skeleton = NodePath("../../../..")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Level2/BackgroundModels/Mountains"]
-transform = Transform3D(-39.5919, 2.17361, -25.3899, 2.42153e-07, 64.8829, 1.18564, 63.0807, 1.36424, -15.9357, 99.2404, 1.97444, 87.7852)
-material_override = SubResource("StandardMaterial3D_8dx55")
-mesh = SubResource("PrismMesh_ujuny")
-skeleton = NodePath("../../../..")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Level2/BackgroundModels/Mountains"]
-transform = Transform3D(66.0557, -1.18533, 13.8458, -4.7228e-07, 64.8829, 1.18564, -34.3996, -2.27612, 26.5874, -115.929, 1.97444, 88.504)
-material_override = SubResource("StandardMaterial3D_8dx55")
-mesh = SubResource("PrismMesh_ujuny")
-skeleton = NodePath("../../../..")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="Level2/BackgroundModels/Mountains"]
-transform = Transform3D(59.4418, -1.54613, 18.0604, 9.46625e-08, 64.8829, 1.18564, -44.8708, -2.04822, 23.9252, -122.973, 1.97444, 104.831)
-material_override = SubResource("StandardMaterial3D_8dx55")
-mesh = SubResource("PrismMesh_ujuny")
-skeleton = NodePath("../../../..")
-
-[node name="Trees" type="Node3D" parent="Level2/BackgroundModels"]
-transform = Transform3D(1, 0, 0, 0, 0.98781, -0.155659, 0, 0.155659, 0.98781, -4.76121, -4.81049, 14.0176)
-
-[node name="tree" parent="Level2/BackgroundModels/Trees" instance=ExtResource("3_3h1b4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4773, -3.99437, 8.72816)
-
-[node name="Snow" type="Node3D" parent="Level2/BackgroundModels"]
-transform = Transform3D(6.3173, -2.593e-08, -4.33239, 0, 1.01069, -1.49983e-07, 3.01252, -5.86616e-09, 9.08508, -8.941, 0.866609, 7.40715)
-
-[node name="Snow1" type="Node3D" parent="Level2/BackgroundModels/Snow"]
-
-[node name="Grass" type="Node3D" parent="Level2/BackgroundModels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68496, 0.405697, -2.64875)
-
-[node name="Grass" type="MeshInstance3D" parent="Level2/BackgroundModels/Grass"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5339, -1.33502, 6.22938)
-material_override = SubResource("StandardMaterial3D_7c7ee")
-mesh = SubResource("QuadMesh_wwvmg")
-
-[node name="Grass2" type="MeshInstance3D" parent="Level2/BackgroundModels/Grass"]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 19.3987, -5.85594, 18.7468)
-material_override = SubResource("StandardMaterial3D_7c7ee")
-mesh = SubResource("QuadMesh_wwvmg")
+[node name="Level" parent="." instance=ExtResource("2_punwc")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.258244, -0.346645, 0.901747, 0.228495, 0.928841, 0.291624, -0.938669, 0.130735, 0.319075, 8.76039, -2.73476, 1.74443)
@@ -171,7 +37,7 @@ directional_shadow_max_distance = 7.2
 directional_shadow_pancake_size = 8.4
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_1x1rp")
+environment = ExtResource("3_bi3k3")
 camera_attributes = SubResource("CameraAttributesPractical_1g3do")
 
 [node name="Godog" parent="." node_paths=PackedStringArray("cameraScene") instance=ExtResource("1_nr1js")]

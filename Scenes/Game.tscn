@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ccrdooi0w71um" path="res://Scenes/Camera.tscn" id="2_j0xlf"]
 [ext_resource type="PackedScene" uid="uid://dfty372hd8kx1" path="res://Scenes/Level_New.tscn" id="2_punwc"]
 [ext_resource type="PackedScene" uid="uid://do2lsasxkw2ya" path="res://Scenes/EndZone.tscn" id="6_41rlm"]
-[ext_resource type="PackedScene" uid="uid://btn5ikxl8o8ku" path="res://Scenes/collectables.tscn" id="7_xufm6"]
+[ext_resource type="PackedScene" uid="uid://btn5ikxl8o8ku" path="res://Scenes/Collectables.tscn" id="7_xufm6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d50ci"]
 sky_top_color = Color(0.133333, 0.231373, 0.760784, 1)

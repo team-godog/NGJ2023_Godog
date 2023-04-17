@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://caoysxyg2rel3"]
+[gd_scene load_steps=15 format=3 uid="uid://caoysxyg2rel3"]
 
 [ext_resource type="Texture2D" uid="uid://dg04efy2pc5mj" path="res://Art/IntroSlides/10.png" id="1_kd6nk"]
-[ext_resource type="Script" path="res://Scripts/EndMenu.gd" id="1_nu45g"]
 [ext_resource type="Script" path="res://Scenes/PlayButton.gd" id="3_54hd4"]
 [ext_resource type="Texture2D" uid="uid://djcvskttpep3n" path="res://Art/UI/Banner1.png" id="4_bq5e2"]
 [ext_resource type="Texture2D" uid="uid://csw7aatjdfutr" path="res://Art/UI/Banner2.png" id="5_3sbjf"]
@@ -42,12 +41,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nu45g")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1148.0
-offset_bottom = 646.0
+offset_right = 1152.0
+offset_bottom = 648.0
 color = Color(0.2, 0.133333, 0.219608, 1)
 
 [node name="GodogSplash" type="Sprite2D" parent="."]

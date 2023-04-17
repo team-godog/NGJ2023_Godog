@@ -138,7 +138,6 @@ texture = ExtResource("7_1je7d")
 [node name="EndScreen" parent="." instance=ExtResource("9_yhhik")]
 visible = false
 layout_mode = 1
-script = null
 
 [node name="ColorRect" parent="EndScreen" index="0"]
 offset_right = 1180.0

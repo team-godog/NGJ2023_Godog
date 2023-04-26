@@ -1,6 +1,5 @@
-[gd_scene load_steps=25 format=3 uid="uid://dfty372hd8kx1"]
+[gd_scene load_steps=24 format=3 uid="uid://dfty372hd8kx1"]
 
-[ext_resource type="Material" uid="uid://ba4fi6qgnghgs" path="res://Materials/icefrost.tres" id="1_ap2wq"]
 [ext_resource type="Material" uid="uid://cepxjvviodl5q" path="res://Materials/TrackMat.tres" id="1_n7b8k"]
 [ext_resource type="PackedScene" uid="uid://j81hogtwfn3r" path="res://Art/3D Models/BlockOut Meshes/townhouse_blockoutglb.glb" id="2_m88s6"]
 [ext_resource type="PackedScene" uid="uid://cfcq7cnyl2pt3" path="res://Art/Prefabs/tree.tscn" id="3_xasa7"]
@@ -258,7 +257,6 @@ curve = SubResource("Curve3D_uwk37")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.727432, 0.0340374, -0.685335, 0.0382148, 0.99521, 0.0899895, 0.685114, -0.0916513, 0.722647, 78.7316, -2.38439, 450.621)
-material_override = ExtResource("1_ap2wq")
 size = Vector3(22.8525, 1, 45.3708)
 
 [node name="Village" type="Node3D" parent="."]

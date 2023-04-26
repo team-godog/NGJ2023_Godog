@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://do15j11nb3xw7"]
+[gd_scene load_steps=11 format=3 uid="uid://17j3cch8f6f5"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ni43j"]
 [ext_resource type="PackedScene" uid="uid://c0rlsqa57skme" path="res://Scenes/Godog.tscn" id="1_nr1js"]
+[ext_resource type="PackedScene" uid="uid://dfty372hd8kx1" path="res://Scenes/Level.tscn" id="2_5x5le"]
 [ext_resource type="PackedScene" uid="uid://ccrdooi0w71um" path="res://Scenes/Camera.tscn" id="2_j0xlf"]
-[ext_resource type="PackedScene" uid="uid://dfty372hd8kx1" path="res://Scenes/Level_New.tscn" id="2_punwc"]
 [ext_resource type="PackedScene" uid="uid://do2lsasxkw2ya" path="res://Scenes/EndZone.tscn" id="6_41rlm"]
 [ext_resource type="PackedScene" uid="uid://btn5ikxl8o8ku" path="res://Scenes/Collectables.tscn" id="7_xufm6"]
 
@@ -53,7 +53,7 @@ volumetric_fog_sky_affect = 0.0
 script = ExtResource("1_ni43j")
 introAnim = false
 
-[node name="Level2" parent="." instance=ExtResource("2_punwc")]
+[node name="Level2" parent="." instance=ExtResource("2_5x5le")]
 
 [node name="BackgroundModels" type="Node3D" parent="Level2"]
 transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 2.68496, 0.524696, 2.62777)

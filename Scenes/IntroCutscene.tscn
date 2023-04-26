@@ -1,16 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://ckkbhjil2qffy"]
+[gd_scene load_steps=18 format=3 uid="uid://dxqliehj4dpgg"]
 
-[ext_resource type="Script" path="res://Scenes/IntroCutscene.gd" id="1_vf384"]
+[ext_resource type="Script" path="res://Scripts/IntroCutscene.gd" id="1_g5rc8"]
 [ext_resource type="Texture2D" uid="uid://dg04efy2pc5mj" path="res://Art/IntroSlides/10.png" id="2_gekjl"]
 [ext_resource type="Texture2D" uid="uid://crmvb1scqq3h2" path="res://Art/IntroSlides/11.png" id="3_1tcg2"]
-[ext_resource type="Script" path="res://Scenes/Slide1.gd" id="4_odyy7"]
-[ext_resource type="Script" path="res://Scenes/Page1.gd" id="4_uioeg"]
 [ext_resource type="Texture2D" uid="uid://by6y8h31h8yqo" path="res://Art/IntroSlides/20.png" id="4_xae0x"]
 [ext_resource type="Texture2D" uid="uid://gmp51oaurwuq" path="res://Art/IntroSlides/31.png" id="5_3saoa"]
 [ext_resource type="Texture2D" uid="uid://ct2i1evatdksq" path="res://Art/IntroSlides/30.png" id="6_36nyn"]
-[ext_resource type="Script" path="res://Scenes/Slide2.gd" id="7_eff82"]
 [ext_resource type="Texture2D" uid="uid://cy66q0rflnoek" path="res://Art/IntroSlides/FIXED.png" id="9_qn4lk"]
-[ext_resource type="Script" path="res://Scenes/Slide3.gd" id="10_ar7ji"]
 [ext_resource type="Texture2D" uid="uid://d1jtduxnaovld" path="res://Art/IntroSlides/intro1.2.png" id="11_ym48p"]
 [ext_resource type="Texture2D" uid="uid://ls6dj4biodii" path="res://Art/IntroSlides/intro1.png" id="12_i05qr"]
 [ext_resource type="AudioStream" uid="uid://cfha2aklgcvds" path="res://Sound/music_cinematic.wav" id="14_dnddn"]
@@ -21,7 +17,7 @@ length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("StreamPlayer1:playing")
+tracks/0/path = NodePath("StreamPlayer:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -45,7 +41,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("page12:visible")
+tracks/2/path = NodePath("Page2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -57,7 +53,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Page13:visible")
+tracks/3/path = NodePath("Page3:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -69,7 +65,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("page4:visible")
+tracks/4/path = NodePath("Page4:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -84,7 +80,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("StreamPlayer1:playing")
+tracks/0/path = NodePath("StreamPlayer:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -108,7 +104,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("page12:visible")
+tracks/2/path = NodePath("Page2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -120,7 +116,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Page13:visible")
+tracks/3/path = NodePath("Page3:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -132,7 +128,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("page4:visible")
+tracks/4/path = NodePath("Page4:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -205,7 +201,7 @@ animations = [{
 }]
 
 [node name="IntroCutscene" type="Node2D"]
-script = ExtResource("1_vf384")
+script = ExtResource("1_g5rc8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Cutscene"
@@ -222,37 +218,31 @@ color = Color(0.2, 0.133333, 0.219608, 1)
 position = Vector2(591, 319)
 scale = Vector2(0.322, 0.322)
 sprite_frames = SubResource("SpriteFrames_im2fu")
+autoplay = "default"
 frame_progress = 0.983199
-script = ExtResource("4_uioeg")
 
-[node name="page12" type="AnimatedSprite2D" parent="."]
+[node name="Page2" type="AnimatedSprite2D" parent="."]
 position = Vector2(570, 325)
 scale = Vector2(0.328391, 0.328391)
 sprite_frames = SubResource("SpriteFrames_i7j5k")
+autoplay = "default"
 frame_progress = 0.47357
-script = ExtResource("7_eff82")
 
-[node name="Page13" type="AnimatedSprite2D" parent="."]
+[node name="Page3" type="AnimatedSprite2D" parent="."]
 position = Vector2(592, 294)
 scale = Vector2(0.321906, 0.321906)
 sprite_frames = SubResource("SpriteFrames_6j2bw")
+autoplay = "default"
 frame_progress = 0.0435128
-script = ExtResource("10_ar7ji")
 
-[node name="page4" type="AnimatedSprite2D" parent="."]
+[node name="Page4" type="AnimatedSprite2D" parent="."]
 position = Vector2(597, 310)
 scale = Vector2(0.328391, 0.328391)
 sprite_frames = SubResource("SpriteFrames_jd7u0")
+autoplay = "default"
 frame_progress = 0.921844
-script = ExtResource("4_odyy7")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
-offset_right = 1148.0
-offset_bottom = 646.0
-color = Color(0.2, 0.133333, 0.219608, 0)
-
-[node name="StreamPlayer1" type="AudioStreamPlayer" parent="."]
+[node name="StreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_dnddn")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

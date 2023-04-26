@@ -10,7 +10,7 @@ func _ready():
 		# Start right away.
 		start()
 
-func _on_intro_animation_finished(anim_name: StringName):
+func _on_intro_animation_finished(_anim_name: StringName):
 	start()
 
 func start():

@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://cq8sj6yrg61e2"]
+
+[ext_resource type="Script" path="res://Scripts/MenuButton.gd" id="1_x8jdm"]
+[ext_resource type="Texture2D" uid="uid://djcvskttpep3n" path="res://Art/UI/Banner1.png" id="2_8gh07"]
+[ext_resource type="Texture2D" uid="uid://csw7aatjdfutr" path="res://Art/UI/Banner2.png" id="3_lbxts"]
+[ext_resource type="FontFile" uid="uid://caa812febmt4f" path="res://Art/UI/EthnicABC-Regular.otf" id="4_q70em"]
+[ext_resource type="Texture2D" uid="uid://b2lx80tbbwcfn" path="res://Art/UI/selector.png" id="5_jkk33"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w33sl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0305f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yibc7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_06rr0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8gh07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lbxts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MenuButton" type="Button"]
+offset_left = 230.0
+offset_top = 371.0
+offset_right = 930.0
+offset_bottom = 884.0
+scale = Vector2(0.321024, 0.321024)
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w33sl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0305f")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yibc7")
+script = ExtResource("1_x8jdm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(358.228, 252.317)
+scale = Vector2(1.92536, 1.92536)
+sprite_frames = SubResource("SpriteFrames_06rr0")
+frame = 1
+frame_progress = 0.431865
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 215.0
+offset_right = 663.0
+offset_bottom = 377.0
+scale = Vector2(0.683287, 0.683287)
+theme_override_fonts/font = ExtResource("4_q70em")
+theme_override_font_sizes/font_size = 132
+text = "Play"
+
+[node name="Selector" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(348.883, 517.095)
+scale = Vector2(1.27025, 1.27025)
+texture = ExtResource("5_jkk33")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

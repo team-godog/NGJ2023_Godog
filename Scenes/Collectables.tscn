@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://btn5ikxl8o8ku"]
 
-[ext_resource type="PackedScene" uid="uid://c48kfmcc8lma0" path="res://Scenes/Collectible.tscn" id="1_kvk4s"]
+[ext_resource type="PackedScene" uid="uid://dcm8lgur458iy" path="res://Scenes/Collectible.tscn" id="1_kvk4s"]
 
 [node name="Collectables" type="Node3D"]
 

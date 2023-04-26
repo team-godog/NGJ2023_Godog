@@ -1,66 +1,24 @@
-[gd_scene load_steps=24 format=3 uid="uid://cq1xwmv77ivhn"]
+[gd_scene load_steps=7 format=3 uid="uid://dhihd3xm7b6y5"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_krjn6"]
 [ext_resource type="Texture2D" uid="uid://cky3gwpjoqg08" path="res://Art/godog_splash.png" id="2_jmvkn"]
-[ext_resource type="Script" path="res://Scenes/PlayButton.gd" id="3_bq7tk"]
-[ext_resource type="Texture2D" uid="uid://djcvskttpep3n" path="res://Art/UI/Banner1.png" id="4_pwe7e"]
-[ext_resource type="Texture2D" uid="uid://csw7aatjdfutr" path="res://Art/UI/Banner2.png" id="5_p2wek"]
-[ext_resource type="FontFile" uid="uid://caa812febmt4f" path="res://Art/UI/EthnicABC-Regular.otf" id="6_8esx7"]
-[ext_resource type="Texture2D" uid="uid://b2lx80tbbwcfn" path="res://Art/UI/selector.png" id="7_1je7d"]
-[ext_resource type="Script" path="res://Scenes/QuitButton.gd" id="8_l17vm"]
+[ext_resource type="PackedScene" uid="uid://cq8sj6yrg61e2" path="res://Scenes/MenuButton.tscn" id="3_b8b7e"]
+[ext_resource type="Texture2D" uid="uid://crmvb1scqq3h2" path="res://Art/IntroSlides/11.png" id="5_htdi0"]
 [ext_resource type="Texture2D" uid="uid://dg04efy2pc5mj" path="res://Art/IntroSlides/10.png" id="9_4863v"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w33sl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0305f"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yibc7"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_06rr0"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvyw1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_pwe7e")
+"texture": ExtResource("9_4863v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_p2wek")
+"texture": ExtResource("5_htdi0")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m5ynd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cxmgu"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe5wb"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1s8j"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q5ys7"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iao0c"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_f84pi"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_pwe7e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_p2wek")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hfjm1"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pts81"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rp1v2"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -84,82 +42,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayButton" type="Button" parent="StartScreen"]
+[node name="PlayButton" parent="StartScreen" instance=ExtResource("3_b8b7e")]
 layout_mode = 0
-offset_left = 230.0
-offset_top = 371.0
-offset_right = 930.0
-offset_bottom = 884.0
-scale = Vector2(0.321024, 0.321024)
-theme_override_colors/font_color = Color(0, 0, 0, 0)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 0)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_w33sl")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_0305f")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_yibc7")
-script = ExtResource("3_bq7tk")
+offset_left = 200.0
+offset_top = 370.0
+offset_right = 900.0
+offset_bottom = 882.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StartScreen/PlayButton"]
-position = Vector2(358.228, 252.317)
-scale = Vector2(1.92536, 1.92536)
-sprite_frames = SubResource("SpriteFrames_06rr0")
-frame = 1
-frame_progress = 0.431865
-
-[node name="Label" type="Label" parent="StartScreen/PlayButton"]
+[node name="QuitButton" parent="StartScreen" instance=ExtResource("3_b8b7e")]
 layout_mode = 0
-offset_left = 243.0
-offset_top = 215.0
-offset_right = 663.0
-offset_bottom = 377.0
-scale = Vector2(0.683287, 0.683287)
-theme_override_fonts/font = ExtResource("6_8esx7")
-theme_override_font_sizes/font_size = 132
-text = "Play"
+offset_left = 690.0
+offset_top = 370.0
+offset_right = 1390.0
+offset_bottom = 882.0
 
-[node name="Selector" type="Sprite2D" parent="StartScreen/PlayButton"]
-visible = false
-position = Vector2(348.883, 517.095)
-scale = Vector2(1.27025, 1.27025)
-texture = ExtResource("7_1je7d")
-
-[node name="QuitButton" type="Button" parent="StartScreen"]
-layout_mode = 0
-offset_left = 662.0
-offset_top = 397.0
-offset_right = 1365.0
-offset_bottom = 902.0
-scale = Vector2(0.323827, 0.323827)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_m5ynd")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_cxmgu")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_qe5wb")
-script = ExtResource("8_l17vm")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StartScreen/QuitButton"]
-position = Vector2(363.169, 178.772)
-scale = Vector2(1.92536, 1.92536)
-sprite_frames = SubResource("SpriteFrames_06rr0")
-frame = 1
-frame_progress = 0.431865
-
-[node name="Label" type="Label" parent="StartScreen/QuitButton"]
-layout_mode = 0
-offset_left = 222.341
-offset_top = 142.051
-offset_right = 638.341
-offset_bottom = 304.051
-scale = Vector2(0.689606, 0.689606)
-theme_override_fonts/font = ExtResource("6_8esx7")
-theme_override_font_sizes/font_size = 132
+[node name="Label" parent="StartScreen/QuitButton" index="1"]
 text = "Quit"
-
-[node name="Selector" type="Sprite2D" parent="StartScreen/QuitButton"]
-visible = false
-position = Vector2(361.304, 438.506)
-scale = Vector2(1.27025, 1.27025)
-texture = ExtResource("7_1je7d")
 
 [node name="EndScreen" type="Control" parent="."]
 visible = false
@@ -172,118 +70,17 @@ grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="EndScreen"]
 layout_mode = 0
-offset_right = 1180.0
-offset_bottom = 692.0
+offset_right = 1152.0
+offset_bottom = 648.0
 color = Color(0.2, 0.133333, 0.219608, 1)
 
-[node name="GodogSplash" type="Sprite2D" parent="EndScreen"]
-position = Vector2(588.915, 336.329)
-scale = Vector2(0.29744, 0.29877)
-texture = ExtResource("9_4863v")
+[node name="Page4" type="AnimatedSprite2D" parent="EndScreen"]
+position = Vector2(597, 310)
+scale = Vector2(0.328391, 0.328391)
+sprite_frames = SubResource("SpriteFrames_gvyw1")
+autoplay = "default"
 
-[node name="StartScreen" type="Control" parent="EndScreen"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="EndScreen/StartScreen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PlayButton" type="Button" parent="EndScreen/StartScreen"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 7.00003
-offset_right = 720.0
-offset_bottom = 520.0
-scale = Vector2(0.321024, 0.321024)
-theme_override_colors/font_color = Color(0, 0, 0, 0)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 0)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_f1s8j")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_q5ys7")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_iao0c")
-script = ExtResource("3_bq7tk")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EndScreen/StartScreen/PlayButton"]
-position = Vector2(358.228, 252.317)
-scale = Vector2(1.92536, 1.92536)
-sprite_frames = SubResource("SpriteFrames_f84pi")
-frame = 1
-frame_progress = 0.431865
-
-[node name="Label" type="Label" parent="EndScreen/StartScreen/PlayButton"]
-layout_mode = 0
-offset_left = 171.326
-offset_top = 214.937
-offset_right = 696.326
-offset_bottom = 376.937
-scale = Vector2(0.683287, 0.683287)
-theme_override_fonts/font = ExtResource("6_8esx7")
-theme_override_font_sizes/font_size = 132
-text = "Replay"
-
-[node name="Selector" type="Sprite2D" parent="EndScreen/StartScreen/PlayButton"]
-visible = false
-position = Vector2(348.883, 517.095)
-scale = Vector2(1.27025, 1.27025)
-texture = ExtResource("7_1je7d")
-
-[node name="QuitButton" type="Button" parent="EndScreen/StartScreen"]
-layout_mode = 0
-offset_left = 880.0
-offset_top = 25.0
-offset_right = 1583.0
-offset_bottom = 530.0
-scale = Vector2(0.323827, 0.323827)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_hfjm1")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_pts81")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_rp1v2")
-script = ExtResource("8_l17vm")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EndScreen/StartScreen/QuitButton"]
-position = Vector2(363.169, 178.772)
-scale = Vector2(1.92536, 1.92536)
-sprite_frames = SubResource("SpriteFrames_f84pi")
-frame = 1
-frame_progress = 0.431865
-
-[node name="Label" type="Label" parent="EndScreen/StartScreen/QuitButton"]
-layout_mode = 0
-offset_left = 222.341
-offset_top = 142.051
-offset_right = 638.341
-offset_bottom = 304.051
-scale = Vector2(0.689606, 0.689606)
-theme_override_fonts/font = ExtResource("6_8esx7")
-theme_override_font_sizes/font_size = 132
-text = "Quit"
-
-[node name="Selector" type="Sprite2D" parent="EndScreen/StartScreen/QuitButton"]
-visible = false
-position = Vector2(361.304, 438.506)
-scale = Vector2(1.27025, 1.27025)
-texture = ExtResource("7_1je7d")
-
-[connection signal="mouse_entered" from="StartScreen/PlayButton" to="StartScreen/PlayButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StartScreen/PlayButton" to="StartScreen/PlayButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="StartScreen/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="mouse_entered" from="StartScreen/QuitButton" to="StartScreen/QuitButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StartScreen/QuitButton" to="StartScreen/QuitButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="StartScreen/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="mouse_entered" from="EndScreen/StartScreen/PlayButton" to="EndScreen/StartScreen/PlayButton" method="_on_mouse_entered" flags=18]
-[connection signal="mouse_exited" from="EndScreen/StartScreen/PlayButton" to="EndScreen/StartScreen/PlayButton" method="_on_mouse_exited" flags=18]
-[connection signal="pressed" from="EndScreen/StartScreen/PlayButton" to="EndScreen" method="_on_play_button_pressed" flags=18]
-[connection signal="mouse_entered" from="EndScreen/StartScreen/QuitButton" to="EndScreen/StartScreen/QuitButton" method="_on_mouse_entered" flags=18]
-[connection signal="mouse_exited" from="EndScreen/StartScreen/QuitButton" to="EndScreen/StartScreen/QuitButton" method="_on_mouse_exited" flags=18]
-[connection signal="pressed" from="EndScreen/StartScreen/QuitButton" to="EndScreen" method="_on_quit_button_pressed" flags=18]
+
+[editable path="StartScreen/QuitButton"]

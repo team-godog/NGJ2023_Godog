@@ -52,7 +52,7 @@ enginePower = 200.0
 [node name="Visuals" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="godog" parent="Visuals" instance=ExtResource("4_olpc2")]
+[node name="GodotMesh" parent="Visuals" instance=ExtResource("4_olpc2")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.35552, 0)
 
 [node name="VehicleWheel3D_FR" type="VehicleWheel3D" parent="."]

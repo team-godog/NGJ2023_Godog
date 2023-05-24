@@ -5,18 +5,28 @@ enum State {
 	START_SCREEN,
 	INTRO_CUTSCENE,
 	IN_GAME,
+	PAUSED,
 	END_SCREEN
 }
 var state : State = State.START_SCREEN
 
 
 func _input(event: InputEvent):
-	if state == State.INTRO_CUTSCENE and event.is_action_pressed("pause"):
-		start_game()
+	if event.is_action_pressed("pause"):
+		if state == State.INTRO_CUTSCENE:
+			start_game()
+		elif state == State.IN_GAME:
+			state = State.PAUSED
+			$/root/Game.process_mode = Node.PROCESS_MODE_DISABLED
+			$PauseScreen.show()
+			self.show()
+		elif state == State.PAUSED:
+			_on_resume_button_pressed()
 
 
 func _on_play_button_pressed():
 	self.hide()
+	$StartScreen.hide()
 	state = State.INTRO_CUTSCENE
 
 	var cutscene = preload("res://Scenes/IntroCutscene.tscn").instantiate()
@@ -38,17 +48,21 @@ func start_game():
 	state = State.IN_GAME
 	get_tree().get_root().add_child(game)
 
+	# Move Menu to the end, so that when we show it for the pause/end screens,
+	# it's an overlay.
+	self.get_parent().move_child(self, -1)
+
 
 func _on_quit_button_pressed():
 	get_tree().quit()
 
 
 func _on_resume_button_pressed():
-	$StartScreen.hide()
-	$ResumeScreen.hide()
+	$PauseScreen.hide()
+	self.hide()
 	state = State.IN_GAME
 
-	$/root/Game.process_mode = Node.PROCESS_MODE_ALWAYS
+	$/root/Game.process_mode = Node.PROCESS_MODE_INHERIT
 
 
 func show_end():

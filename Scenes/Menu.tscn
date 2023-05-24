@@ -29,11 +29,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_krjn6")
 
-[node name="GodogSplash" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-scale = Vector2(1.17192, 1.07285)
-texture = ExtResource("2_jmvkn")
-
 [node name="StartScreen" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -41,6 +36,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GodogSplash" type="Sprite2D" parent="StartScreen"]
+position = Vector2(576, 324)
+scale = Vector2(1.17192, 1.07285)
+texture = ExtResource("2_jmvkn")
 
 [node name="PlayButton" parent="StartScreen" instance=ExtResource("3_b8b7e")]
 layout_mode = 0
@@ -57,6 +57,46 @@ offset_right = 1390.0
 offset_bottom = 882.0
 
 [node name="Label" parent="StartScreen/QuitButton" index="1"]
+text = "Quit"
+
+[node name="PauseScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimmingOverlay" type="ColorRect" parent="PauseScreen"]
+modulate = Color(0, 0, 0, 0.666667)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" parent="PauseScreen" instance=ExtResource("3_b8b7e")]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 370.0
+offset_right = 900.0
+offset_bottom = 882.0
+
+[node name="Label" parent="PauseScreen/ResumeButton" index="1"]
+offset_left = 190.0
+offset_right = 715.0
+text = "Resume"
+
+[node name="QuitButton" parent="PauseScreen" instance=ExtResource("3_b8b7e")]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 370.0
+offset_right = 1390.0
+offset_bottom = 882.0
+
+[node name="Label" parent="PauseScreen/QuitButton" index="1"]
 text = "Quit"
 
 [node name="EndScreen" type="Control" parent="."]
@@ -82,5 +122,9 @@ autoplay = "default"
 
 [connection signal="pressed" from="StartScreen/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="StartScreen/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PauseScreen/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseScreen/QuitButton" to="." method="_on_quit_button_pressed"]
 
 [editable path="StartScreen/QuitButton"]
+[editable path="PauseScreen/ResumeButton"]
+[editable path="PauseScreen/QuitButton"]

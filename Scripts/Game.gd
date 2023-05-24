@@ -14,5 +14,5 @@ func _on_intro_animation_finished(_anim_name: StringName):
 	start()
 
 func start():
-	$Godog.process_mode = Node.PROCESS_MODE_ALWAYS
+	$Godog.process_mode = Node.PROCESS_MODE_INHERIT
 	GameState.play_music()
